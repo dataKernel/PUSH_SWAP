@@ -12,13 +12,20 @@ t_node	*create_node(int value)
 	return (node);
 }
 
-//pa (push a) : Prend le premier élément au sommet de b et le met sur a.
-//Ne fait rien si b est vide.
-void	push_a(t_node **head, t_node *node)
+/* function to push a node at the top of the stack(head) and link all the others
+nodes between them until null */
+void	push(t_node **head, t_node *elem)
 {
 	t_node	*firstElem;
 
 	firstElem = *head;
-	*head = node;
-	node->next = firstElem;
+	*head = elem;
+	elem->next = firstElem;
+}
+
+/* pa (push a) : Prend le premier élément au sommet de b et le met sur a.
+Ne fait rien si b est vide. */
+void	push_a(t_node **headA, t_node **headB, t_node *elem)
+{
+	return ;
 }
