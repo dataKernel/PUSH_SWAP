@@ -50,6 +50,9 @@ int	main(int argc, char *argv[])
 	headA = NULL;
 	headB = NULL;
 	i = 1;
+    //protection des arguments via main
+    if(argc <= 1)
+        return(-1);
 	while (i < argc)
 	{
         
@@ -58,6 +61,6 @@ int	main(int argc, char *argv[])
         push(&headA, nodeA);
 		i++;
 	}
-    printf("%i", headA->next->value);
+    printf("%i", headA->next->next->value);
 	return (0);
 }
