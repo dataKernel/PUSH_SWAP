@@ -33,7 +33,7 @@ int	ft_atoi(const char *str)
 	return (result * check);
 }
 
-int	main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	// checking values from args
 	printf("nbr args: %i\n", argc);
