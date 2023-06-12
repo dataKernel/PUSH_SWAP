@@ -42,9 +42,9 @@ int main(int argc, char *argv[])
 	// heads definitions
 	t_node  *headA;
 	t_node  *headB;
-	// node definitions
-	t_node  *nodeA;
-	t_node  *nodeB;
+    // node definitions
+    t_node  *nodeA;
+    t_node  *nodeB;
 	int i;
 
 	headA = NULL;
@@ -54,13 +54,12 @@ int main(int argc, char *argv[])
     if(argc <= 1)
         return(-1);
 	while (i < argc)
-	{
-        
+	{       
 		nodeA = create_node(ft_atoi(argv[i]));
         //check(debug)
         push(&headA, nodeA);
 		i++;
 	}
-    printf("%i", headA->next->next->value);
+    printf("%i", headA->next->value);
 	return (0);
 }
