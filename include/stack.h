@@ -8,6 +8,7 @@ typedef struct      s_node
 }t_node;
 
 t_node  *create_node(int value);
+t_node  *pop(t_node **head);
 
 void    push_element(t_node **head, t_node *elem);
 void    push(t_node **headA, t_node **headB);

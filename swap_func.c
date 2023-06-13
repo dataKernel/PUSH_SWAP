@@ -1,4 +1,4 @@
-#include "stack.h"
+#include "include/stack.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -53,10 +53,11 @@ t_node	*pop(t_node **head)
 	if(*head == NULL)
 	{
 		printf("ERROR the head is NULL");
-		return ;
+		return NULL;
 	}
 	firstElem = *head;
 	firstElem->next = NULL;
 	*head = (*head)->next;
+	printf("%i", (*head)->value);
 	return(firstElem);
 }
