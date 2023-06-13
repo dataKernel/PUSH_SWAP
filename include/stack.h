@@ -5,7 +5,7 @@ typedef struct s_node
 {
 	int				value;
 	struct s_node	*next;
-}					t_node;
+}t_node;
 
 /**
  * @brief create a node on the `HEAP` who returns a ptr on `t_node` with the given value

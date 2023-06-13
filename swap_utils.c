@@ -1,4 +1,4 @@
-static int	test_str(char c, char *str)
+int	test_str(char c, char *str)
 {
 	while (*str != '\0')
 	{

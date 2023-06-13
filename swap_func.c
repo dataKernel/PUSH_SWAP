@@ -12,6 +12,22 @@ t_node	*create_node(int value)
 	return (node);
 }
 
+t_node	*pop(t_node **head)
+{
+	t_node *firstElem;
+
+	if (*head == NULL)
+	{
+		printf("ERROR the head is NULL");
+		return (NULL);
+	}
+	firstElem = *head;
+	firstElem->next = NULL;
+	*head = (*head)->next;
+	printf("%i", (*head)->value);
+	return (firstElem);
+}
+
 void	push_element(t_node **head, t_node *elem)
 {
 	t_node	*firstElem;
@@ -36,20 +52,4 @@ void	push(t_node **src, t_node **dst)
 	*dst = *src;
 	(*dst)->next = firstElemDst;
 	*src = nextElementSrc;
-}
-
-t_node	*pop(t_node **head)
-{
-	t_node *firstElem;
-
-	if (*head == NULL)
-	{
-		printf("ERROR the head is NULL");
-		return (NULL);
-	}
-	firstElem = *head;
-	firstElem->next = NULL;
-	*head = (*head)->next;
-	printf("%i", (*head)->value);
-	return (firstElem);
 }
