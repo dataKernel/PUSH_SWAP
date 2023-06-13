@@ -13,6 +13,7 @@ typedef struct s_node
  * @return return a ptr `t_node` from the heap
  */
 t_node  *create_node(int value);
+
 /**
  * @brief Take out the first element of the list(src),
  * and return it, while pointing the elem to NULL.
@@ -20,6 +21,7 @@ t_node  *create_node(int value);
  * @return the first element of the list 
  */
 t_node  *pop(t_node **head);
+
 /**
  * @brief push a node at the top of the stack(head) and link all the others nodes between them until null (used to init the list)
  * @param head ptr on ptr on `t_node` given as the HEAD
@@ -27,6 +29,7 @@ t_node  *pop(t_node **head);
  * @return `VOID`
  */
 void    push_element(t_node **head, t_node *elem);
+
 /**
  * @brief take the first element of the list(src) and push it to an other list on the top of it(dst). Don't do anything if src is empty.
  * @param src ptr on ptr on `t_node` given as the HEAD->source
@@ -34,5 +37,13 @@ void    push_element(t_node **head, t_node *elem);
  * @return `VOID`
  */
 void    push(t_node **headA, t_node **headB);
+
+/**
+ * @brief swap the node contained by the head with the 2nd node on the list. if there is only headSimple provided, then there is only one swap otherwise both head need to be swapped.
+ * @param headSimple ptr on ptr on `t_node`given as the HEAD
+ * @param headDouble ptr on ptr on `t_node`given as the 2nd head to swap 
+ * @return `VOID`
+*/
+void    swap(t_node **headSimple, t_node **headDouble);
 
 #endif

@@ -10,6 +10,7 @@ int main(int argc, char *argv[])
 	t_node  *headB;
 	t_node	*nodeCreation;
 	int i;
+	int	check;
 
 	headA = NULL;
 	headB = NULL;
@@ -23,8 +24,6 @@ int main(int argc, char *argv[])
         push_element(&headB, nodeCreation);
 		i++;
 	}
-	pop(&headB);
-	i = 1;
 	while(headA)
 	{
 		printf("Element(A)[%i]->%i\n", i, headA->value);

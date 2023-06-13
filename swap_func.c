@@ -22,9 +22,8 @@ t_node	*pop(t_node **head)
 		return (NULL);
 	}
 	firstElem = *head;
-	firstElem->next = NULL;
 	*head = (*head)->next;
-	printf("%i", (*head)->value);
+	firstElem->next = NULL;
 	return (firstElem);
 }
 
@@ -52,4 +51,9 @@ void	push(t_node **src, t_node **dst)
 	*dst = *src;
 	(*dst)->next = firstElemDst;
 	*src = nextElementSrc;
+}
+
+void	swap(t_node **headSimple, t_node **headDouble)
+{
+	return ;
 }
