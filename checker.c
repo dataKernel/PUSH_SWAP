@@ -35,16 +35,10 @@ int	ft_atoi(const char *str)
 
 int main(int argc, char *argv[])
 {
-	// checking values from args
-	printf("nbr args: %i\n", argc);
-	for (int i = 1; i < argc; i++)
-		printf("argv[%i]-->%s\n", i, argv[i]);
 	// heads definitions
 	t_node  *headA;
 	t_node  *headB;
-    // node definitions
-    t_node  *nodeA;
-    t_node  *nodeB;
+	t_node	*nodeCreation;
 	int i;
 
 	headA = NULL;
@@ -55,11 +49,24 @@ int main(int argc, char *argv[])
         return(-1);
 	while (i < argc)
 	{       
-		nodeA = create_node(ft_atoi(argv[i]));
-        //check(debug)
-        push(&headA, nodeA);
+		nodeCreation = create_node(ft_atoi(argv[i]));
+        push_element(&headB, nodeCreation);
 		i++;
 	}
-    printf("%i", headA->next->value);
+	push(&headB, &headA);
+	i = 1;
+	while(headA)
+	{
+		printf("Element(A)[%i]->%i\n", i, headA->value);
+		headA = headA->next;
+		i++;
+	}
+	i = 1;
+	while(headB)
+	{
+		printf("Element(B)[%i]->%i\n", i, headB->value);
+		headB = headB->next;
+		i++;
+	}
 	return (0);
 }

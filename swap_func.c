@@ -1,7 +1,8 @@
 #include "stack.h"
+#include <stdio.h>
 #include <stdlib.h>
 
-// function to create a node who returns a ptr on t_node with the given value
+// create_node(value): to create a node who returns a ptr on t_node with the given value
 t_node	*create_node(int value)
 {
 	t_node	*node;
@@ -12,9 +13,9 @@ t_node	*create_node(int value)
 	return (node);
 }
 
-/* function to push a node at the top of the stack(head) and link all the others
-nodes between them until null */
-void	push(t_node **head, t_node *elem)
+/* push_element(head, elem): push a node at the top of the stack(head) and link all the others
+nodes between them until null (used to init the list) */
+void	push_element(t_node **head, t_node *elem)
 {
 	t_node	*firstElem;
 
@@ -23,9 +24,20 @@ void	push(t_node **head, t_node *elem)
 	elem->next = firstElem;
 }
 
-/* pa (push a) : Prend le premier élément au sommet de b et le met sur a.
-Ne fait rien si b est vide. */
-void	push_a(t_node **headA, t_node **headB, t_node *elem)
+/* push(src, dst): Take the first element  */
+void	push(t_node **src, t_node **dst)
 {
-	return ;
+	t_node	*firstElemDst;
+	t_node	*nextElementSrc;
+
+	if(*src == NULL)
+	{
+		printf("ERROR src is NULL");
+		return ;
+	}
+	firstElemDst = *dst;
+	nextElementSrc = (*src)->next;
+	*dst = *src;
+	(*dst)->next = firstElemDst;
+	*src = nextElementSrc;
 }
