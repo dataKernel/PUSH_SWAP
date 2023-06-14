@@ -44,6 +44,6 @@ void    push(t_node **headA, t_node **headB);
  * @param headDouble ptr on ptr on `t_node`given as the 2nd head to swap 
  * @return `VOID`
 */
-void    swap(t_node **headSimple, t_node **headDouble);//
+void    swap(t_node **headSimple, t_node **headDouble);
 
 #endif
