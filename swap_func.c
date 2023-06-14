@@ -1,3 +1,4 @@
+#include "include/stack_utils.h"
 #include "include/stack.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -65,11 +66,12 @@ void	swap_nodes_values(t_node **head)
 
 void	swap(t_node **headSimple, t_node **headDouble)
 {
+	int		sizeList;
 	if(headDouble == NULL)
 	{
 		if(headSimple == NULL)
 		{
-			printf("Error headSimple is NULL");
+			printf("Error headSimple is NULL or the list size is too short.");
 			return ;
 		}
 		swap_nodes_values(headSimple);
@@ -79,5 +81,4 @@ void	swap(t_node **headSimple, t_node **headDouble)
 		swap_nodes_values(headSimple);
 		swap_nodes_values(headDouble);
 	}
-	return ;
 }
