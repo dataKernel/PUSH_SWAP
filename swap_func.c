@@ -16,7 +16,7 @@ t_node	*pop(t_node **head)
 {
 	t_node *firstElem;
 
-	if (*head == NULL)
+	if (head == NULL)
 	{
 		printf("ERROR the head is NULL");
 		return (NULL);
@@ -39,21 +39,40 @@ void	push_element(t_node **head, t_node *elem)
 void	push(t_node **src, t_node **dst)
 {
 	t_node	*firstElemDst;
-	t_node	*nextElementSrc;
+	t_node	*nextElemSrc;
 
-	if (*src == NULL)
+	if (src == NULL)
 	{
 		printf("ERROR src is NULL");
 		return ;
 	}
 	firstElemDst = *dst;
-	nextElementSrc = (*src)->next;
+	nextElemSrc = (*src)->next;
 	*dst = *src;
 	(*dst)->next = firstElemDst;
-	*src = nextElementSrc;
+	*src = nextElemSrc;
 }
 
 void	swap(t_node **headSimple, t_node **headDouble)
 {
+	int		firstElemSimple;
+	int		firstElemDouble;
+	
+	firstElemSimple = 0;
+	firstElemDouble = 0;
+	if(headDouble == NULL)
+	{
+		if(headSimple == NULL)
+		{
+			printf("Error headSimple is NULL");
+			return ;
+		}
+		firstElemSimple = (*headSimple)->value;
+		(*headSimple)->value = (*headSimple)->next->value;
+		(*headSimple)->next->value = firstElemSimple;
+	}
+	else
+		printf("head pas null");
+		//faire le ss== sa + sb
 	return ;
 }

@@ -18,12 +18,15 @@ int main(int argc, char *argv[])
     //protection des arguments via main
     if(argc <= 1)
         return(-1);
+	//creation de la liste
 	while (i < argc)
 	{       
 		nodeCreation = create_node(ft_atoi(argv[i]));
         push_element(&headB, nodeCreation);
 		i++;
 	}
+	//call test fuction
+	swap(&headB, NULL);
 	while(headA)
 	{
 		printf("Element(A)[%i]->%i\n", i, headA->value);
