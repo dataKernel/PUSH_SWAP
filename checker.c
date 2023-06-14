@@ -8,7 +8,8 @@ int main(int argc, char *argv[])
 	// heads definitions
 	t_node  *headA;
 	t_node  *headB;
-	t_node	*nodeCreation;
+	t_node	*nodeCreationA;
+	t_node	*nodeCreationB;
 	int i;
 	int	check;
 
@@ -21,12 +22,13 @@ int main(int argc, char *argv[])
 	//creation de la liste
 	while (i < argc)
 	{       
-		nodeCreation = create_node(ft_atoi(argv[i]));
-        push_element(&headB, nodeCreation);
+		nodeCreationA = create_node(ft_atoi(argv[i]));
+        nodeCreationB = create_node(ft_atoi(argv[i]));
+		push_element(&headA, nodeCreationA);
+		push_element(&headB, nodeCreationB);
 		i++;
 	}
 	//call test fuction
-	swap(&headB, NULL);
 	while(headA)
 	{
 		printf("Element(A)[%i]->%i\n", i, headA->value);

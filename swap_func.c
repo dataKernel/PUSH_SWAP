@@ -53,13 +53,18 @@ void	push(t_node **src, t_node **dst)
 	*src = nextElemSrc;
 }
 
+void	swap_nodes_values(t_node **head)
+{
+	int		firstElem;
+
+	firstElem = 0;
+	firstElem = (*head)->value;
+	(*head)->value = (*head)->next->value;
+	(*head)->next->value = firstElem;
+}
+
 void	swap(t_node **headSimple, t_node **headDouble)
 {
-	int		firstElemSimple;
-	int		firstElemDouble;
-	
-	firstElemSimple = 0;
-	firstElemDouble = 0;
 	if(headDouble == NULL)
 	{
 		if(headSimple == NULL)
@@ -67,12 +72,12 @@ void	swap(t_node **headSimple, t_node **headDouble)
 			printf("Error headSimple is NULL");
 			return ;
 		}
-		firstElemSimple = (*headSimple)->value;
-		(*headSimple)->value = (*headSimple)->next->value;
-		(*headSimple)->next->value = firstElemSimple;
+		swap_nodes_values(headSimple);
 	}
 	else
-		printf("head pas null");
-		//faire le ss== sa + sb
+	{
+		swap_nodes_values(headSimple);
+		swap_nodes_values(headDouble);
+	}
 	return ;
 }
