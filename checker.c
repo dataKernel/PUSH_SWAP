@@ -1,5 +1,5 @@
-#include "include/stack.h"
 #include "include/stack_utils.h"
+#include "include/stack.h"
 #include <stdio.h>
 #include <unistd.h>
 
@@ -11,7 +11,6 @@ int main(int argc, char *argv[])
 	t_node	*nodeCreationA;
 	t_node	*nodeCreationB;
 	int i;
-	int	check;
 
 	headA = NULL;
 	headB = NULL;
@@ -28,14 +27,16 @@ int main(int argc, char *argv[])
 		push_element(&headB, nodeCreationB);
 		i++;
 	}
+	i = 1;
 	//call test fuction
-	printf("size A: %i", size_list(headA));
+	printf("size: %i\n", size_list(&headA));
 	while(headA)
 	{
 		printf("Element(A)[%i]->%i\n", i, headA->value);
 		headA = headA->next;
 		i++;
 	}
+	printf("\n");
 	i = 1;
 	while(headB)
 	{

@@ -43,14 +43,5 @@ void    push(t_node **headA, t_node **headB);
  * @param head ptr on ptr on `t_node` given as the HEAD
  * @return `VOID`
 */
-void	swap_nodes_values(t_node **head);
-
-/**
- * @brief swap the node contained by the head with the 2nd node on the list. if there is only headSimple provided, then there is only one swap otherwise both head need to be swapped.
- * @param headSimple ptr on ptr on `t_node` given as the HEAD
- * @param headDouble ptr on ptr on `t_node` given as the 2nd head to swap 
- * @return `VOID`
-*/
-void    swap(t_node **headSimple, t_node **headDouble);
-
+void	swap(t_node **head);
 #endif

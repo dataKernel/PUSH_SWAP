@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "include/stack.h"
 
 int	test_str(char c, char *str)
@@ -31,15 +32,21 @@ int	ft_atoi(const char *str)
 	return (result * check);
 }
 
-int	size_list(t_node *head)
+int	size_list(t_node **head)
 {
+	t_node	*tempHead;
 	int		size;
 
+	//tempHead = head;
+	if(*head == NULL)
+		return(0);
+	
 	size = 0;
-	while(head)
+	while(*head)
 	{
-		head = head->next;
+		*head = (*head)->next;
 		size++;
 	}
+	//head = tempHead;
 	return(size);
 }

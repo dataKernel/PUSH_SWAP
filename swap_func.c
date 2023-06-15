@@ -54,31 +54,12 @@ void	push(t_node **src, t_node **dst)
 	*src = nextElemSrc;
 }
 
-void	swap_nodes_values(t_node **head)
+void	swap(t_node **head)
 {
 	int		firstElem;
-
+	
 	firstElem = 0;
 	firstElem = (*head)->value;
 	(*head)->value = (*head)->next->value;
 	(*head)->next->value = firstElem;
-}
-
-void	swap(t_node **headSimple, t_node **headDouble)
-{
-	int		sizeList;
-	if(headDouble == NULL)
-	{
-		if(headSimple == NULL)
-		{
-			printf("Error headSimple is NULL or the list size is too short.");
-			return ;
-		}
-		swap_nodes_values(headSimple);
-	}
-	else
-	{
-		swap_nodes_values(headSimple);
-		swap_nodes_values(headDouble);
-	}
 }

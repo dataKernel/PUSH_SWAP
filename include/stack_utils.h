@@ -5,6 +5,6 @@
 
 int test_str(char c, char *str);
 int ft_atoi(const char *str);
-int size_list(t_node *head);
+int size_list(t_node **head);
 
 #endif
