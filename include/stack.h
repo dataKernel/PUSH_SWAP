@@ -42,6 +42,14 @@ void    push_element(t_node **head, t_node *elem);
 void    push(t_node **headA, t_node **headB);
 
 /**
+ * @brief swap the both list in the same time in this function.
+ * @param headA ptr on ptr on `t_node` given as the HEAD
+ * @param headB ptr on ptr on `t_node` given as the HEAD
+ * return VOID
+*/
+void	swap_all(t_node **headA, t_node **headB);
+
+/**
  * @brief swap the node value contained by the head with the 2nd node of on the list. 
  * Check if the head or the next element are NULL so meaning that the list has at
  * least a size of 2 

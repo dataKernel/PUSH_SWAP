@@ -1,5 +1,5 @@
-#include "include/stack.h"
 #include "include/stack_utils.h"
+#include "include/stack.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -42,11 +42,8 @@ void	push(t_node **src, t_node **dst)
 	t_node	*firstElemDst;
 	t_node	*nextElemSrc;
 
-	if (src == NULL)
-	{
-		printf("ERROR src is null");
+	if (src == NULL || *src == NULL)
 		return ;
-	}
 	firstElemDst = *dst;
 	nextElemSrc = (*src)->next;
 	*dst = *src;
