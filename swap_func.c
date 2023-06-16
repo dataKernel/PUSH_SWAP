@@ -13,21 +13,6 @@ t_node	*create_node(int value)
 	return (node);
 }
 
-t_node	*pop(t_node **head)
-{
-	t_node	*firstElem;
-
-	if (*head == NULL)
-	{
-		printf("ERROR head is null");
-		return (NULL);
-	}
-	firstElem = *head;
-	*head = (*head)->next;
-	firstElem->next = NULL;
-	return (firstElem);
-}
-
 void	push_element(t_node **head, t_node *elem)
 {
 	t_node	*firstElem;
