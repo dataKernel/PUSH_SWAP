@@ -17,20 +17,26 @@ t_node	*pop(t_node **head)
 
 void    rotate(t_node **head)
 {
-    t_node  *firstElem;
+    t_node  *oldHead;
+    int     firstElem;
 
-    if(head == NULL || *head == NULL)
-        return ;
-    firstElem = *head;
+    oldHead = *head;
+    firstElem = (*head)->value;
     while(*head != NULL)
     {
         if((*head)->next == NULL)
         {
-            (*head)->value = firstElem->value;
-            *head = firstElem;
+            (*head)->value = firstElem;
+            *head = oldHead;
             return ;
         }
         (*head)->value = (*head)->next->value;
         *head = (*head)->next;
     }
+}
+
+void    rotate_all(t_node **headA, t_node **headB)
+{
+    rotate(headA);
+    rotate(headB);
 }

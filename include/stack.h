@@ -42,7 +42,7 @@ void    push_element(t_node **head, t_node *elem);
 void    push(t_node **headA, t_node **headB);
 
 /**
- * @brief swap the both list in the same time in this function.
+ * @brief swap the node value contained by the head with the 2nd node for both list
  * @param headA ptr on ptr on `t_node` given as the HEAD
  * @param headB ptr on ptr on `t_node` given as the HEAD
  * return VOID
@@ -50,7 +50,7 @@ void    push(t_node **headA, t_node **headB);
 void	swap_all(t_node **headA, t_node **headB);
 
 /**
- * @brief swap the node value contained by the head with the 2nd node of on the list. 
+ * @brief swap the node value contained by the head with the 2nd node on the list. 
  * Check if the head or the next element are NULL so meaning that the list has at
  * least a size of 2 
  * @param head ptr on ptr on `t_node` given as the HEAD
@@ -60,8 +60,17 @@ void	swap(t_node **head);
 
 /**
  * @brief shift of one position all the elements of the list to the top
- * @param head ptr on ptr on `t_node`given as the HEAD
+ * @param head ptr on ptr on `t_node` given as the HEAD
  * @return `VOID`
 */
 void	rotate(t_node **head);
+
+/**
+ * @brief shift of one position all the elements of the both list to the top
+ * @param headA ptr on ptr on `t_node` given as the HEAD
+ * @param headB ptr on ptr on `t_node` given as the HEAD
+ * @return `VOID`
+ */
+void	rotate_all(t_node **headA, t_node **headB);
+
 #endif
