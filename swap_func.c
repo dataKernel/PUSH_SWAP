@@ -17,9 +17,9 @@ t_node	*pop(t_node **head)
 {
 	t_node *firstElem;
 
-	if (head == NULL)
+	if (*head == NULL)
 	{
-		printf("ERROR the head is NULL");
+		printf("ERROR head is null");
 		return (NULL);
 	}
 	firstElem = *head;
@@ -44,7 +44,7 @@ void	push(t_node **src, t_node **dst)
 
 	if (src == NULL)
 	{
-		printf("ERROR src is NULL");
+		printf("ERROR src is null");
 		return ;
 	}
 	firstElemDst = *dst;
@@ -54,11 +54,26 @@ void	push(t_node **src, t_node **dst)
 	*src = nextElemSrc;
 }
 
+void	swap_all(t_node **headA, t_node **headB)
+{
+	swap(headA);
+	swap(headB);
+}
+
 void	swap(t_node **head)
 {
 	int		firstElem;
-	
-	firstElem = 0;
+
+	if(*head == NULL)
+	{
+		printf("ERROR head is null");
+		return ;
+	}
+	else if((*head)->next == NULL)
+	{
+		printf("ERROR the size list is less than 2");
+		return ;
+	}
 	firstElem = (*head)->value;
 	(*head)->value = (*head)->next->value;
 	(*head)->next->value = firstElem;

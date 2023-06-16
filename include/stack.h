@@ -8,7 +8,8 @@ typedef struct s_node
 }t_node;
 
 /**
- * @brief create a node on the `HEAP` who returns a ptr on `t_node` with the given value
+ * @brief create a node on the `HEAP` who returns a ptr on `t_node` 
+ * with the given value
  * @param value integer given as value
  * @return return a ptr `t_node` from the heap
  */
@@ -23,7 +24,8 @@ t_node  *create_node(int value);
 t_node  *pop(t_node **head);
 
 /**
- * @brief push a node at the top of the stack(head) and link all the others nodes between them until null (used to init the list)
+ * @brief push a node at the top of the stack(head) and link all the others nodes 
+ * between them until null (used to init the list)
  * @param head ptr on ptr on `t_node` given as the HEAD
  * @param elem ptr on `t_node` given as a node element
  * @return `VOID`
@@ -31,7 +33,8 @@ t_node  *pop(t_node **head);
 void    push_element(t_node **head, t_node *elem);
 
 /**
- * @brief take the first element of the list(src) and push it to an other list on the top of it(dst). Don't do anything if src is empty.
+ * @brief take the first element of the list(src) and push it 
+ * to an other list on the top of it(dst). Don't do anything if src is empty
  * @param src ptr on ptr on `t_node` given as the HEAD->source
  * @param dst ptr on ptr on `t_node`given as the HEAD->destination
  * @return `VOID`
@@ -39,7 +42,9 @@ void    push_element(t_node **head, t_node *elem);
 void    push(t_node **headA, t_node **headB);
 
 /**
- * @brief swap the node contained by the head with the 2nd node of on the list.
+ * @brief swap the node value contained by the head with the 2nd node of on the list. 
+ * Check if the head or the next element are NULL so meaning that the list has at
+ * least a size of 2 
  * @param head ptr on ptr on `t_node` given as the HEAD
  * @return `VOID`
 */

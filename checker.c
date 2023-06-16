@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 	}
 	i = 1;
 	//call test fuction
-	printf("size: %i\n", size_list(&headA));
+	swap(&headA);
 	while(headA)
 	{
 		printf("Element(A)[%i]->%i\n", i, headA->value);
