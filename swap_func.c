@@ -1,5 +1,5 @@
-#include "include/stack_utils.h"
 #include "include/stack.h"
+#include "include/stack_utils.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -15,7 +15,7 @@ t_node	*create_node(int value)
 
 t_node	*pop(t_node **head)
 {
-	t_node *firstElem;
+	t_node	*firstElem;
 
 	if (*head == NULL)
 	{
@@ -58,23 +58,17 @@ void	swap_all(t_node **headA, t_node **headB)
 {
 	swap(headA);
 	swap(headB);
+	return ;
 }
 
 void	swap(t_node **head)
 {
-	int		firstElem;
+	int	firstElem;
 
-	if(*head == NULL)
-	{
-		printf("ERROR head is null");
+	if (head == NULL || *head == NULL || (*head)->next == NULL)
 		return ;
-	}
-	else if((*head)->next == NULL)
-	{
-		printf("ERROR the size list is less than 2");
-		return ;
-	}
 	firstElem = (*head)->value;
 	(*head)->value = (*head)->next->value;
 	(*head)->next->value = firstElem;
+	return ;
 }
