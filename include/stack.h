@@ -73,4 +73,11 @@ void	rotate(t_node **head);
  */
 void	rotate_all(t_node **headA, t_node **headB);
 
+/**
+ * @brief shift of one position all the elements of the list to to bottom
+ * @param head ptr on ptr on `t_node` given as the HEAD
+ * @return `VOID`
+*/
+void	reverse(t_node **head);
+
 #endif
