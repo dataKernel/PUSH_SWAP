@@ -20,15 +20,35 @@ void    rotate(t_node **head)
     t_node  *oldHead;
     t_node  *position;
 
+    if(head == NULL || *head == NULL)
+        return;
     oldHead = *head;
     *head = (*head)->next;
     position = *head;
-
-    printf("old:%i__head:%i__posi:%i", oldHead->value, (*head)->value, position->value);
+    while(position)
+    {
+        if(position->next == NULL)
+        {
+            position->next = oldHead;
+            oldHead->next = NULL;
+        }
+        position = position->next;
+    }
 }
+
+void    reverse(t_node **head)
+{
+    t_node  *oldHead;
+    t_node  *position;
+
+    if(head == NULL || *head == NULL)
+        return ;
+}
+
 
 void    rotate_all(t_node **headA, t_node **headB)
 {
     rotate(headA);
     rotate(headB);
 }
+

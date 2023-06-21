@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 	}
 	i = 1;
 	//call test fuction
-	rotate(&headA);
+	rotate_all(&headA, &headB);
 	while(headA)
 	{
 		printf("Element(A)[%i]->%i\n", i, headA->value);
