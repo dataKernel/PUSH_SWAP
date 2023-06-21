@@ -66,6 +66,13 @@ void	swap(t_node **head);
 void	rotate(t_node **head);
 
 /**
+ * @brief shift of one position all the elements of the list to to bottom
+ * @param head ptr on ptr on `t_node` given as the HEAD
+ * @return `VOID`
+*/
+void	reverse(t_node **head);
+
+/**
  * @brief shift of one position all the elements of the both list to the top
  * @param headA ptr on ptr on `t_node` given as the HEAD
  * @param headB ptr on ptr on `t_node` given as the HEAD
@@ -74,10 +81,11 @@ void	rotate(t_node **head);
 void	rotate_all(t_node **headA, t_node **headB);
 
 /**
- * @brief shift of one position all the elements of the list to to bottom
- * @param head ptr on ptr on `t_node` given as the HEAD
+ * @brief shift of one position all the elements of the both list to the top
+ * @param headA ptr on ptr on `t_node` given as the HEAD
+ * @param headB ptr on ptr on `t_node` given as the HEAD
  * @return `VOID`
 */
-void	reverse(t_node **head);
+void	reverse_all(t_node **headA, t_node **headB);
 
 #endif
