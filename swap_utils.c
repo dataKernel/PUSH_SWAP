@@ -50,10 +50,24 @@ int	size_list(t_node **head)
 	return (size);
 }
 
+void	init_list(t_node **headA, int argc, char *argv[])
+{
+	t_node	*nodeCreation;
+	int		i;
+
+	i = 1;
+	while (i < argc)
+	{
+		nodeCreation = create_node(ft_atoi(argv[i]));
+		push_element(headA, nodeCreation);
+		i++;
+	}
+}
+
 void	show_results(t_node **headA, t_node **headB)
 {
-	int		i;
-	
+	int i;
+
 	i = 1;
 	while (*headA)
 	{
