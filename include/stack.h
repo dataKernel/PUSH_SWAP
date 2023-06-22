@@ -39,7 +39,7 @@ void    push_element(t_node **head, t_node *elem);
  * @param dst ptr on ptr on `t_node`given as the HEAD->destination
  * @return `VOID`
  */
-void    push(t_node **headA, t_node **headB);
+void    push(t_node **src, t_node **dst);
 
 /**
  * @brief swap the node value contained by the head with the 2nd node for both list
