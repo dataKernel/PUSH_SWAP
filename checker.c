@@ -22,9 +22,7 @@ int	main(int argc, char *argv[])
 	if (argc <= 1)
 		return (-1);
 	init_list(&headA, argc, argv);
-	printf("STATE INIT\n----------------\n");
 	show_results(headA, headB);
-	printf("your choice:\n");
 	while (buffer != END_OF_FILE)
 	{
 		read(0, &buffer, 1);
@@ -48,7 +46,6 @@ int	main(int argc, char *argv[])
 			i = 0;
 		}
 	}
-	printf("AFTER STATE\n----------------\n");
 	show_results(headA, headB);
 	return (0);
 }

@@ -64,16 +64,18 @@ void	init_list(t_node **headA, int argc, char *argv[])
 
 void	show_results(t_node *headA, t_node *headB)
 {
-	int		i;
+	int	i;
 
+	printf("===============STATE ELEMENTS===============\n\n");
+	printf("------------------------------------------------\n");
 	i = 1;
-	while(headA)
+	while (headA)
 	{
 		printf("Element(A)[%i]->%i\n", i, headA->value);
 		headA = headA->next;
 		i++;
 	}
-	printf("\n");
+	printf("------------------------------------------------\n");
 	i = 1;
 	while (headB)
 	{
@@ -81,6 +83,7 @@ void	show_results(t_node *headA, t_node *headB)
 		headB = headB->next;
 		i++;
 	}
+	printf("------------------------------------------------\n");
 }
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
