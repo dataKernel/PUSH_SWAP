@@ -8,7 +8,7 @@
 #include "stack.h"
 
 void    init_list(t_node **headA, int argc, char *argv[]);
-void    show_results(t_node **headA, t_node **headB);
+void    show_results(t_node *headA, t_node *headB);
 int     ft_strncmp(const char *s1, const char *s2, size_t n);
 int     test_str(char c, char *str);
 int     ft_atoi(const char *str);

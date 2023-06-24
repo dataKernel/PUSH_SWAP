@@ -64,23 +64,23 @@ void	init_list(t_node **headA, int argc, char *argv[])
 	}
 }
 
-void	show_results(t_node **headA, t_node **headB)
+void	show_results(t_node *headA, t_node *headB)
 {
-	int	i;
+	int		i;
 
 	i = 1;
-	while (*headA)
+	while(headA)
 	{
-		printf("Element(A)[%i]->%i\n", i, (*headA)->value);
-		*headA = (*headA)->next;
+		printf("Element(A)[%i]->%i\n", i, headA->value);
+		headA = headA->next;
 		i++;
 	}
 	printf("\n");
 	i = 1;
-	while (*headB)
+	while (headB)
 	{
-		printf("Element(B)[%i]->%i\n", i, (*headB)->value);
-		*headB = (*headB)->next;
+		printf("Element(B)[%i]->%i\n", i, headB->value);
+		headB = headB->next;
 		i++;
 	}
 }
