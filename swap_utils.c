@@ -37,7 +37,6 @@ int	size_list(t_node **head)
 	t_node	*tempHead;
 	int		size;
 
-	// tempHead = head;
 	if (*head == NULL)
 		return (0);
 	size = 0;
@@ -46,7 +45,6 @@ int	size_list(t_node **head)
 		*head = (*head)->next;
 		size++;
 	}
-	// head = tempHead;
 	return (size);
 }
 
