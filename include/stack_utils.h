@@ -26,6 +26,15 @@ void    init_list(t_node **head, int argc, char *argv[]);
 void    show_results(t_node *headA, t_node *headB);
 
 /**
+ * @brief check from the standard input what swap_function to call to apply on
+ * stackA and stackB via 2 heads
+ * @param headA ptr on ptr on `t_node` given as the HEAD
+ * @param headB ptr on ptr on `t_node` given as the HEAD
+ * @return VOID
+*/
+void    func_choice(t_node **headA, t_node **headB);
+
+/**
  * @brief iterate the list from the HEAD to get the number of elements
  * contained by the list
  * @param head ptr on ptr on `t_node` given as the HEAD

@@ -32,22 +32,6 @@ int	ft_atoi(const char *str)
 	return (result * check);
 }
 
-int	size_list(t_node **head)
-{
-	t_node	*tempHead;
-	int		size;
-
-	if (*head == NULL)
-		return (0);
-	size = 0;
-	while (*head)
-	{
-		*head = (*head)->next;
-		size++;
-	}
-	return (size);
-}
-
 void	init_list(t_node **headA, int argc, char *argv[])
 {
 	t_node	*nodeCreation;
