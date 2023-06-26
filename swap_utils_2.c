@@ -5,13 +5,70 @@
 #include <sys/types.h>
 #include <sys/uio.h>
 #include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
 
-void	func_choice(t_node **headA, t_node **headB)
+void	func_choice_advanced(t_node **headA, t_node **headB, char *str)
 {
-
+	if(!ft_strncmp(str, "ra", 3))
+		rotate(headA);
+	else if(!ft_strncmp(str, "rb", 3))
+		rotate(headB);
+	else if(!ft_strncmp(str, "rr", 3))
+		rotate_all(headA, headB);
+	else if(!ft_strncmp(str, "rra", 3))
+		reverse(headA);
+	else if(!ft_strncmp(str, "rrb", 3))
+		reverse(headB);
+	else if(!ft_strncmp(str, "rrr", 3))
+		reverse_all(headA, headB);
+	else
+	{
+		printf("Error\n");
+		exit(1);
+	}
 }
 
-int 	size_list(t_node **head)
+void	func_choice_base(t_node **headA, t_node **headB, char *str)
+{
+	if(!ft_strncmp(str, "sa", 3))
+		swap(headA);
+	else if(!ft_strncmp(str, "sb", 3))
+		swap(headB);
+	else if(!ft_strncmp(str, "ss", 3))
+		swap_all(headA, headB);
+	else if(!ft_strncmp(str, "pa", 3))
+		push(headB, headA);
+	else if(!ft_strncmp(str, "pb", 3))
+		push(headA, headB);
+}
+
+void	exec_swap_func(t_node **headA, t_node **headB)
+{
+	char	choice[4];
+	char	buffer;
+	int		i;
+
+	i = 0;
+	while (buffer != END_OF_FILE)
+	{
+		read(0, &buffer, 1);
+		if (buffer != END_OF_LINE && buffer != END_OF_FILE && i < 4)
+		{
+			choice[i] = buffer;
+			i++;
+		}
+		else
+		{
+			choice[i] = '\0';
+			func_choice_base(headA, headB, choice);
+			func_choice_advanced(headA, headB, choice);
+			i = 0;
+		}
+	}
+}
+
+int	size_list(t_node **head)
 {
 	t_node	*tempHead;
 	int		size;
