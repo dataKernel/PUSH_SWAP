@@ -39,6 +39,9 @@ int	main(int argc, char *argv[])
 	exec_swap_func(&headA, &headB);
 	show_results(headA, headB);
 	bool check = check_list_is_ordered(headA);
-	printf("check : %s", check ? "true" : "false");
+	if(check)
+		printf("OK\n");
+	else
+		printf("KO\n");
 	return (0);
 }
