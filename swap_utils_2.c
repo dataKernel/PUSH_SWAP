@@ -8,6 +8,21 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+int	size_list(t_node **head)
+{
+	t_node	*tempHead;
+	int		size;
+
+	if (*head == NULL)
+		return (0);
+	size = 0;
+	while (*head)
+	{
+		*head = (*head)->next;
+		size++;
+	}
+	return (size);
+}
 
 void	func_choice_base(t_node **headA, t_node **headB, char *str)
 {
@@ -71,18 +86,13 @@ void	exec_swap_func(t_node **headA, t_node **headB)
 	}
 }
 
-int	size_list(t_node **head)
+bool	check_list_is_ordered(t_node *head)
 {
-	t_node	*tempHead;
-	int		size;
-
-	if (*head == NULL)
-		return (0);
-	size = 0;
-	while (*head)
+	while(head->next)
 	{
-		*head = (*head)->next;
-		size++;
+		if(head->value < head->next->value)
+			return(false);
+		head = head->next;
 	}
-	return (size);
+	return(true);
 }
