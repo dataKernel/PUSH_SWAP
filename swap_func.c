@@ -45,12 +45,12 @@ void	swap_all(t_node **headA, t_node **headB)
 
 void	swap(t_node **head)
 {
-	int	firstElem;
+	t_node	*oldHead;
 
 	if (head == NULL || *head == NULL || (*head)->next == NULL)
 		return ;
-	firstElem = (*head)->value;
-	(*head)->value = (*head)->next->value;
-	(*head)->next->value = firstElem;
+	oldHead = *head;
+	*head = (*head)->next;
+	(*head)->next = oldHead;
 	return ;
 }

@@ -56,7 +56,7 @@ void	swap_all(t_node **headA, t_node **headB);
  * @param head ptr on ptr on `t_node` given as the HEAD
  * @return `VOID`
 */
-void	swap(t_node **head);
+void	swap(t_node *head);
 
 /**
  * @brief shift of one position all the elements of the list to the top

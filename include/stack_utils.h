@@ -61,12 +61,20 @@ void	func_choice_base(t_node **headA, t_node **headB, char *str);
 void	func_choice_advanced(t_node **headA, t_node **headB, char *str);
 
 /**
+ * @brief reorder 3 elem from the list, do nothing if there is not element or
+ * just 1. use the swap functions to use the 2 stack to reorganize elements.
+ * @param headA ptr on ptr on `t_node` given as the HEAD
+ * @param headB ptr on ptr on `t_node` given as the HEAD
+ * @return VOID
+ */
+void	ordering_three_elem(t_node **headA, t_node **headB);
+
+/**
  * @brief check that the list is ordered
  * @param head ptr on `t_node` given as the HEAD
  * @return boolean to know if it's ordered or not
 */
 bool	check_list_is_ordered(t_node *head);
-
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		test_str(char c, char *str);

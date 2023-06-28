@@ -36,12 +36,9 @@ int	main(int argc, char *argv[])
 	}
 	init_list(&headA, argc, argv);
 	show_results(headA, headB);
-	exec_swap_func(&headA, &headB);
+	//swap(headA);
+	//exec_swap_func(&headA, &headB);
+	ordering_three_elem(&headA, &headB);	
 	show_results(headA, headB);
-	bool check = check_list_is_ordered(headA);
-	if(check)
-		printf("OK\n");
-	else
-		printf("KO\n");
 	return (0);
 }

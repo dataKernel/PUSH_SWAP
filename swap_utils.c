@@ -50,24 +50,26 @@ void	show_results(t_node *headA, t_node *headB)
 {
 	int	i;
 
-	printf("===============STATE ELEMENTS===============\n\n");
-	printf("------------------------------------------------\n");
+	printf("============================================\n");
+	printf("--------STACK_A-------|\n");
 	i = 1;
 	while (headA)
 	{
-		printf("Element(A)[%i]->%i\n", i, headA->value);
+		printf("Element(A)[%i]->%i      |\n", i, headA->value);
 		headA = headA->next;
 		i++;
 	}
-	printf("------------------------------------------------\n");
+	printf("----------------------|\n\n");
+	printf("--------STACK_B-------|\n");
 	i = 1;
 	while (headB)
 	{
-		printf("Element(B)[%i]->%i\n", i, headB->value);
+		printf("Element(B)[%i]->%i      |\n", i, headB->value);
 		headB = headB->next;
 		i++;
 	}
-	printf("------------------------------------------------\n");
+	printf("----------------------|\n");
+	printf("============================================\n\n");
 }
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
