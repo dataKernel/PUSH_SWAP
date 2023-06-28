@@ -4,7 +4,7 @@
 
 void    ordering_three_elem(t_node **headA, t_node **headB)
 {
-    if(size_list(headA) == 2)
+    if(size_list(*headA) == 2)
     {
         //if((*headA)->value > (*headA)->next->value)
             //swap(headA);

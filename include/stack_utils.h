@@ -11,10 +11,10 @@
 /**
  * @brief iterate the list from the HEAD to get the number of elements
  * contained by the list
- * @param head ptr on ptr on `t_node` given as the HEAD
+ * @param head ptr on `t_node` given as the HEAD
  * @return VOID
  */
-int		size_list(t_node **head);
+int		size_list(t_node *head);
 
 /**
  * @brief init the list based on the arguments given by the program

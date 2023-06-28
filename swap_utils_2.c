@@ -8,17 +8,16 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int	size_list(t_node **head)
+int	size_list(t_node *head)
 {
-	t_node	*tempHead;
 	int		size;
 
-	if (*head == NULL)
+	if (head == NULL)
 		return (0);
 	size = 0;
-	while (*head)
+	while (head)
 	{
-		*head = (*head)->next;
+		head = head->next;
 		size++;
 	}
 	return (size);
@@ -26,7 +25,6 @@ int	size_list(t_node **head)
 
 void	func_choice_base(t_node **headA, t_node **headB, char *str)
 {
-	/*
 	if(!ft_strncmp(str, "sa", 3))
 		swap(headA);
 	else if(!ft_strncmp(str, "sb", 3))
@@ -39,7 +37,6 @@ void	func_choice_base(t_node **headA, t_node **headB, char *str)
 		push(headA, headB);
 	else
 		func_choice_advanced(headA, headB, str);
-	*/
 }
 
 void	func_choice_advanced(t_node **headA, t_node **headB, char *str)

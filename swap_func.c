@@ -40,7 +40,6 @@ void	swap_all(t_node **headA, t_node **headB)
 {
 	swap(headA);
 	swap(headB);
-	return ;
 }
 
 void	swap(t_node **head)
@@ -51,6 +50,6 @@ void	swap(t_node **head)
 		return ;
 	oldHead = *head;
 	*head = (*head)->next;
+	oldHead->next = (*head)->next;
 	(*head)->next = oldHead;
-	return ;
 }
