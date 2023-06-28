@@ -23,12 +23,8 @@ void    ordering_three_elem(t_node **headA, t_node **headB)
         (*headA)->next->value > (*headA)->next->next->value)
         {
             reverse(headA);
-            if(check_list_is_ordered(*headA))
-                printf("check: yes");
-            else
-                printf("check: no\n");
-            //if(!check_list_is_ordered(*headA))
-            //    swap(headA);
+            if(!check_list_is_ordered(*headA))
+                swap(headA);
         }
     }
 }
