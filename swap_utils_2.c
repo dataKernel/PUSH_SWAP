@@ -89,7 +89,7 @@ bool	check_list_is_ordered(t_node *head)
 {
 	while(head->next)
 	{
-		if(head->value < head->next->value)
+		if(head->value > head->next->value)
 			return(false);
 		head = head->next;
 	}

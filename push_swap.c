@@ -6,14 +6,13 @@ void    ordering_three_elem(t_node **headA, t_node **headB)
 {
     if(size_list(*headA) == 2)
     {
-        //if((*headA)->value > (*headA)->next->value)
-            //swap(headA);
+        if((*headA)->value > (*headA)->next->value)
+            swap(headA);
     }
     else
     {
-        printf("value: %p\n", *headA);
         //A > B > C
-        /*if((*headA)->value > (*headA)->next->value && 
+        if((*headA)->value > (*headA)->next->value && 
         (*headA)->next->value > (*headA)->next->next->value)
         {
             rotate(headA);
@@ -24,9 +23,12 @@ void    ordering_three_elem(t_node **headA, t_node **headB)
         (*headA)->next->value > (*headA)->next->next->value)
         {
             reverse(headA);
-            if(!check_list_is_ordered(*headA))
-                swap(headA);
+            if(check_list_is_ordered(*headA))
+                printf("check: yes");
+            else
+                printf("check: no\n");
+            //if(!check_list_is_ordered(*headA))
+            //    swap(headA);
         }
-        */
     }
 }
