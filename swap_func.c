@@ -6,7 +6,7 @@
 t_node	*create_node(int value)
 {
 	t_node	*node;
-
+	
 	node = (t_node *)malloc(sizeof(t_node));
 	node->value = value;
 	node->next = NULL;

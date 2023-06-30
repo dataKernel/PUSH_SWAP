@@ -8,13 +8,8 @@
 # include <string.h>
 # include <stdbool.h>
 
-/**
- * @brief iterate the list from the HEAD to get the number of elements
- * contained by the list
- * @param head ptr on `t_node` given as the HEAD
- * @return VOID
- */
-int		size_list(t_node *head);
+
+t_node  *copy_head(t_node *head);
 
 /**
  * @brief init the list based on the arguments given by the program
@@ -75,6 +70,14 @@ void	ordering_three_elem(t_node **headA, t_node **headB);
  * @return boolean to know if it's ordered or not
 */
 bool	check_list_is_ordered(t_node *head);
+
+/**
+ * @brief iterate the list from the HEAD to get the number of elements
+ * contained by the list
+ * @param head ptr on `t_node` given as the HEAD
+ * @return VOID
+ */
+int		size_list(t_node *head);
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		test_str(char c, char *str);

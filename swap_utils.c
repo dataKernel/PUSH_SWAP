@@ -1,4 +1,5 @@
 #include "include/stack.h"
+#include "include/stack_utils.h"
 #include <stdio.h>
 
 int	test_str(char c, char *str)
