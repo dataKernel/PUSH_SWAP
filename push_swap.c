@@ -36,11 +36,8 @@ void	ordering_three_elem(t_node **headA, t_node **headB)
 	}
 	else
 	{
-		//A < B < C
-		if((*headA)->value < (*headA)->next->value
-		&& (*headA)->next->value)
 		// A > B > C
-		else if ((*headA)->value > (*headA)->next->value
+		if ((*headA)->value > (*headA)->next->value
 			&& (*headA)->next->value > (*headA)->next->next->value)
 		{
 			rotate(headA);
