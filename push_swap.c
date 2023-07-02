@@ -4,16 +4,23 @@
 
 t_node	*copy_head(t_node *head)
 {
-	t_node	*copy_head;
+	t_node	*copyHead;
+	t_node	*firstElem;
 	t_node	*node;
 
-	copy_head = NULL;
-	while(head->next)
+	copyHead = create_node(head->value);
+	firstElem = copyHead;
+	head = head->next; 
+	while(head)
 	{
 		node = create_node(head->value);
-		push_element(&copy_head, node);
+		copyHead->next = node;
+		copyHead = copyHead->next;
 		head = head->next;
 	}
+	copyHead->next = NULL;
+	copyHead = firstElem;
+	return(copyHead);
 }
 
 void	ordering_three_elem(t_node **headA, t_node **headB)
@@ -21,7 +28,7 @@ void	ordering_three_elem(t_node **headA, t_node **headB)
 	t_node	*copyTestHead;
 	t_node	*oldHead;
 
-	copyTestHead = *headA;
+	copyTestHead = copy_head(*headA);
 	if (size_list(*headA) == 2)
 	{
 		if ((*headA)->value > (*headA)->next->value)
@@ -29,8 +36,11 @@ void	ordering_three_elem(t_node **headA, t_node **headB)
 	}
 	else
 	{
+		//A < B < C
+		if((*headA)->value < (*headA)->next->value
+		&& (*headA)->next->value)
 		// A > B > C
-		if ((*headA)->value > (*headA)->next->value
+		else if ((*headA)->value > (*headA)->next->value
 			&& (*headA)->next->value > (*headA)->next->next->value)
 		{
 			rotate(headA);
@@ -51,8 +61,8 @@ void	ordering_three_elem(t_node **headA, t_node **headB)
 			swap(&copyTestHead);
 			if(check_list_is_ordered(copyTestHead))
 				*headA = copyTestHead;
-			else
-			//...
+			else 
+				rotate(headA);
 		}
 	}
 }

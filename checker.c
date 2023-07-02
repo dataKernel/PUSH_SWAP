@@ -7,6 +7,7 @@ int	main(int argc, char *argv[])
 	// heads definitions
 	t_node 	*headA;
 	t_node 	*headB;
+
 	int		i;
 	int		j;
 

@@ -20,14 +20,14 @@ void    rotate(t_node **head)
     t_node  *oldHead;
     t_node  *position;
 
-    if(head == NULL || *head == NULL)
+    if (head == NULL || *head == NULL)
         return;
     oldHead = *head;
     *head = (*head)->next;
     position = *head;
-    while(position)
+    while (position)
     {
-        if(position->next == NULL)
+        if (position->next == NULL)
         {
             position->next = oldHead;
             oldHead->next = NULL;
