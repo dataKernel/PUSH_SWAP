@@ -70,6 +70,14 @@ void	func_choice_advanced(t_node **headA, t_node **headB, char *str);
 void	ordering_three_elem(t_node **headA, t_node **headB);
 
 /**
+ * @brief slipting all values from headA to headB except for the last 3 values
+ * @param headA ptr on ptr on `t_node` given as the HEAD
+ * @param headB ptr on ptr on `t_node`given as the HEAD
+ * @return VOID
+*/
+void    split_head_a(t_node **headA, t_node **headB);
+
+/**
  * @brief check that the list is ordered
  * @param head ptr on `t_node` given as the HEAD
  * @return boolean to know if it's ordered or not

@@ -2,6 +2,11 @@
 #include "include/stack_utils.h"
 #include <stdio.h>
 
+void	split_head_a(t_node **headA, t_node **headB)
+{
+	
+}
+
 t_node	*copy_head(t_node *head)
 {
 	t_node	*copyHead;
