@@ -9,6 +9,11 @@
 # include <stdbool.h>
 
 
+/**
+ * @brief copy the list values and return the reference allocated to the HEAP
+ * @param head ptr on `t_node` given as the HEAD
+ * @return return heap reference with list copied
+*/
 t_node  *copy_head(t_node *head);
 
 /**
