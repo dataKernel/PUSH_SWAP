@@ -113,8 +113,7 @@ void	insertion_into_headA(t_node **headA, t_node **headB)
 				reverse(&copyReverse);
 				countReverse++;
 			}
-		}
-		push(headB, headA);
+		}	
 		if(countRotate < countReverse)
 		{
 			while(i < countRotate)
@@ -131,5 +130,6 @@ void	insertion_into_headA(t_node **headA, t_node **headB)
 				i++;
 			}
 		}
+		break;
 	}
 }
