@@ -85,6 +85,9 @@ void    split_headA_and_headB(t_node **headA, t_node **headB);
 */
 void    insertion_into_headA(t_node **headA, t_node **headB);
 
+
+void    free_head(t_node *head);
+
 /**
  * @brief check that the list is ordered
  * @param head ptr on `t_node` given as the HEAD

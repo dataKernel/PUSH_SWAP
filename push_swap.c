@@ -26,7 +26,11 @@ t_node	*copy_head(t_node *head)
 
 void	free_head(t_node *head)
 {
-
+	while(head)
+	{
+		free(head);
+		head = head->next;
+	}
 }
 
 void	split_headA_and_headB(t_node **headA, t_node **headB)
@@ -73,38 +77,59 @@ void	ordering_three_elem(t_node **headA)
 		{
 			swap(&copyTestHead);
 			if(check_list_is_ordered(copyTestHead))
-				*headA = copyTestHead;
+				swap(headA);
 			else 
 				rotate(headA);
 		}
 	}
+	free_head(copyTestHead);
 }
 
 void	insertion_into_headA(t_node **headA, t_node **headB)
 {
 	t_node	*copyRotate;
 	t_node	*copyReverse;
+	int		i;
 	int		countRotate;
 	int		countReverse;
 
 	copyRotate = copy_head(*headA);
 	copyReverse = copy_head(*headB);
+	i = 0;
 	countRotate = 0;
 	countReverse = 0;
-	/*while(copyRotate->value < (*headB)->value || copyReverse->value < (*headB)->value)
+	while(*headB)
 	{
-		if(copyRotate->value < (*headB)->value)
+		while(copyRotate->value < (*headB)->value 
+		|| copyReverse->value < (*headB)->value)
 		{
-			rotate(&copyRotate);
-			countRotate++;
+			if(copyRotate->value < (*headB)->value)
+			{
+				rotate(&copyRotate);
+				countRotate++;
+			}
+			if(copyReverse->value < (*headB)->value)
+			{
+				reverse(&copyReverse);
+				countReverse++;
+			}
 		}
-		else if(copyReverse->value < (*headB)->value)
+		push(headB, headA);
+		if(countRotate < countReverse)
 		{
-			reverse(&copyReverse);
-			countReverse++;
+			while(i < countRotate)
+			{
+				rotate(headA);
+				i++;
+			}
+		}
+		else
+		{
+			while(i < countReverse)
+			{
+				reverse(headA);
+				i++;
+			}
 		}
 	}
-	*/
-	printf("count rotate: %i\n", countRotate);
-	printf("count reverse: %i\n", countReverse);
 }
