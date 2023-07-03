@@ -94,21 +94,21 @@ void	insertion_into_headA(t_node **headA, t_node **headB)
 	int		countReverse;
 
 	copyRotate = copy_head(*headA);
-	copyReverse = copy_head(*headB);
+	copyReverse = copy_head(*headA);
 	i = 0;
 	countRotate = 0;
 	countReverse = 0;
 	while(*headB)
 	{
 		while(copyRotate->value < (*headB)->value 
-		|| copyReverse->value < (*headB)->value)
+		|| copyReverse->value > (*headB)->value)
 		{
 			if(copyRotate->value < (*headB)->value)
 			{
 				rotate(&copyRotate);
 				countRotate++;
 			}
-			if(copyReverse->value < (*headB)->value)
+			if(copyReverse->value > (*headB)->value)
 			{
 				reverse(&copyReverse);
 				countReverse++;
@@ -130,6 +130,9 @@ void	insertion_into_headA(t_node **headA, t_node **headB)
 				i++;
 			}
 		}
+		push(headB, headA);
 		break;
-	}
+		//while(!check_list_is_ordered(*headA))		
+		//	rotate(headA);
+	}	
 }
