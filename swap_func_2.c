@@ -19,7 +19,7 @@ void    rotate(t_node **head)
 {
     t_node  *oldHead;
     t_node  *position;
-
+    
     if (head == NULL || *head == NULL)
         return;
     oldHead = *head;
@@ -68,4 +68,3 @@ void    rotate_all(t_node **headA, t_node **headB)
     rotate(headA);
     rotate(headB);
 }
-
