@@ -36,8 +36,8 @@ int	main(int argc, char *argv[])
 		i++;
 	}
 	init_list(&headA, argc, argv);
-	show_results(headA, headB);
-	ordering_three_elem(&headA, &headB);	
+	split_headA_and_headB(&headA, &headB);
+	insertion_into_headA(&headA, &headB);
 	show_results(headA, headB);
 	return (0);
 }
