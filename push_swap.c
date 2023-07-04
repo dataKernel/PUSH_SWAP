@@ -86,53 +86,5 @@ void	ordering_three_elem(t_node **headA)
 }
 
 void	insertion_into_headA(t_node **headA, t_node **headB)
-{
-	t_node	*copyRotate;
-	t_node	*copyReverse;
-	int		i;
-	int		countRotate;
-	int		countReverse;
-
-	copyRotate = copy_head(*headA);
-	copyReverse = copy_head(*headA);
-	i = 0;
-	countRotate = 0;
-	countReverse = 0;
-	while(*headB)
-	{
-		while(copyRotate->value < (*headB)->value 
-		|| copyReverse->value > (*headB)->value)
-		{
-			if(copyRotate->value < (*headB)->value)
-			{
-				rotate(&copyRotate);
-				countRotate++;
-			}
-			if(copyReverse->value > (*headB)->value)
-			{
-				reverse(&copyReverse);
-				countReverse++;
-			}
-		}	
-		if(countRotate < countReverse)
-		{
-			while(i < countRotate)
-			{
-				rotate(headA);
-				i++;
-			}
-		}
-		else
-		{
-			while(i < countReverse)
-			{
-				reverse(headA);
-				i++;
-			}
-		}
-		push(headB, headA);
-		break;
-		//while(!check_list_is_ordered(*headA))		
-		//	rotate(headA);
-	}	
+{	
 }
