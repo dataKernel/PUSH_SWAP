@@ -67,7 +67,7 @@ void	func_choice_advanced(t_node **headA, t_node **headB, char *str);
  * @param headB ptr on ptr on `t_node` given as the HEAD
  * @return VOID
  */
-void	ordering_three_elem(t_node **headA);
+void	sort_three_elem(t_node **headA);
 
 /**
  * @brief slipting all values from headA to headB except for the last 3 values
@@ -85,8 +85,12 @@ void    split_headA_and_headB(t_node **headA, t_node **headB);
 */
 void    insertion_into_headA(t_node **headA, t_node **headB);
 
-
-void    free_head(t_node *head);
+/**
+ * @brief free the head and all the nodes from the HEAP
+ * @param head ptr on ptr on `t_node` given as the HEAD
+ * @return void
+*/
+void    free_list(t_node *head);
 
 /**
  * @brief check that the list is ordered
@@ -94,6 +98,15 @@ void    free_head(t_node *head);
  * @return boolean to know if it's ordered or not
 */
 bool	check_list_is_ordered(t_node *head);
+
+/**
+ * @brief check inside the list with the value provided where to insert the elem via
+ * his indexation.
+ * @param headA ptr on `t_node` given as the HEAD
+ * @param value integer from stack B
+ * @return integer corresponding to the right index insertion
+*/
+int     check_index_insert(t_node *head, int value);
 
 /**
  * @brief iterate the list from the HEAD to get the number of elements

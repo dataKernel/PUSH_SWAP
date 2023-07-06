@@ -36,12 +36,6 @@ void	push(t_node **src, t_node **dst)
 	*src = nextElemSrc;
 }
 
-void	swap_all(t_node **headA, t_node **headB)
-{
-	swap(headA);
-	swap(headB);
-}
-
 void	swap(t_node **head)
 {
 	t_node	*oldHead;
@@ -52,4 +46,10 @@ void	swap(t_node **head)
 	*head = (*head)->next;
 	oldHead->next = (*head)->next;
 	(*head)->next = oldHead;
+}
+
+void	swap_all(t_node **headA, t_node **headB)
+{
+	swap(headA);
+	swap(headB);
 }

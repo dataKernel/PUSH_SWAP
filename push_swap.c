@@ -1,6 +1,5 @@
 #include "include/stack.h"
 #include "include/stack_utils.h"
-#include <stdlib.h>
 #include <stdio.h>
 
 t_node	*copy_head(t_node *head)
@@ -11,8 +10,8 @@ t_node	*copy_head(t_node *head)
 
 	copyHead = create_node(head->value);
 	firstElem = copyHead;
-	head = head->next; 
-	while(head)
+	head = head->next;
+	while (head)
 	{
 		node = create_node(head->value);
 		copyHead->next = node;
@@ -21,29 +20,10 @@ t_node	*copy_head(t_node *head)
 	}
 	copyHead->next = NULL;
 	copyHead = firstElem;
-	return(copyHead);
+	return (copyHead);
 }
 
-void	free_head(t_node *head)
-{
-	while(head)
-	{
-		free(head);
-		head = head->next;
-	}
-}
-
-void	split_headA_and_headB(t_node **headA, t_node **headB)
-{
-	while(size_list(*headA) > 3)
-	{
-		push(headA, headB);
-	}
-	ordering_three_elem(headA);
-}
-
-
-void	ordering_three_elem(t_node **headA)
+void	sort_three_elem(t_node **headA)
 {
 	t_node	*copyTestHead;
 	t_node	*oldHead;
@@ -76,15 +56,59 @@ void	ordering_three_elem(t_node **headA)
 			&& (*headA)->next->value < (*headA)->next->next->value)
 		{
 			swap(&copyTestHead);
-			if(check_list_is_ordered(copyTestHead))
+			if (check_list_is_ordered(copyTestHead))
 				swap(headA);
-			else 
+			else
 				rotate(headA);
 		}
 	}
-	free_head(copyTestHead);
+	free_list(copyTestHead);
 }
 
 void	insertion_into_headA(t_node **headA, t_node **headB)
-{	
+{
+	int indexActuel;
+	int indexInsert;
+	int rotateResult;
+	int reverseResult;
+
+	indexActuel = 0;
+	while (*headB)
+	{
+		indexInsert = check_index_insert(*headA, (*headB)->value);
+		rotateResult = (indexInsert - indexActuel) % size_list(*headA);
+		reverseResult = (indexActuel - indexInsert) % size_list(*headA);
+		if (rotateResult < 0)
+		{
+			printf("negaRo:%i\n", rotateResult);
+			rotateResult += size_list(*headA);
+		}
+		if (reverseResult < 0)
+		{
+			printf("negaRe:%i,\n", reverseResult);
+			reverseResult += size_list(*headA);
+		}
+		if (rotateResult < reverseResult)
+		{
+			printf("ROTATE!\n");
+			while (rotateResult > 0)
+			{
+				rotate(headA);
+				rotateResult--;
+			}
+		}
+		else
+		{
+			printf("REVERSE!\n");
+			while (reverseResult > 0)
+			{
+				reverse(headA);
+				reverseResult--;
+			}
+		}
+		push(headB, headA);
+		show_results(*headA, *headB);
+		indexActuel = indexInsert;
+	}
+	return ;
 }

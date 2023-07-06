@@ -37,7 +37,6 @@ int	main(int argc, char *argv[])
 	}
 	init_list(&headA, argc, argv);
 	split_headA_and_headB(&headA, &headB);
-	
-	show_results(headA, headB);
+	insertion_into_headA(&headA, &headB);	
 	return (0);
 }
