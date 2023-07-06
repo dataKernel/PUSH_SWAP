@@ -107,7 +107,6 @@ void	insertion_into_headA(t_node **headA, t_node **headB)
 			}
 		}
 		push(headB, headA);
-		show_results(*headA, *headB);
 		indexActuel = indexInsert;
 	}
 	return ;
