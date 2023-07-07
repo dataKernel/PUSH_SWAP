@@ -67,47 +67,16 @@ void	sort_three_elem(t_node **headA)
 
 void	insertion_into_headA(t_node **headA, t_node **headB)
 {
-	int indexActuel;
-	int indexInsert;
-	int rotateResult;
-	int reverseResult;
+	int actualIndex;
+	int insertIndex;
 
-	indexActuel = 0;
+	actualIndex = 0;
 	while (*headB)
 	{
-		indexInsert = check_index_insert(*headA, (*headB)->value);
-		rotateResult = (indexInsert - indexActuel) % size_list(*headA);
-		reverseResult = (indexActuel - indexInsert) % size_list(*headA);
-		if (rotateResult < 0)
-		{
-			printf("negaRo:%i\n", rotateResult);
-			rotateResult += size_list(*headA);
-		}
-		if (reverseResult < 0)
-		{
-			printf("negaRe:%i,\n", reverseResult);
-			reverseResult += size_list(*headA);
-		}
-		if (rotateResult < reverseResult)
-		{
-			printf("ROTATE!\n");
-			while (rotateResult > 0)
-			{
-				rotate(headA);
-				rotateResult--;
-			}
-		}
-		else
-		{
-			printf("REVERSE!\n");
-			while (reverseResult > 0)
-			{
-				reverse(headA);
-				reverseResult--;
-			}
-		}
+		insertIndex = check_index_insert(*headA, (*headB)->value);
+		truc(headA, headB, actualIndex, insertIndex);	
 		push(headB, headA);
-		indexActuel = indexInsert;
+		actualIndex = insertIndex;
 	}
 	return ;
 }

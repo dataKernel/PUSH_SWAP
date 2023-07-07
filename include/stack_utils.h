@@ -116,7 +116,7 @@ int     check_index_insert(t_node *head, int value);
  */
 int		size_list(t_node *head);
 
-int     rotate_result(int indexActual, int indexInsert);
+void     truc(t_node **headA, t_node **headB, int actualIndex, int insertIndex);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		test_str(char c, char *str);
 int		ft_atoi(const char *str);
