@@ -92,6 +92,8 @@ void    insertion_into_headA(t_node **headA, t_node **headB);
 */
 void    free_list(t_node *head);
 
+void    sort_list(t_node **headA, t_node **headB, int actualIndex, int insertIndex);
+
 /**
  * @brief check that the list is ordered
  * @param head ptr on `t_node` given as the HEAD
@@ -116,7 +118,6 @@ int     check_index_insert(t_node *head, int value);
  */
 int		size_list(t_node *head);
 
-void     truc(t_node **headA, t_node **headB, int actualIndex, int insertIndex);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		test_str(char c, char *str);
 int		ft_atoi(const char *str);
