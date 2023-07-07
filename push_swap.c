@@ -74,7 +74,7 @@ void	insertion_into_headA(t_node **headA, t_node **headB)
 	while (*headB)
 	{
 		insertIndex = check_index_insert(*headA, (*headB)->value);
-		truc(headA, headB, actualIndex, insertIndex);	
+		sort_list(headA, actualIndex, insertIndex);	
 		push(headB, headA);
 		actualIndex = insertIndex;
 	}

@@ -1,7 +1,6 @@
 #include "include/stack.h"
 #include "include/stack_utils.h"
 #include <stdio.h>
-#include <stdlib.h>
 
 int	check_index_insert(t_node *head, int value)
 {
@@ -42,8 +41,8 @@ void	sort_list(t_node **headA, int actualIndex, int insertIndex)
 	int	rotateResult;
 	int	reverseResult;
 
-	reverseResult = check_nbr_rotate(*headA, actualIndex, insertIndex);
-	rotateResult = check_nbr_reverse(*headA, actualIndex, insertIndex);
+	rotateResult = check_nbr_rotate(*headA, actualIndex, insertIndex);
+	reverseResult = check_nbr_reverse(*headA, actualIndex, insertIndex);
 	if (rotateResult < 0)
 		rotateResult += size_list(*headA);
 	if (reverseResult < 0)
