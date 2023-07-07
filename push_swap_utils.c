@@ -17,17 +17,33 @@ int	check_index_insert(t_node *head, int value)
 	return (index);
 }
 
-int		check_nbr_rotate() {}		
+int		check_nbr_rotate(t_node *headA, int actualIndex, int insertIndex) 
+{
+	int		res;
 
-int		check_nbr_reverse() {}
+	res = (insertIndex - actualIndex) % size_list(headA);
+	if(res < 0)
+		res += size_list(headA);
+	return(res);
+}		
 
-void	sort_list(t_node **headA, t_node **headB, int actualIndex, int insertIndex)
+int		check_nbr_reverse(t_node *headA, int actualIndex, int insertIndex) 
+{
+	int		res;
+
+	res = (actualIndex - insertIndex) % size_list(headA);
+	if(res < 0)
+		res += size_list(headA);
+	return(res);
+}
+
+void	sort_list(t_node **headA, int actualIndex, int insertIndex)
 {
 	int	rotateResult;
 	int	reverseResult;
 
-	rotateResult = (insertIndex - actualIndex) % size_list(*headA);
-	reverseResult = (actualIndex - insertIndex) % size_list(*headA);
+	reverseResult = check_nbr_rotate(*headA, actualIndex, insertIndex);
+	rotateResult = check_nbr_reverse(*headA, actualIndex, insertIndex);
 	if (rotateResult < 0)
 		rotateResult += size_list(*headA);
 	if (reverseResult < 0)
@@ -47,15 +63,6 @@ void	sort_list(t_node **headA, t_node **headB, int actualIndex, int insertIndex)
 			reverse(headA);
 			reverseResult--;
 		}
-	}
-}
-
-void	free_list(t_node *head)
-{
-	while (head)
-	{
-		free(head);
-		head = head->next;
 	}
 }
 
