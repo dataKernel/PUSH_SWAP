@@ -17,7 +17,11 @@ int	check_index_insert(t_node *head, int value)
 	return (index);
 }
 
-void	truc(t_node **headA, t_node **headB, int actualIndex, int insertIndex)
+int		check_nbr_rotate() {}		
+
+int		check_nbr_reverse() {}
+
+void	sort_list(t_node **headA, t_node **headB, int actualIndex, int insertIndex)
 {
 	int	rotateResult;
 	int	reverseResult;

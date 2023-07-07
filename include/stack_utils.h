@@ -92,6 +92,14 @@ void    insertion_into_headA(t_node **headA, t_node **headB);
 */
 void    free_list(t_node *head);
 
+/**
+ * @brief sort the list from stack B to stack A with the push_swap instructions
+ * @param headA ptr on ptr on `t_node` given as the HEAD
+ * @param headB ptr on ptr on `t_node` given as the HEAD
+ * @param actualndex integer who defines what is the actual index in the list
+ * @param insertIndex integer who defines what is the insert index to insert inside the list
+ * @return VOID
+*/
 void    sort_list(t_node **headA, t_node **headB, int actualIndex, int insertIndex);
 
 /**
