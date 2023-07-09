@@ -67,14 +67,12 @@ void	sort_three_elem(t_node **headA)
 
 void	insertion_into_headA(t_node **headA, t_node **headB)
 {
-	int actualIndex;
-	int insertIndex;
+	int 	actualIndex;
+	int		insertIndex;
 
 	actualIndex = 0;
-	while (*headB)
-	{
-		insertIndex = check_index_insert(*headA, (*headB)->value);
-		
-	}
+	insertIndex = check_index_insert(*headA, (*headB)->value);
+	check_best_operation(*headA, *headB, actualIndex, insertIndex);
+	actualIndex = insertIndex;
 	return ;
 }

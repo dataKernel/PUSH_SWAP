@@ -39,7 +39,9 @@ int		check_nbr_reverse(t_node *headA, int actualIndex, int insertIndex)
 int		count_rr_or_rrr(int a, int b)
 {
 	int		count;
-
+	
+	if(a == 0 || b == 0)
+		return(0);
 	count = 0;
 	while((a - b) > 0 || a > 0)
 	{
