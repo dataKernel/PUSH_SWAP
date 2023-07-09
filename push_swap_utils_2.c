@@ -21,11 +21,19 @@ void	check_best_operation(t_node *headA, t_node *headB, int actualIndex, int ins
 		nbrRotateA -= count_rr_or_rrr(nbrRotateA, nbrRotateB);
 		while( i < nbrRotateA)
 		{
-			rotate()
+			rotate(headA);
 			i++;
 		}
-		nbrRotateB++;
-		while(i < count_rr_or_rrr(nbrRotateA))
+		while(i < nbrRotateB)
+		{
+			rotate(headB);
+			i++;
+		}
+		while(i < count_rr_or_rrr(nbrRotateA, nbrRotateB))
+		{
+			rotate_all(headA, headB);
+			i++;
+		}
 		headB = headB->next;
 	}
 }
