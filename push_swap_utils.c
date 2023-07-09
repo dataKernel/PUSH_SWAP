@@ -36,29 +36,17 @@ int		check_nbr_reverse(t_node *headA, int actualIndex, int insertIndex)
 	return(res);
 }
 
-void	sort_list(t_node **headA, int actualIndex, int insertIndex)
+int		count_rr_or_rrr(int a, int b)
 {
-	int	rotateResult;
-	int	reverseResult;
+	int		count;
 
-	rotateResult = check_nbr_rotate(*headA, actualIndex, insertIndex);
-	reverseResult = check_nbr_reverse(*headA, actualIndex, insertIndex);
-	if (rotateResult < reverseResult)
+	count = 0;
+	while((a - b) > 0 || a > 0)
 	{
-		while (rotateResult > 0)
-		{
-			rotate(headA);
-			rotateResult--;
-		}
+		count++;
+		a--;
 	}
-	else
-	{
-		while (reverseResult > 0)
-		{
-			reverse(headA);
-			reverseResult--;
-		}
-	}
+	return(count);
 }
 
 void	split_headA_and_headB(t_node **headA, t_node **headB)

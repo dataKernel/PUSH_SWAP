@@ -1,7 +1,6 @@
-#include <stdlib.h>
-
 #include "include/stack.h"
 #include "include/stack_utils.h"
+#include <stdlib.h>
 
 void	free_list(t_node *head)
 {
