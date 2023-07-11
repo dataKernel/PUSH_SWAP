@@ -16,16 +16,6 @@
 t_node	*copy_head(t_node *head);
 
 /**
- * @brief init the list based on the arguments given by the program
- * @param head ptr on ptr on `t_node` given as the HEAD
- * @param argc integer representing the numbers of arguments given by the prog
-
-	* @param argv string array representing the values of arguments given by the prog
- * @return VOID
- */
-void	init_list(t_node **head, int argc, char *argv[]);
-
-/**
  * @brief print values and element indexation to each nodes from
  * both HEAD provided
  * @param headA ptr on `t_node` given as the copy of the HEAD
@@ -92,8 +82,6 @@ void	insertion_into_headA(t_node **headA, t_node **headB);
  */
 void	free_list(t_node *head);
 
-void	check_best_operation(t_node *headA, t_node *headB, int actualIndex, int insertIndex);
-
 /**
  * @brief check that the list is ordered
  * @param head ptr on `t_node` given as the HEAD
@@ -141,6 +129,8 @@ int		count_rr_or_rrr(int a, int b);
 int		size_list(t_node *head);
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		min(int a, int b);
+int		max(int a, int b);
 int		test_str(char c, char *str);
 int		ft_atoi(const char *str);
 

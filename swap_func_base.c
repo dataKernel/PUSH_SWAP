@@ -1,7 +1,21 @@
-#include "include/stack_utils.h"
 #include "include/stack.h"
+#include "include/stack_utils.h"
 #include <stdio.h>
 #include <stdlib.h>
+
+void	init_list(t_node **headA, int argc, char *argv[])
+{
+	t_node	*nodeCreation;
+	int		i;
+
+	i = 1;
+	while (i < argc)
+	{
+		nodeCreation = create_node(ft_atoi(argv[i]));
+		push_element(headA, nodeCreation);
+		i++;
+	}
+}
 
 t_node	*create_node(int value)
 {

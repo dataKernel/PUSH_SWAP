@@ -2,77 +2,63 @@
 #include "include/stack_utils.h"
 #include <stdio.h>
 
-t_node	*copy_head(t_node *head)
-{
-	t_node	*copyHead;
-	t_node	*firstElem;
-	t_node	*node;
+/**
+ * @brief init the list based on the arguments given by the program
+ * @param head ptr on ptr on `t_node` given as the HEAD
+ * @param argc integer representing the numbers of arguments given by the prog
 
-	copyHead = create_node(head->value);
-	firstElem = copyHead;
-	head = head->next;
-	while (head)
+	* @param argv string array representing the values of arguments given by the prog
+ * @return VOID
+ */
+void	init_list(t_node **headA, int argc, char *argv[])
+{
+	t_node	*nodeCreation;
+	int		i;
+
+	i = 1;
+	while (i < argc)
 	{
-		node = create_node(head->value);
-		copyHead->next = node;
-		copyHead = copyHead->next;
-		head = head->next;
+		nodeCreation = create_node(ft_atoi(argv[i]));
+		push_element(headA, nodeCreation);
+		i++;
 	}
-	copyHead->next = NULL;
-	copyHead = firstElem;
-	return (copyHead);
 }
 
-void	sort_three_elem(t_node **headA)
+int	main(int argc, char *argv[])
 {
-	t_node	*copyTestHead;
-	t_node	*oldHead;
+	t_node *headA;
+	t_node *headB;
+	int i;
+	int j;
 
-	copyTestHead = copy_head(*headA);
-	if (size_list(*headA) == 2)
+	// heads definitions
+	headA = NULL;
+	headB = NULL;
+	i = 0;
+	// protection des arguments via main
+	if (argc <= 1)
 	{
-		if ((*headA)->value > (*headA)->next->value)
-			swap(headA);
+		printf("Error\n");
+		return (-1);
 	}
-	else
+	i = 1;
+	while (i < argc)
 	{
-		// A > B > C
-		if ((*headA)->value > (*headA)->next->value
-			&& (*headA)->next->value > (*headA)->next->next->value)
+		j = 0;
+		while (argv[i][j])
 		{
-			rotate(headA);
-			swap(headA);
+			if (argv[i][j] < '0' || argv[i][j] > '9')
+			{
+				printf("Error\n");
+				return (1);
+			}
+			j++;
 		}
-		// A < B > C
-		else if ((*headA)->value < (*headA)->next->value
-			&& (*headA)->next->value > (*headA)->next->next->value)
-		{
-			reverse(headA);
-			if (!check_list_is_ordered(*headA))
-				swap(headA);
-		}
-		// A > B < C
-		else if ((*headA)->value > (*headA)->next->value
-			&& (*headA)->next->value < (*headA)->next->next->value)
-		{
-			swap(&copyTestHead);
-			if (check_list_is_ordered(copyTestHead))
-				swap(headA);
-			else
-				rotate(headA);
-		}
+		i++;
 	}
-	free_list(copyTestHead);
-}
-
-void	insertion_into_headA(t_node **headA, t_node **headB)
-{
-	int 	actualIndex;
-	int		insertIndex;
-
-	actualIndex = 0;
-	insertIndex = check_index_insert(*headA, (*headB)->value);
-	check_best_operation(*headA, *headB, actualIndex, insertIndex);
-	actualIndex = insertIndex;
-	return ;
+	init_list(&headA, argc, argv);
+	split_headA_and_headB(&headA, &headB);
+	show_results(headA, headB);
+	insertion_into_headA(&headA, &headB);
+	return (0);
 }

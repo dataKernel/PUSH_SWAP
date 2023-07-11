@@ -3,47 +3,90 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void	check_best_operation(t_node *headA, t_node *headB, int actualIndex, int insertIndex)
+t_node	*copy_head(t_node *head)
 {
-	int		sizeList;
-	int		nbrRotateA;
-	int		nbrReverseA;
-	int		nbrRotateB;
-	int		i;
-	//on va avancer dans la headB pr check tout les elements
-	i = 0;
-	sizeList = size_list(headB);
-	nbrRotateA = check_nbr_rotate(headA, actualIndex, insertIndex);
-	nbrReverseA = check_nbr_reverse(headA, actualIndex, insertIndex);
-	nbrRotateB = 0;
-	while(headB)
+	t_node	*copyHead;
+	t_node	*firstElem;
+	t_node	*node;
+
+	copyHead = create_node(head->value);
+	firstElem = copyHead;
+	head = head->next;
+	while (head)
 	{
-		nbrRotateA -= count_rr_or_rrr(nbrRotateA, nbrRotateB);
-		while( i < nbrRotateA)
+		node = create_node(head->value);
+		copyHead->next = node;
+		copyHead = copyHead->next;
+		head = head->next;
+	}
+	copyHead->next = NULL;
+	copyHead = firstElem;
+	return (copyHead);
+}
+
+void	sort_three_elem(t_node **headA)
+{
+	t_node	*copyTestHead;
+	t_node	*oldHead;
+
+	copyTestHead = copy_head(*headA);
+	if (size_list(*headA) == 2)
+	{
+		if ((*headA)->value > (*headA)->next->value)
+		{
+			swap(headA);
+		}
+	}
+	else
+	{
+		// A > B > C
+		if ((*headA)->value > (*headA)->next->value
+			&& (*headA)->next->value > (*headA)->next->next->value)
 		{
 			rotate(headA);
-			i++;
+			swap(headA);
 		}
-		while(i < nbrRotateB)
+		// A < B > C
+		else if ((*headA)->value < (*headA)->next->value
+			&& (*headA)->next->value > (*headA)->next->next->value)
 		{
-			rotate(headB);
-			i++;
+			reverse(headA);
+			if (!check_list_is_ordered(*headA))
+				swap(headA);
 		}
-		while(i < count_rr_or_rrr(nbrRotateA, nbrRotateB))
+		// A > B < C
+		else if ((*headA)->value > (*headA)->next->value
+			&& (*headA)->next->value < (*headA)->next->next->value)
 		{
-			rotate_all(headA, headB);
-			i++;
+			swap(&copyTestHead);
+			if (check_list_is_ordered(copyTestHead))
+				swap(headA);
+			else
+				rotate(headA);
 		}
-		headB = headB->next;
 	}
+	free_list(copyTestHead);
+}
+
+int	min(int a, int b)
+{
+	return ((a > b) ? b : a);
+}
+
+int	max(int a, int b)
+{
+	return ((a > b) ? a : b);
 }
 
 
 void	free_list(t_node *head)
 {
+	t_node *next;
+
 	while (head)
 	{
+		next = head->next;
 		free(head);
-		head = head->next;
+		head = next;
 	}
 }
