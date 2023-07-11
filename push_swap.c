@@ -1,6 +1,7 @@
 #include "include/stack.h"
 #include "include/stack_utils.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * @brief init the list based on the arguments given by the program
@@ -24,22 +25,16 @@ void	init_list(t_node **headA, int argc, char *argv[])
 	}
 }
 
-int	main(int argc, char *argv[])
+void	arguments_checking(int argc, char **argv)
 {
-	t_node *headA;
-	t_node *headB;
-	int i;
-	int j;
+	int		i;
+	int		j;
 
-	// heads definitions
-	headA = NULL;
-	headB = NULL;
 	i = 0;
-	// protection des arguments via main
-	if (argc <= 1)
+	if (argc <= 2)
 	{
 		printf("Error\n");
-		return (-1);
+		exit(1);
 	}
 	i = 1;
 	while (i < argc)
@@ -50,12 +45,23 @@ int	main(int argc, char *argv[])
 			if (argv[i][j] < '0' || argv[i][j] > '9')
 			{
 				printf("Error\n");
-				return (1);
+				exit(1);
 			}
 			j++;
 		}
 		i++;
 	}
+}
+
+int	main(int argc, char *argv[])
+{
+	t_node *headA;
+	t_node *headB;
+
+	arguments_checking(argc, argv);
+	// heads definitions
+	headA = NULL;
+	headB = NULL;
 	init_list(&headA, argc, argv);
 	split_headA_and_headB(&headA, &headB);
 	show_results(headA, headB);
