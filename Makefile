@@ -7,7 +7,7 @@ OBJS	= 	libft_utils.c push_swap_insertions.c push_swap_utils.c \
 			swap_func_base.c function_utils.c
 ###RULES###
 all: $(NAME)
-fclean:		
+fclean: find . -type f -name '*.o' -delete
 push_swap: $(OBJS)
 $(CC) $(OBJS) -o $(NAME)
 
