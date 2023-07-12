@@ -74,13 +74,31 @@ void	push_b(t_node **headB, t_node **headA);
 void	swap_all(t_node **headA, t_node **headB);
 
 /**
- * @brief swap the node value contained by the head with the 2nd node on the list.
+ * @brief swap the node value contained by the head with the 2nd node on the list
  * Check if the head or the next element are NULL so meaning that the list has at
  * least a size of 2
  * @param head ptr on ptr on `t_node` given as the HEAD
  * @return `VOID`
  */
-void	swap(t_node **head);
+void	swap_a(t_node **head);
+
+/**
+ * @brief swap the node value contained by the head with the 2nd node on the list
+ * Check if the head or the next element are NULL so meaning that the list has at
+ * least a size of 2
+ * @param headA ptr on ptr on `t_node` given as the HEAD
+ * @return `VOID`
+ */
+void	swap_a(t_node **headA);
+
+/**
+ * @brief swap the node value contained by the head with the 2nd node on the list
+ * Check if the head of the next element are NULL so meaning that the list has at
+ * least a size of 2
+ * @param headB ptr on ptr on `t_node` given as the HEAD
+ * @return VOID
+*/
+void	swap_b(t_node **headB);
 
 /**
  * @brief shift of one position all the elements of the list to the top

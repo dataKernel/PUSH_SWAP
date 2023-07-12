@@ -59,7 +59,6 @@ int	main(int argc, char *argv[])
 	t_node *headB;
 
 	arguments_checking(argc, argv);
-	// heads definitions
 	headA = NULL;
 	headB = NULL;
 	init_list(&headA, argc, argv);

@@ -34,7 +34,7 @@ void	sort_three_elem(t_node **headA)
 	{
 		if ((*headA)->value > (*headA)->next->value)
 		{
-			swap(headA);
+			swap_a(headA);
 		}
 	}
 	else
@@ -44,7 +44,7 @@ void	sort_three_elem(t_node **headA)
 			&& (*headA)->next->value > (*headA)->next->next->value)
 		{
 			rotate(headA);
-			swap(headA);
+			swap_a(headA);
 		}
 		// A < B > C
 		else if ((*headA)->value < (*headA)->next->value
@@ -52,15 +52,15 @@ void	sort_three_elem(t_node **headA)
 		{
 			reverse(headA);
 			if (!check_list_is_ordered(*headA))
-				swap(headA);
+				swap_a(headA);
 		}
 		// A > B < C
 		else if ((*headA)->value > (*headA)->next->value
 			&& (*headA)->next->value < (*headA)->next->next->value)
 		{
-			swap(&copyTestHead);
+			swap_a(&copyTestHead);
 			if (check_list_is_ordered(copyTestHead))
-				swap(headA);
+				swap_a(headA);
 			else
 				rotate(headA);
 		}

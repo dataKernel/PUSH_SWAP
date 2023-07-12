@@ -26,9 +26,9 @@ int	size_list(t_node *head)
 void	func_choice_base(t_node **headA, t_node **headB, char *str)
 {
 	if(!ft_strncmp(str, "sa", 3))
-		swap(headA);
+		swap_a(headA);
 	else if(!ft_strncmp(str, "sb", 3))
-		swap(headB);
+		swap_b(headB);
 	else if(!ft_strncmp(str, "ss", 3))
 		swap_all(headA, headB);
 	else if(!ft_strncmp(str, "pa", 3))

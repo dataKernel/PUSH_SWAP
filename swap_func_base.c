@@ -42,7 +42,7 @@ void	push_b(t_node **headB, t_node **headA)
 	t_node	*firstElement;
 	t_node	*nextElement;
 
-	if (headA == NULL || *headA == NULL)
+	if (headA == NULL || *headA == NULL || (*headA)->next == NULL)
 		return ;
 	firstElement = *headB;
 	nextElement = (*headA)->next;
@@ -51,20 +51,36 @@ void	push_b(t_node **headB, t_node **headA)
 	*headA = nextElement;
 }
 
-void	swap(t_node **head)
+void	swap_a(t_node **headA)
 {
 	t_node	*oldHead;
 
-	if (head == NULL || *head == NULL || (*head)->next == NULL)
+	if (headA == NULL || *headA == NULL || (*headA)->next == NULL)
 		return ;
-	oldHead = *head;
-	*head = (*head)->next;
-	oldHead->next = (*head)->next;
-	(*head)->next = oldHead;
+	oldHead = *headA;
+	*headA = (*headA)->next;
+	oldHead->next = (*headA)->next;
+	(*headA)->next = oldHead;
+}
+
+void	swap_b(t_node **headB)
+{
+	t_node	*oldHead;
+
+	if (headB == NULL || *headB == NULL || (*headB)->next == NULL)
+		return;
+	oldHead = *headB;
+	*headB = (*headB)->next;
+	oldHead->next = (*headB)->next;
+	(*headB)->next = oldHead;
 }
 
 void	swap_all(t_node **headA, t_node **headB)
 {
-	swap(headA);
-	swap(headB);
+	if (headA == NULL || *headA == NULL || (*headA)->next == NULL)
+		return ;
+	if (headB == NULL || *headB == NULL || (*headB)->next == NULL)
+		return ;
+	swap_a(headA);
+	swap_b(headB);
 }
