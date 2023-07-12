@@ -7,8 +7,7 @@
  * @brief init the list based on the arguments given by the program
  * @param head ptr on ptr on `t_node` given as the HEAD
  * @param argc integer representing the numbers of arguments given by the prog
-
-	* @param argv string array representing the values of arguments given by the prog
+ * @param argv string array representing the values of arguments given by the prog
  * @return VOID
  */
 void	init_list(t_node **headA, int argc, char *argv[])
@@ -43,10 +42,11 @@ void	arguments_checking(int argc, char **argv)
 		while (argv[i][j])
 		{
 			if (argv[i][j] < '0' || argv[i][j] > '9')
-			{
-				printf("Error\n");
-				exit(1);
-			}
+				if(argv[i][j] != '-')
+				{
+					printf("Error\n");
+					exit(1);
+				}
 			j++;
 		}
 		i++;
