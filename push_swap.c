@@ -58,9 +58,9 @@ int	main(int argc, char *argv[])
 	t_node *headA;
 	t_node *headB;
 
-	arguments_checking(argc, argv);
 	headA = NULL;
 	headB = NULL;
+	arguments_checking(argc, argv);
 	init_list(&headA, argc, argv);
 	//split_headA_and_headB(&headA, &headB);
 	show_results(headA, headB);
