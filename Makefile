@@ -29,7 +29,7 @@ push_swap_func_advanced.o: push_swap_func_advanced.c include/stack.h include/sta
 function_utils.o : function_utils.c include/stack.h include/stack_utils.h
 	$(CC) $(FLAGS) function_utils.c -c -o function_utils.o
 
-push_swap_utils.o: push_swap_utils.c include/stack.h include/stack_advanced.h
+qqqqmmmpush_swap_utils.o: push_swap_utils.c include/stack.h include/stack_advanced.h
 	$(CC) $(FLAGS) push_swap_utils.c -c -o push_swap_utils.o
 
 push_swap_utils_2.o: push_swap_utils_2.c include/stack.h include/stack_advanced.h
