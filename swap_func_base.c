@@ -1,5 +1,6 @@
 #include "include/stack.h"
 #include "include/stack_utils.h"
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -16,7 +17,7 @@ t_node	*create_node(int value)
 void	push_element(t_node **head, t_node *elem)
 {
 	t_node	*firstElem;
-	
+
 	firstElem = *head;
 	*head = elem;
 	elem->next = firstElem;
@@ -27,7 +28,7 @@ void	push_a(t_node **headA, t_node **headB)
 	t_node	*firstElement;
 	t_node	*nextElement;
 
-	if(headA == NULL || *headA == NULL)
+	if (headA == NULL || *headA == NULL)
 		return ;
 	firstElement = *headB;
 	nextElement = (*headA)->next;
@@ -36,6 +37,19 @@ void	push_a(t_node **headA, t_node **headB)
 	*headA = nextElement;
 }
 
+void	push_b(t_node **headB, t_node **headA)
+{
+	t_node	*firstElement;
+	t_node	*nextElement;
+
+	if (headA == NULL || *headA == NULL)
+		return ;
+	firstElement = *headB;
+	nextElement = (*headA)->next;
+	*headB = *headA;
+	(*headB)->next = firstElement;
+	*headA = nextElement;
+}
 
 void	swap(t_node **head)
 {

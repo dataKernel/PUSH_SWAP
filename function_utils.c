@@ -32,9 +32,9 @@ void	func_choice_base(t_node **headA, t_node **headB, char *str)
 	else if(!ft_strncmp(str, "ss", 3))
 		swap_all(headA, headB);
 	else if(!ft_strncmp(str, "pa", 3))
-		push(headB, headA);
+		push_a(headB, headA);
 	else if(!ft_strncmp(str, "pb", 3))
-		push(headA, headB);
+		push_b(headA, headB);
 	else
 		func_choice_advanced(headA, headB, str);
 }

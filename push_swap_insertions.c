@@ -52,7 +52,7 @@ void insert_rotate(t_node **headA, t_node **headB, t_rotate_and_reverse actual){
 		while(i++ < actual.rotateB - actual.rotateA)
 			rotate(headB);
 	}
-	push(headB, headA);
+	push_a(headB, headA);
 }
 
 void insert_reverse(t_node **headA, t_node **headB, t_rotate_and_reverse actual){
@@ -76,7 +76,7 @@ void insert_reverse(t_node **headA, t_node **headB, t_rotate_and_reverse actual)
 		while(i++ < actual.reverseB - actual.reverseA)
 			reverse(headB);
 	}
-	push(headB, headA);
+	push_a(headB, headA);
 }
 
 void insert_one(t_node **headA, t_node **headB, int actualIndex, int indexB){
@@ -115,7 +115,8 @@ void	insertion_into_headA(t_node **headA, t_node **headB)
 	int 	i;
 
 	actualIndex = 0;
-	while(*headB){
+	while(*headB)
+	{
 		indexB = get_best_B_to_insert(*headA, *headB, actualIndex);
 		insert_one(headA, headB, actualIndex, indexB);
 		actualIndex = check_index_insert(*headA, (*headA) -> value);

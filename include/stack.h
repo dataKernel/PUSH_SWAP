@@ -39,8 +39,7 @@ t_node	*create_node(int value);
 t_node	*pop(t_node **head);
 
 /**
-
-	* @brief push a node at the top of the stack(head) and link all the others nodes
+ * @brief push a node at the top of the stack(head) and link all the others nodes
  * between them until null (used to init the list)
  * @param head ptr on ptr on `t_node` given as the HEAD
  * @param elem ptr on `t_node` given as a node element
@@ -51,15 +50,23 @@ void	push_element(t_node **head, t_node *elem);
 /**
  * @brief take the first element of the list(headA) and push it
  * to an other list on the top of it(headB). Don't do anything if src is empty
- * @param headA ptr on ptr on `t_node` given as the HEAD->source
- * @param headB ptr on ptr on `t_node`given as the HEAD->destination
+ * @param headB ptr on ptr on `t_node` given as the HEAD->source
+ * @param headA ptr on ptr on `t_node`given as the HEAD->destination
  * @return `VOID`
  */
-void	push_a(t_node **headA, t_node **headB);
+void	push_a(t_node **headB, t_node **headA);
 
 /**
+ * @brief take the first element of the list(headB) and push it
+ * to an other list on the top of it (headB). Don't do anything if src is empty
+ * @param headA ptr on ptr on `t_node` given as the HEAD->source
+ * @param headB ptr on ptr on `t_node` given as the HEAD->destination
+ * @return VOID
+*/
+void	push_b(t_node **headB, t_node **headA);
 
-	* @brief swap the node value contained by the head with the 2nd node for both list
+/**
+ * @brief swap the node value contained by the head with the 2nd node for both list
  * @param headA ptr on ptr on `t_node` given as the HEAD
  * @param headB ptr on ptr on `t_node` given as the HEAD
  * return VOID
@@ -67,10 +74,8 @@ void	push_a(t_node **headA, t_node **headB);
 void	swap_all(t_node **headA, t_node **headB);
 
 /**
-
-	* @brief swap the node value contained by the head with the 2nd node on the list.
-
-	* Check if the head or the next element are NULL so meaning that the list has at
+ * @brief swap the node value contained by the head with the 2nd node on the list.
+ * Check if the head or the next element are NULL so meaning that the list has at
  * least a size of 2
  * @param head ptr on ptr on `t_node` given as the HEAD
  * @return `VOID`
