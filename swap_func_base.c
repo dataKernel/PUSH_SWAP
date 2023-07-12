@@ -78,10 +78,8 @@ void	swap_b(t_node **headB)
 
 void	swap_all(t_node **headA, t_node **headB)
 {
-	if (headA == NULL || *headA == NULL || (*headA)->next == NULL)
-		return ;
-	if (headB == NULL || *headB == NULL || (*headB)->next == NULL)
-		return ;
-	swap_a(headA);
-	swap_b(headB);
+	if (headA != NULL || *headA != NULL || (*headA)->next != NULL)
+		swap_a(headA);
+	if (headB != NULL || *headB != NULL || (*headB)->next != NULL)
+		swap_b(headB);
 }

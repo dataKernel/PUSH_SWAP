@@ -64,7 +64,7 @@ int	main(int argc, char *argv[])
 	init_list(&headB, argc, argv);
 	//split_headA_and_headB(&headA, &headB);
 	show_results(headA, headB);
-	swap_b(&headB);
+	swap_all(&headA, &headB);
 	show_results(headA, headB);
 	//insertion_into_headA(&headA, &headB);
 	return (0);
