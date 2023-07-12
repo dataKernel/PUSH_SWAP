@@ -49,13 +49,13 @@ t_node	*pop(t_node **head);
 void	push_element(t_node **head, t_node *elem);
 
 /**
- * @brief take the first element of the list(src) and push it
- * to an other list on the top of it(dst). Don't do anything if src is empty
- * @param src ptr on ptr on `t_node` given as the HEAD->source
- * @param dst ptr on ptr on `t_node`given as the HEAD->destination
+ * @brief take the first element of the list(headA) and push it
+ * to an other list on the top of it(headB). Don't do anything if src is empty
+ * @param headA ptr on ptr on `t_node` given as the HEAD->source
+ * @param headB ptr on ptr on `t_node`given as the HEAD->destination
  * @return `VOID`
  */
-void	push(t_node **src, t_node **dst);
+void	push_a(t_node **headA, t_node **headB);
 
 /**
 

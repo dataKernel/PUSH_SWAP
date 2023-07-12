@@ -55,7 +55,7 @@ void	split_headA_and_headB(t_node **headA, t_node **headB)
 {
 	while (size_list(*headA) > 3)
 	{
-		push(headA, headB);
+		push_a(headA, headB);
 	}
 	sort_three_elem(headA);
 }
