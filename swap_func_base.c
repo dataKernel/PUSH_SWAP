@@ -23,21 +23,22 @@ void	push_element(t_node **head, t_node *elem)
 	elem->next = firstElem;
 }
 
-void	push_a(t_node **headA, t_node **headB)
+
+void	push_a(t_node **headB, t_node **headA)
 {
 	t_node	*firstElement;
 	t_node	*nextElement;
 
-	if (headA == NULL || *headA == NULL)
+	if (headB == NULL || *headB == NULL || (*headB)->next == NULL)
 		return ;
-	firstElement = *headB;
-	nextElement = (*headA)->next;
-	*headB = *headA;
-	(*headB)->next = firstElement;
-	*headA = nextElement;
+	firstElement = *headA;
+	nextElement = (*headB)->next;
+	*headA = *headB;
+	(*headA)->next = firstElement;
+	*headB = nextElement;
 }
 
-void	push_b(t_node **headB, t_node **headA)
+void	push_b(t_node **headA, t_node **headB)
 {
 	t_node	*firstElement;
 	t_node	*nextElement;
