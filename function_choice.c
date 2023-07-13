@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   function_choice.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/13 20:48:51 by data_kernel       #+#    #+#             */
+/*   Updated: 2023/07/13 20:50:45 by data_kernel      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "include/stack.h"
 #include "include/stack_utils.h"
 
@@ -25,15 +37,15 @@ int	size_list(t_node *head)
 
 void	func_choice_base(t_node **headA, t_node **headB, char *str)
 {
-	if(!ft_strncmp(str, "sa", 3))
+	if (!ft_strncmp(str, "sa", 3))
 		swap_a(headA);
-	else if(!ft_strncmp(str, "sb", 3))
+	else if (!ft_strncmp(str, "sb", 3))
 		swap_b(headB);
-	else if(!ft_strncmp(str, "ss", 3))
+	else if (!ft_strncmp(str, "ss", 3))
 		swap_all(headA, headB);
-	else if(!ft_strncmp(str, "pa", 3))
+	else if (!ft_strncmp(str, "pa", 3))
 		push_a(headB, headA);
-	else if(!ft_strncmp(str, "pb", 3))
+	else if (!ft_strncmp(str, "pb", 3))
 		push_b(headA, headB);
 	else
 		func_choice_advanced(headA, headB, str);
@@ -41,17 +53,17 @@ void	func_choice_base(t_node **headA, t_node **headB, char *str)
 
 void	func_choice_advanced(t_node **headA, t_node **headB, char *str)
 {
-	if(!ft_strncmp(str, "ra", 3))
+	if (!ft_strncmp(str, "ra", 3))
 		rotate_a(headA);
-	else if(!ft_strncmp(str, "rb", 3))
+	else if (!ft_strncmp(str, "rb", 3))
 		rotate_b(headB);
-	else if(!ft_strncmp(str, "rr", 3))
+	else if (!ft_strncmp(str, "rr", 3))
 		rotate_all(headA, headB);
-	else if(!ft_strncmp(str, "rra", 3))
+	else if (!ft_strncmp(str, "rra", 3))
 		reverse(headA);
-	else if(!ft_strncmp(str, "rrb", 3))
+	else if (!ft_strncmp(str, "rrb", 3))
 		reverse(headB);
-	else if(!ft_strncmp(str, "rrr", 3))
+	else if (!ft_strncmp(str, "rrr", 3))
 		reverse_all(headA, headB);
 	else
 	{
@@ -87,11 +99,11 @@ void	exec_swap_func(t_node **headA, t_node **headB)
 
 bool	check_list_is_ordered(t_node *head)
 {
-	while(head->next)
+	while (head->next)
 	{
-		if(head->value > head->next->value)
-			return(false);
+		if (head->value > head->next->value)
+			return (false);
 		head = head->next;
 	}
-	return(true);
+	return (true);
 }

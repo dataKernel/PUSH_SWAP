@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/13 18:50:03 by data_kernel       #+#    #+#             */
+/*   Updated: 2023/07/13 18:50:14 by data_kernel      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef STACK_H
 # define STACK_H
 
-typedef struct	s_node
+typedef struct s_node
 {
 	int				value;
 	struct s_node	*next;
@@ -9,10 +21,10 @@ typedef struct	s_node
 
 typedef struct s_rotate_and_reverse
 {
-	int				rotateA;
-	int				rotateB;
-	int				reverseA;
-	int				reverseB;
+	int				rotate_a;
+	int				rotate_b;
+	int				reverse_a;
+	int				reverse_b;
 }t_rotate_and_reverse;
 
 typedef struct s_index_and_value
@@ -20,7 +32,6 @@ typedef struct s_index_and_value
 	int				index;
 	int				value;
 }t_index_and_value;
-
 
 /**
  * @brief create a node on the `HEAP` who returns a ptr on `t_node`
@@ -66,7 +77,8 @@ void	push_a(t_node **headB, t_node **headA);
 void	push_b(t_node **headA, t_node **headB);
 
 /**
- * @brief swap the node value contained by the head with the 2nd node for both list
+ * @brief swap the node value contained by the head with the 2nd node 
+ * for both list
  * @param headA ptr on ptr on `t_node` given as the HEAD
  * @param headB ptr on ptr on `t_node` given as the HEAD
  * return VOID
@@ -101,14 +113,16 @@ void	swap_a(t_node **headA);
 void	swap_b(t_node **headB);
 
 /**
- * @brief shift of one position all the elements of the list from headA to the top
+ * @brief shift of one position all the elements of the list from headA
+ * to the top
  * @param headA ptr on ptr on `t_node` given as the HEAD
  * @return `VOID`
  */
 void	rotate_a(t_node **headA);
 
 /**
- * @brief shift of one position all the elements of the list from headB to the top
+ * @brief shift of one position all the elements of the list 
+ * from headB to the top
  * @param headB ptr on ptr on `t_node` given as the HEAD
  * @return `VOID`
  *

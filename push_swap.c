@@ -1,25 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/13 18:54:22 by data_kernel       #+#    #+#             */
+/*   Updated: 2023/07/13 20:48:28 by data_kernel      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "include/stack.h"
 #include "include/stack_utils.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-/**
- * @brief init the list based on the arguments given by the program
- * @param head ptr on ptr on `t_node` given as the HEAD
- * @param argc integer representing the numbers of arguments given by the prog
- * @param argv string array representing the values of arguments given by the prog
- * @return VOID
- */
 void	init_list(t_node **headA, int argc, char *argv[])
 {
-	t_node	*nodeCreation;
+	t_node	*nodecreation;
 	int		i;
 
 	i = 1;
 	while (i < argc)
 	{
-		nodeCreation = create_node(ft_atoi(argv[i]));
-		push_element(headA, nodeCreation);
+		nodecreation = create_node(ft_atoi(argv[i]));
+		push_element(headA, nodecreation);
 		i++;
 	}
 }
@@ -29,12 +34,6 @@ void	arguments_checking(int argc, char **argv)
 	int		i;
 	int		j;
 
-	i = 0;
-	if (argc <= 2)
-	{
-		printf("Error\n");
-		exit(1);
-	}
 	i = 1;
 	while (i < argc)
 	{
@@ -42,11 +41,13 @@ void	arguments_checking(int argc, char **argv)
 		while (argv[i][j])
 		{
 			if (argv[i][j] < '0' || argv[i][j] > '9')
-				if(argv[i][j] != '-')
+			{
+				if (argv[i][j] != '-' || argc < 2)
 				{
 					printf("Error\n");
 					exit(1);
 				}
+			}
 			j++;
 		}
 		i++;
@@ -55,15 +56,15 @@ void	arguments_checking(int argc, char **argv)
 
 int	main(int argc, char *argv[])
 {
-	t_node *headA;
-	t_node *headB;
+	t_node	*head_a;
+	t_node	*head_b;
 
-	headA = NULL;
-	headB = NULL;
+	head_a = NULL;
+	head_b = NULL;
 	arguments_checking(argc, argv);
-	init_list(&headA, argc, argv);
-	split_headA_and_headB(&headA, &headB);
-	show_results(headA, headB);
+	init_list(&head_a, argc, argv);
+	split_headA_and_headB(&head_a, &head_b);
+	show_results(head_a, head_b);
 	//insertion_into_headA(&headA, &headB);
 	return (0);
 }
