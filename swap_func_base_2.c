@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   swap_func_base_2.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/13 21:24:14 by data_kernel       #+#    #+#             */
+/*   Updated: 2023/07/13 21:25:38 by data_kernel      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "include/stack.h"
 #include "include/stack_utils.h"
-
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+
 t_node	*create_node(int value)
 {
 	t_node	*node;
@@ -15,51 +27,51 @@ t_node	*create_node(int value)
 
 void	push_element(t_node **head, t_node *elem)
 {
-	t_node *firstElem;
+	t_node	*first_elem;
 
-	firstElem = *head;
+	first_elem = *head;
 	*head = elem;
-	elem->next = firstElem;
+	elem->next = first_elem;
 }
 
-void    rotate_a(t_node **headA)
+void	rotate_a(t_node **headA)
 {
-    t_node  *oldHead;
-    t_node  *position;
-    
-    if (headA == NULL || *headA == NULL)
-        return;
-    oldHead = *headA;
-    *headA = (*headA)->next;
-    position = *headA;
-    while (position)
-    {
-        if (position->next == NULL)
-        {
-            position->next = oldHead;
-            oldHead->next = NULL;
-        }
-        position = position->next;
-    }
+	t_node	*old_head;
+	t_node	*position;
+
+	if (headA == NULL || *headA == NULL)
+		return ;
+	old_head = *headA;
+	*headA = (*headA)->next;
+	position = *headA;
+	while (position)
+	{
+		if (position->next == NULL)
+		{
+			position->next = old_head;
+			old_head->next = NULL;
+		}
+		position = position->next;
+	}
 }
 
-void    rotate_b(t_node **headB)
+void	rotate_b(t_node **headB)
 {
-    t_node  *oldHead;
-    t_node  *position;
+	t_node	*old_head;
+	t_node	*position;
 
-    if (headB == NULL || *headB == NULL)
-        return ;
-    oldHead = *headB;
-    *headB = (*headB)->next;
-    position = *headB;
-    while (position)
-    {
-        if (position->next == NULL)
-        {
-            position ->next = oldHead;
-            oldHead->next = NULL;
-        }
-        position = position->next;
-    }
+	if (headB == NULL || *headB == NULL)
+		return ;
+	old_head = *headB;
+	*headB = (*headB)->next;
+	position = *headB;
+	while (position)
+	{
+		if (position->next == NULL)
+		{
+			position->next = old_head;
+			old_head->next = NULL;
+		}
+		position = position->next;
+	}
 }

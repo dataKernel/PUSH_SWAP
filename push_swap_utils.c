@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/13 21:31:40 by data_kernel       #+#    #+#             */
+/*   Updated: 2023/07/13 21:38:49 by data_kernel      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "include/stack.h"
 #include "include/stack_utils.h"
 #include <stdio.h>
@@ -16,48 +28,48 @@ int	check_index_insert(t_node *head, int value)
 	return (index);
 }
 
-int		check_nbr_rotate(t_node *headA, int actualIndex, int insertIndex) 
+int	check_nbr_rotate(t_node *head_a, int actual_index, int insert_index)
 {
-	int		res;
+	int	res;
 
-	res = (insertIndex - actualIndex) % size_list(headA);
-	if(res < 0)
-		res += size_list(headA);
-	return(res);
-}		
-
-int		check_nbr_reverse(t_node *headA, int actualIndex, int insertIndex) 
-{
-	int		res;
-
-	res = (actualIndex - insertIndex) % size_list(headA);
-	if(res < 0)
-		res += size_list(headA);
-	return(res);
+	res = (insert_index - actual_index) % size_list(head_a);
+	if (res < 0)
+		res += size_list(head_a);
+	return (res);
 }
 
-int		count_rr_or_rrr(int a, int b)
+int	check_nbr_reverse(t_node *head_a, int actual_index, int insert_index)
 {
-	int		count;
-	
-	if(a == 0 || b == 0)
-		return(0);
+	int	res;
+
+	res = (actual_index - insert_index) % size_list(head_a);
+	if (res < 0)
+		res += size_list(head_a);
+	return (res);
+}
+
+int	count_rr_or_rrr(int a, int b)
+{
+	int	count;
+
+	if (a == 0 || b == 0)
+		return (0);
 	count = 0;
-	while((a - b) > 0 || a > 0)
+	while ((a - b) > 0 || a > 0)
 	{
 		count++;
 		a--;
 	}
-	return(count);
+	return (count);
 }
 
-void	split_headA_and_headB(t_node **headA, t_node **headB)
+void	split_heada_and_headb(t_node **head_a, t_node **head_b)
 {
-	if(headA == NULL || *headA == NULL)
-		return;
-	while (size_list(*headA) > 3)
+	if (head_a == NULL || *head_a == NULL)
+		return ;
+	while (size_list(*head_a) > 3)
 	{
-		push_a(headA, headB);
+		push_a(head_a, head_b);
 	}
-	sort_three_elem(headA);
+	sort_three_elem(head_a);
 }

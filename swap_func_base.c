@@ -1,57 +1,69 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   swap_func_base.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/13 21:00:25 by data_kernel       #+#    #+#             */
+/*   Updated: 2023/07/13 21:11:49 by data_kernel      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "include/stack.h"
 #include "include/stack_utils.h"
 #include <stdio.h>
 
 void	push_a(t_node **headB, t_node **headA)
 {
-	t_node	*firstElement;
-	t_node	*nextElement;
+	t_node	*first_element;
+	t_node	*next_element;
 
 	if (headB == NULL || *headB == NULL || (*headB)->next == NULL)
 		return ;
-	firstElement = *headA;
-	nextElement = (*headB)->next;
+	first_element = *headA;
+	next_element = (*headB)->next;
 	*headA = *headB;
-	(*headA)->next = firstElement;
-	*headB = nextElement;
+	(*headA)->next = first_element;
+	*headB = next_element;
 }
 
 void	push_b(t_node **headA, t_node **headB)
 {
-	t_node	*firstElement;
-	t_node	*nextElement;
+	t_node	*first_element;
+	t_node	*next_element;
 
 	if (headA == NULL || *headA == NULL || (*headA)->next == NULL)
 		return ;
-	firstElement = *headB;
-	nextElement = (*headA)->next;
+	first_element = *headB;
+	next_element = (*headA)->next;
 	*headB = *headA;
-	(*headB)->next = firstElement;
-	*headA = nextElement;
+	(*headB)->next = first_element;
+	*headA = next_element;
 }
 
 void	swap_a(t_node **headA)
 {
-	t_node	*oldHead;
+	t_node	*old_head;
 
 	if (headA == NULL || *headA == NULL || (*headA)->next == NULL)
 		return ;
-	oldHead = *headA;
+	old_head = *headA;
 	*headA = (*headA)->next;
-	oldHead->next = (*headA)->next;
-	(*headA)->next = oldHead;
+	old_head->next = (*headA)->next;
+	(*headA)->next = old_head;
 }
 
 void	swap_b(t_node **headB)
 {
-	t_node	*oldHead;
+	t_node	*old_head;
 
 	if (headB == NULL || *headB == NULL || (*headB)->next == NULL)
-		return;
-	oldHead = *headB;
+		return ;
+	old_head = *headB;
 	*headB = (*headB)->next;
-	oldHead->next = (*headB)->next;
-	(*headB)->next = oldHead;
+	old_head->next = (*headB)->next;
+	(*headB)->next = old_head;
 }
 
 void	swap_all(t_node **headA, t_node **headB)
