@@ -42,9 +42,9 @@ void	func_choice_base(t_node **headA, t_node **headB, char *str)
 void	func_choice_advanced(t_node **headA, t_node **headB, char *str)
 {
 	if(!ft_strncmp(str, "ra", 3))
-		rotate(headA);
+		rotate_a(headA);
 	else if(!ft_strncmp(str, "rb", 3))
-		rotate(headB);
+		rotate_b(headB);
 	else if(!ft_strncmp(str, "rr", 3))
 		rotate_all(headA, headB);
 	else if(!ft_strncmp(str, "rra", 3))

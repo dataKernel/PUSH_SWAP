@@ -1,7 +1,6 @@
 #include "include/stack.h"
 #include <stdio.h>
 
-
 void    reverse(t_node **head)
 {
     t_node  *oldHead;
@@ -25,8 +24,8 @@ void    reverse(t_node **head)
 
 void    reverse_all(t_node **headA, t_node **headB)
 {
-    rotate(headA);
-    rotate(headB);    
+    reverse(headA);
+    reverse(headB);    
 }
 
 void    rotate_all(t_node **headA, t_node **headB)

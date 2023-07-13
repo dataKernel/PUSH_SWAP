@@ -53,6 +53,8 @@ int		count_rr_or_rrr(int a, int b)
 
 void	split_headA_and_headB(t_node **headA, t_node **headB)
 {
+	if(headA == NULL || *headA == NULL)
+		return;
 	while (size_list(*headA) > 3)
 	{
 		push_a(headA, headB);

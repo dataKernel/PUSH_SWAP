@@ -2,7 +2,7 @@
 #include "include/stack_utils.h"
 
 #include <stdlib.h>
-
+#include <stdio.h>
 t_node	*create_node(int value)
 {
 	t_node	*node;
