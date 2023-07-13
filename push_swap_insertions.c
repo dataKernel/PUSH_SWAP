@@ -44,13 +44,13 @@ void insert_rotate(t_node **headA, t_node **headB, t_rotate_and_reverse actual){
 	if (actual.rotateA > actual.rotateB)
 	{
 		while(i++ < actual.rotateA - actual.rotateB)
-			rotate(headA);
+			rotate_a(headA);
 	}
 	i = 0;
 	if (actual.rotateA < actual.rotateB)
 	{
 		while(i++ < actual.rotateB - actual.rotateA)
-			rotate(headB);
+			rotate_a(headB);
 	}
 	push_a(headB, headA);
 }
@@ -129,7 +129,7 @@ void	insertion_into_headA(t_node **headA, t_node **headB)
 	{
 		while(i < rotate_count)
 		{
-			rotate(headA);
+			rotate_a(headA);
 			i++;
 		}
 	}

@@ -31,6 +31,8 @@ void    reverse_all(t_node **headA, t_node **headB)
 
 void    rotate_all(t_node **headA, t_node **headB)
 {
-    rotate(headA);
-    rotate(headB);
+    if (headA != NULL || *headA != NULL || (*headA)->next != NULL)
+        rotate_a(headA);
+    if (headB != NULL || *headB != NULL || (*headB)->next != NULL)
+        rotate_b(headB);
 }

@@ -1,6 +1,7 @@
 .vscode
 a.out
 *.exe
+*.o
 checker
 push_swap
 script.c

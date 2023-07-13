@@ -101,11 +101,19 @@ void	swap_a(t_node **headA);
 void	swap_b(t_node **headB);
 
 /**
- * @brief shift of one position all the elements of the list to the top
+ * @brief shift of one position all the elements of the list from headA to the top
  * @param headA ptr on ptr on `t_node` given as the HEAD
  * @return `VOID`
  */
 void	rotate_a(t_node **headA);
+
+/**
+ * @brief shift of one position all the elements of the list from headB to the top
+ * @param headB ptr on ptr on `t_node` given as the HEAD
+ * @return `VOID`
+ *
+*/
+void	rotate_b(t_node **headB);
 
 /**
  * @brief shift of one position all the elements of the list to to bottom

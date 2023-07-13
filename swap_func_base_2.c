@@ -43,3 +43,23 @@ void    rotate_a(t_node **headA)
     }
 }
 
+void    rotate_b(t_node **headB)
+{
+    t_node  *oldHead;
+    t_node  *position;
+
+    if (headB == NULL || *headB == NULL)
+        return ;
+    oldHead = *headB;
+    *headB = (*headB)->next;
+    position = *headB;
+    while (position)
+    {
+        if (position->next == NULL)
+        {
+            position ->next = oldHead;
+            oldHead->next = NULL;
+        }
+        position = position->next;
+    }
+}

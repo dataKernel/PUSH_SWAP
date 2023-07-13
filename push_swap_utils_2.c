@@ -43,7 +43,7 @@ void	sort_three_elem(t_node **headA)
 		if ((*headA)->value > (*headA)->next->value
 			&& (*headA)->next->value > (*headA)->next->next->value)
 		{
-			rotate(headA);
+			rotate_a(headA);
 			swap_a(headA);
 		}
 		// A < B > C
@@ -62,7 +62,7 @@ void	sort_three_elem(t_node **headA)
 			if (check_list_is_ordered(copyTestHead))
 				swap_a(headA);
 			else
-				rotate(headA);
+				rotate_a(headA);
 		}
 	}
 	free_list(copyTestHead);
