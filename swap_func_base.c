@@ -1,7 +1,6 @@
 #include "include/stack.h"
 #include "include/stack_utils.h"
 #include <stdio.h>
-#include <stdlib.h>
 
 void	push_a(t_node **headB, t_node **headA)
 {
