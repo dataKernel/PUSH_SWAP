@@ -67,6 +67,11 @@ int	ft_atoi(const char *str)
 	return (result * check);
 }
 
+void	ft_memset()
+{
+	//...
+}
+
 void	show_results(t_node *headA, t_node *headB)
 {
 	int i;
