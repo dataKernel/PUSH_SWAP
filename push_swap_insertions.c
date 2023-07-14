@@ -2,6 +2,7 @@
 #include "include/stack_utils.h"
 #include <stdio.h>
 
+
 int	get_best_B_to_insert(t_node *head_a, t_node *head_b, int ind)
 {
 	t_rotate_and_reverse	actual;
