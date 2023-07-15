@@ -1,9 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap_insertions.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/14 13:24:09 by data_kernel       #+#    #+#             */
+/*   Updated: 2023/07/15 14:12:32 by data_kernel      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "include/stack.h"
 #include "include/stack_utils.h"
 #include <stdio.h>
 
-
-int	get_best_B_to_insert(t_node *head_a, t_node *head_b, int ind)
+int	get_best_b_to_insert(t_node *head_a, t_node *head_b, int ind)
 {
 	t_rotate_and_reverse	actual;
 	t_index_and_value		mini;
@@ -17,18 +28,17 @@ int	get_best_B_to_insert(t_node *head_a, t_node *head_b, int ind)
 	while (head_b)
 	{
 		insert_index = check_index_insert(head_a, head_b->value);
-		actual.rotate_a = check_nbr_rotate(head_a, ind, insert_index);
-		actual.reverse_a = check_nbr_reverse(head_a, ind, insert_index);
-		nb_insert = min(max(actual.rotate_a, actual.rotate_b),
-				max(actual.reverse_a, actual.reverse_b));
+		actual.ra = check_nbr_rotate(head_a, ind, insert_index);
+		actual.rra = check_nbr_reverse(head_a, ind, insert_index);
+		nb_insert = min(max(actual.ra, actual.rb), max(actual.rra, actual.rrb));
 		if (mini.value == -1 || nb_insert < mini.value)
 		{
 			mini.value = nb_insert;
 			mini.index = i;
 		}
 		head_b = head_b->next;
-		actual.rotate_b++;
-		actual.reverse_b = size_list(head_b);
+		actual.rb++;
+		actual.rrb = size_list(head_b);
 	}
 	return (mini.index);
 }
@@ -39,22 +49,22 @@ t_rotate_and_reverse actual)
 	int	i;
 
 	i = 0;
-	while (i < min(actual.rotate_a, actual.rotate_b))
+	while (i < min(actual.ra, actual.rb))
 	{
 		rotate_all(head_a, head_b);
 		i++;
 	}
 	i = 0;
-	if (actual.rotate_a > actual.rotate_b)
+	if (actual.ra > actual.rb)
 	{
-		while (i++ < actual.rotate_a - actual.rotate_b)
+		while (i++ < actual.ra - actual.rb)
 			rotate_a(head_a);
 	}
 	i = 0;
-	if (actual.rotate_a < actual.rotate_b)
+	if (actual.ra < actual.rb)
 	{
-		while (i++ < actual.rotate_b - actual.rotate_a)
-			rotate_a(head_b);
+		while (i++ < actual.rb - actual.ra)
+			rotate_b(head_b);
 	}
 	push_a(head_b, head_a);
 }
@@ -65,27 +75,28 @@ void	insert_reverse(t_node **head_a, t_node **head_b,
 	int	i;
 
 	i = 0;
-	while (i < min(actual.reverse_a, actual.reverse_b))
+	while (i < min(actual.rra, actual.rrb))
 	{
 		reverse_all(head_a, head_b);
 		i++;
 	}
 	i = 0;
-	if (actual.reverse_a > actual.reverse_b)
+	if (actual.rra > actual.rrb)
 	{
-		while (i++ < actual.reverse_a - actual.reverse_b)
-			reverse(head_a);
+		while (i++ < actual.rra - actual.rrb)
+			reverse_a(head_a);
 	}
 	i = 0;
-	if (actual.reverse_a < actual.reverse_b)
+	if (actual.rra < actual.rrb)
 	{
-		while (i++ < actual.reverse_b - actual.reverse_a)
-			reverse(head_b);
+		while (i++ < actual.rrb - actual.rra)
+			reverse_b(head_b);
 	}
 	push_a(head_b, head_a);
 }
 
-void	insert_one(t_node **head_a, t_node **head_b, int actual_index, int indexB)
+void	insert_one(t_node **head_a, t_node **head_b, int actual_index, 
+int index_b)
 {
 	t_rotate_and_reverse	actual;
 	t_node					*current_b;
@@ -93,19 +104,18 @@ void	insert_one(t_node **head_a, t_node **head_b, int actual_index, int indexB)
 
 	i = 0;
 	current_b = *head_b;
-	while (i < indexB)
+	while (i < index_b)
 	{
 		current_b = current_b->next;
 		i++;
 	}
-	actual.rotate_a = check_nbr_rotate(*head_a, actual_index,
+	actual.ra = check_nbr_rotate(*head_a, actual_index, 
 			check_index_insert(*head_a, current_b->value));
-	actual.reverse_a = check_nbr_reverse(*head_a, actual_index,
+	actual.rra = check_nbr_reverse(*head_a, actual_index, 
 			check_index_insert(*head_a, current_b->value));
-	actual.rotate_b = indexB;
-	actual.reverse_b = (size_list(*head_b) - indexB) % size_list(*head_b);
-	if (max(actual.rotate_a, actual.rotate_b) < max(actual.reverse_a,
-			actual.reverse_b))
+	actual.rb = index_b;
+	actual.rrb = (size_list(*head_b) - index_b) % size_list(*head_b);
+	if (max(actual.ra, actual.rb) < max(actual.rra, actual.rrb))
 	{
 		insert_rotate(head_a, head_b, actual);
 	}
@@ -115,40 +125,22 @@ void	insert_one(t_node **head_a, t_node **head_b, int actual_index, int indexB)
 	}
 }
 
-void	insertion_into_headA(t_node **head_a, t_node **head_b)
+void	insertion_into_head_a(t_node **head_a, t_node **head_b)
 {
-	int actual_index;
-	int indexB;
-	int rotate_count;
-	int reverse_count;
-	int i;
+	int		actual_index;
+	int		index_b;
+	int		rotate_count;
+	int		reverse_count;
 
 	actual_index = 0;
 	while (*head_b)
 	{
-		indexB = get_best_B_to_insert(*head_a, *head_b, actual_index);
-		insert_one(head_a, head_b, actual_index, indexB);
+		index_b = get_best_b_to_insert(*head_a, *head_b, actual_index);
+		insert_one(head_a, head_b, actual_index, index_b);
 		actual_index = check_index_insert(*head_a, (*head_a)->value);
-		show_results(*head_a, *head_b);
 	}
+	printf("bug\n");
 	rotate_count = check_nbr_rotate(*head_a, actual_index, 0);
 	reverse_count = check_nbr_reverse(*head_a, actual_index, 0);
-	i = 0;
-	if (rotate_count < reverse_count)
-	{
-		while (i < rotate_count)
-		{
-			rotate_a(head_a);
-			i++;
-		}
-	}
-	else
-	{
-		while (i < reverse_count)
-		{
-			reverse(head_b);
-			i++;
-		}
-	}
-	show_results(*head_a, *head_b);
+	insertion_ext(rotate_count, reverse_count, head_a, head_b);
 }

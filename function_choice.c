@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 20:48:51 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/13 20:50:45 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/14 16:02:14 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,9 @@ void	func_choice_advanced(t_node **headA, t_node **headB, char *str)
 	else if (!ft_strncmp(str, "rr", 3))
 		rotate_all(headA, headB);
 	else if (!ft_strncmp(str, "rra", 3))
-		reverse(headA);
+		reverse_a(headA);
 	else if (!ft_strncmp(str, "rrb", 3))
-		reverse(headB);
+		reverse_b(headB);
 	else if (!ft_strncmp(str, "rrr", 3))
 		reverse_all(headA, headB);
 	else

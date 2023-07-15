@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:50:03 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/13 18:50:14 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/14 18:04:07 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ typedef struct s_node
 
 typedef struct s_rotate_and_reverse
 {
-	int				rotate_a;
-	int				rotate_b;
-	int				reverse_a;
-	int				reverse_b;
+	int				ra;
+	int				rb;
+	int				rra;
+	int				rrb;
 }t_rotate_and_reverse;
 
 typedef struct s_index_and_value
@@ -59,8 +59,8 @@ t_node	*pop(t_node **head);
 void	push_element(t_node **head, t_node *elem);
 
 /**
- * @brief take the first element of the list(headA) and push it
- * to an other list on the top of it(headB). Don't do anything if src is empty
+ * @brief take the first element of the list(headB) and push it
+ * to an other list on the top of it(headA). Don't do anything if src is empty
  * @param headB ptr on ptr on `t_node` given as the HEAD->source
  * @param headA ptr on ptr on `t_node`given as the HEAD->destination
  * @return `VOID`
@@ -68,7 +68,7 @@ void	push_element(t_node **head, t_node *elem);
 void	push_a(t_node **headB, t_node **headA);
 
 /**
- * @brief take the first element of the list(headB) and push it
+ * @brief take the first element of the list(headA) and push it
  * to an other list on the top of it (headB). Don't do anything if src is empty
  * @param headA ptr on ptr on `t_node` given as the HEAD->source
  * @param headB ptr on ptr on `t_node` given as the HEAD->destination
@@ -84,15 +84,6 @@ void	push_b(t_node **headA, t_node **headB);
  * return VOID
  */
 void	swap_all(t_node **headA, t_node **headB);
-
-/**
- * @brief swap the node value contained by the head with the 2nd node on the list
- * Check if the head or the next element are NULL so meaning that the list has at
- * least a size of 2
- * @param head ptr on ptr on `t_node` given as the HEAD
- * @return `VOID`
- */
-void	swap_a(t_node **head);
 
 /**
  * @brief swap the node value contained by the head with the 2nd node on the list
@@ -130,11 +121,18 @@ void	rotate_a(t_node **headA);
 void	rotate_b(t_node **headB);
 
 /**
- * @brief shift of one position all the elements of the list to to bottom
- * @param head ptr on ptr on `t_node` given as the HEAD
+ * @brief shift of one position all the elements of the list A to to bottom
+ * @param head ptr on ptr on `t_node` given as the HEAD A
  * @return `VOID`
  */
-void	reverse(t_node **head);
+void	reverse_a(t_node **head);
+
+/**
+ * @brief shift of one position all the elements of the list B to the bottom
+ * @param head ptr on ptr on `t_node` given as the HEAD B
+ * @return `VOID`
+*/
+void	reverse_b(t_node **head);
 
 /**
  * @brief shift of one position all the elements of the both list to the top

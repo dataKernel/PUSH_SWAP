@@ -5,23 +5,23 @@
 
 t_node	*copy_head(t_node *head)
 {
-	t_node	*copyHead;
-	t_node	*firstElem;
+	t_node	*copy_head;
+	t_node	*first_elem;
 	t_node	*node;
 
-	copyHead = create_node(head->value);
-	firstElem = copyHead;
+	copy_head = create_node(head->value);
+	first_elem = copy_head;
 	head = head->next;
 	while (head)
 	{
 		node = create_node(head->value);
-		copyHead->next = node;
-		copyHead = copyHead->next;
+		copy_head->next = node;
+		copy_head = copy_head->next;
 		head = head->next;
 	}
-	copyHead->next = NULL;
-	copyHead = firstElem;
-	return (copyHead);
+	copy_head->next = NULL;
+	copy_head = first_elem;
+	return (copy_head);
 }
 
 void	sort_three_elem(t_node **headA)
@@ -39,22 +39,19 @@ void	sort_three_elem(t_node **headA)
 	}
 	else
 	{
-		// A > B > C
 		if ((*headA)->value > (*headA)->next->value
 			&& (*headA)->next->value > (*headA)->next->next->value)
 		{
 			rotate_a(headA);
 			swap_a(headA);
 		}
-		// A < B > C
 		else if ((*headA)->value < (*headA)->next->value
 			&& (*headA)->next->value > (*headA)->next->next->value)
 		{
-			reverse(headA);
+			reverse_a(headA);
 			if (!check_list_is_ordered(*headA))
 				swap_a(headA);
 		}
-		// A > B < C
 		else if ((*headA)->value > (*headA)->next->value
 			&& (*headA)->next->value < (*headA)->next->next->value)
 		{
@@ -70,12 +67,18 @@ void	sort_three_elem(t_node **headA)
 
 int	min(int a, int b)
 {
-	return ((a > b) ? b : a);
+	if (a > b)
+		return (b);
+	else
+		return (a);
 }
 
 int	max(int a, int b)
 {
-	return ((a > b) ? a : b);
+	if (a > b)
+		return (a);
+	else
+		return (b);
 }
 
 

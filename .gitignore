@@ -1,5 +1,6 @@
 .vscode
 a.out
+push_swap_insertions_backup.c
 *.exe
 *.o
 checker

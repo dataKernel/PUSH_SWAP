@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:46:58 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/13 21:38:32 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/14 15:58:31 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ void	split_heada_and_headb(t_node **head_a, t_node **head_b);
  * @param head_b ptr on ptr on `t_node`given as the HEAD
  * @return VOID
  */
-void	insertion_into_headA(t_node **head_a, t_node **head_b);
+void	insertion_into_head_a(t_node **head_a, t_node **head_b);
 
 /**
  * @brief free the head and all the nodes from the HEAP
@@ -148,9 +148,11 @@ int		check_nbr_reverse(t_node *head_a, int actualIndex, int insertIndex);
  */
 int		size_list(t_node *head);
 
+void	insertion_ext(int rotate_count, int reverse_count, t_node **head_a, t_node **head_b);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		min(int a, int b);
 int		max(int a, int b);
+int		min_max(int a, int b, int c, int d);
 int		test_str(char c, char *str);
 int		ft_atoi(const char *str);
 
