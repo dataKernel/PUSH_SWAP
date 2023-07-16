@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 13:24:09 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/15 14:12:32 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/16 08:50:16 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,20 +109,16 @@ int index_b)
 		current_b = current_b->next;
 		i++;
 	}
-	actual.ra = check_nbr_rotate(*head_a, actual_index, 
+	actual.ra = check_nbr_rotate(*head_a, actual_index,
 			check_index_insert(*head_a, current_b->value));
-	actual.rra = check_nbr_reverse(*head_a, actual_index, 
+	actual.rra = check_nbr_reverse(*head_a, actual_index,
 			check_index_insert(*head_a, current_b->value));
 	actual.rb = index_b;
 	actual.rrb = (size_list(*head_b) - index_b) % size_list(*head_b);
 	if (max(actual.ra, actual.rb) < max(actual.rra, actual.rrb))
-	{
 		insert_rotate(head_a, head_b, actual);
-	}
 	else
-	{
 		insert_reverse(head_a, head_b, actual);
-	}
 }
 
 void	insertion_into_head_a(t_node **head_a, t_node **head_b)
@@ -139,7 +135,6 @@ void	insertion_into_head_a(t_node **head_a, t_node **head_b)
 		insert_one(head_a, head_b, actual_index, index_b);
 		actual_index = check_index_insert(*head_a, (*head_a)->value);
 	}
-	printf("bug\n");
 	rotate_count = check_nbr_rotate(*head_a, actual_index, 0);
 	reverse_count = check_nbr_reverse(*head_a, actual_index, 0);
 	insertion_ext(rotate_count, reverse_count, head_a, head_b);
