@@ -6,11 +6,12 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 21:00:25 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/18 11:50:52 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/18 12:52:21 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/stack.h"
+#include "PRINTF/ft_printf.h"
 #include "include/stack_utils.h"
 #include <stdio.h>
 
@@ -26,6 +27,7 @@ void	push_a(t_node **headB, t_node **headA)
 	*headA = *headB;
 	(*headA)->next = first_element;
 	*headB = next_element;
+	ft_printf("pa\n");
 }
 
 void	push_b(t_node **headA, t_node **headB)

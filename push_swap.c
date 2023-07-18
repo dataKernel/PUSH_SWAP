@@ -6,13 +6,13 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:54:22 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/16 08:48:04 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/18 12:42:39 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/stack.h"
+#include "PRINTF/ft_printf.h"
 #include "include/stack_utils.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 void	init_list(t_node **headA, int argc, char *argv[])
@@ -44,7 +44,7 @@ void	arguments_checking(int argc, char **argv)
 			{
 				if (argv[i][j] != '-' || argc < 2)
 				{
-					printf("Error\n");
+					ft_printf("Error\n");
 					exit(1);
 				}
 			}
@@ -62,10 +62,10 @@ int	main(int argc, char *argv[])
 	head_a = NULL;
 	head_b = NULL;
 	arguments_checking(argc, argv);
-	init_list(&head_a, argc, argv);
-	split_heada_and_headb(&head_a, &head_b);
-	show_results(head_a, head_b);
-	insertion_into_head_a(&head_a, &head_b);
-	show_results(head_a, head_b);
+	// init_list(&head_a, argc, argv);
+	// split_heada_and_headb(&head_a, &head_b);
+	// show_results(head_a, head_b);
+	// insertion_into_head_a(&head_a, &head_b);
+	// show_results(head_a, head_b);
 	return (0);
 }

@@ -13,7 +13,7 @@ clean:
 fclean:
 	rm -f push_swap
 	find . -type f -name '*.o' -delete
-push_swap: $(OBJS)
+push_swap: $(OBJS) PRINTF/libftprintf.a
 	$(CC) $(OBJS) PRINTF/libftprintf.a -o $(NAME)
 
 ###SRC###
@@ -49,5 +49,4 @@ norm_fuker.o: norm_fuker.c include/stack.h
 
 ###PRINT###
 PRINTF/libftprintf.a: PRINTF/libftprintf.a
-	make -C PRINTF fclean
 	make -C PRINTF

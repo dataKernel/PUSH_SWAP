@@ -1,4 +1,16 @@
-#include "include/stack.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft_utils.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/18 12:22:56 by data_kernel       #+#    #+#             */
+/*   Updated: 2023/07/18 12:59:36 by data_kernel      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../include/stack.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -67,14 +79,9 @@ int	ft_atoi(const char *str)
 	return (result * check);
 }
 
-void	ft_memset()
-{
-	//...
-}
-
 void	show_results(t_node *headA, t_node *headB)
 {
-	int i;
+	int	i;
 
 	printf("============================================\n");
 	printf("--------STACK_A-------|\n");
@@ -96,4 +103,23 @@ void	show_results(t_node *headA, t_node *headB)
 	}
 	printf("----------------------|\n");
 	printf("============================================\n\n");
+}
+
+void	*ft_memset(void *b, int c, size_t len)
+{
+	size_t			i;
+	unsigned char	*component;
+	unsigned char	value;
+
+	if (!b)
+		return (NULL);
+	component = b;
+	value = c;
+	i = 0;
+	while (i < len)
+	{
+		component[i] = value;
+		i++;
+	}
+	return (b);
 }
