@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsaint-l <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 14:14:07 by lsaint-l          #+#    #+#             */
-/*   Updated: 2022/04/22 13:09:08 by lancelot         ###   ########.fr       */
+/*   Updated: 2023/07/18 16:31:47 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strrchr(const char *s, int c)
 	ptr = (char *)s;
 	i = 0;
 	while (ptr[i])
-	{	
+	{
 		if (ptr[i] == (char)c)
 			last_posi = i;
 		i++;

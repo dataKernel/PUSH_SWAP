@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap_utils_2.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/18 17:14:06 by data_kernel       #+#    #+#             */
+/*   Updated: 2023/07/18 17:14:30 by data_kernel      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "include/stack.h"
 #include "include/stack_utils.h"
 #include <stdio.h>
@@ -26,10 +38,10 @@ t_node	*copy_head(t_node *head)
 
 void	sort_three_elem(t_node **headA)
 {
-	t_node	*copyTestHead;
-	t_node	*oldHead;
+	t_node	*copy_test_head;
+	t_node	*old_head;
 
-	copyTestHead = copy_head(*headA);
+	copy_test_head = copy_head(*headA);
 	if (size_list(*headA) == 2)
 	{
 		if ((*headA)->value > (*headA)->next->value)
@@ -39,30 +51,9 @@ void	sort_three_elem(t_node **headA)
 	}
 	else
 	{
-		if ((*headA)->value > (*headA)->next->value
-			&& (*headA)->next->value > (*headA)->next->next->value)
-		{
-			rotate_a(headA);
-			swap_a(headA);
-		}
-		else if ((*headA)->value < (*headA)->next->value
-			&& (*headA)->next->value > (*headA)->next->next->value)
-		{
-			reverse_a(headA);
-			if (!check_list_is_ordered(*headA))
-				swap_a(headA);
-		}
-		else if ((*headA)->value > (*headA)->next->value
-			&& (*headA)->next->value < (*headA)->next->next->value)
-		{
-			swap_a(&copyTestHead);
-			if (check_list_is_ordered(copyTestHead))
-				swap_a(headA);
-			else
-				rotate_a(headA);
-		}
+		sort_three_elem_ext(headA, copy_test_head);
 	}
-	free_list(copyTestHead);
+	free_list(copy_test_head);
 }
 
 int	min(int a, int b)
@@ -81,10 +72,9 @@ int	max(int a, int b)
 		return (b);
 }
 
-
 void	free_list(t_node *head)
 {
-	t_node *next;
+	t_node	*next;
 
 	while (head)
 	{
