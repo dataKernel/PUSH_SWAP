@@ -40,8 +40,8 @@ push_swap_utils.o: push_swap_utils.c include/stack.h include/stack_utils.h
 push_swap_utils_2.o: push_swap_utils_2.c include/stack.h include/stack_utils.h
 	$(CC) $(FLAGS) push_swap_utils_2.c -c -o push_swap_utils_2.o
 
-libft_utils.o: libft_utils.c include/stack.h
-	$(CC) $(FLAGS) libft_utils.c -c -o libft_utils.o
+libft_utils.o: libft/libft_utils.c include/stack.h
+	$(CC) $(FLAGS) libft/libft_utils.c -c -o libft_utils.o
 
 norm_fuker.o: norm_fuker.c include/stack.h
 	$(CC) $(FLAGS) norm_fuker.c -c -o norm_fuker.o
