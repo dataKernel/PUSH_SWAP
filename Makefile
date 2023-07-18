@@ -8,12 +8,13 @@ OBJS	= 	libft_utils.o push_swap_insertions.o push_swap_utils.o \
 			norm_fuker.o
 ###RULES###
 all: $(NAME)
-
-fclean: 
+clean:
+	rm -f push_swap
+fclean:
+	rm -f push_swap
 	find . -type f -name '*.o' -delete
-
 push_swap: $(OBJS)
-	$(CC) $(OBJS) -o $(NAME)
+	$(CC) $(OBJS) PRINTF/libftprintf.a -o $(NAME)
 
 ###SRC###
 push_swap.o: push_swap.c include/stack.h include/stack_utils.h
@@ -45,3 +46,8 @@ libft_utils.o: libft/libft_utils.c include/stack.h
 
 norm_fuker.o: norm_fuker.c include/stack.h
 	$(CC) $(FLAGS) norm_fuker.c -c -o norm_fuker.o
+
+###PRINT###
+PRINTF/libftprintf.a: PRINTF/libftprintf.a
+	make -C PRINTF fclean
+	make -C PRINTF
