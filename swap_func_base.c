@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 21:00:25 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/13 21:11:49 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/18 11:09:04 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	push_a(t_node **headB, t_node **headA)
 	t_node	*first_element;
 	t_node	*next_element;
 
-	if (headB == NULL || *headB == NULL || (*headB)->next == NULL)
+	if (headB == NULL || *headB == NULL)
 		return ;
 	first_element = *headA;
 	next_element = (*headB)->next;
@@ -33,7 +33,7 @@ void	push_b(t_node **headA, t_node **headB)
 	t_node	*first_element;
 	t_node	*next_element;
 
-	if (headA == NULL || *headA == NULL || (*headA)->next == NULL)
+	if (headA == NULL || *headA == NULL)
 		return ;
 	first_element = *headB;
 	next_element = (*headA)->next;
