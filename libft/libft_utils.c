@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 12:22:56 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/18 14:50:39 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/18 15:02:00 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	show_results(t_node *headA, t_node *headB)
 {
 	int	i;
 
-	ft_printf("============================================\n");
+	ft_printf("===========================================\n");
 	ft_printf("--------STACK_A-------|\n");
 	i = 1;
 	while (headA)
