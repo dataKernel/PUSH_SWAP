@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:54:22 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/18 12:42:39 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/18 14:51:16 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,10 @@ int	main(int argc, char *argv[])
 	head_a = NULL;
 	head_b = NULL;
 	arguments_checking(argc, argv);
-	// init_list(&head_a, argc, argv);
-	// split_heada_and_headb(&head_a, &head_b);
-	// show_results(head_a, head_b);
-	// insertion_into_head_a(&head_a, &head_b);
-	// show_results(head_a, head_b);
+	init_list(&head_a, argc, argv);
+	split_heada_and_headb(&head_a, &head_b);
+	show_results(head_a, head_b);
+	insertion_into_head_a(&head_a, &head_b);
+	show_results(head_a, head_b);
 	return (0);
 }

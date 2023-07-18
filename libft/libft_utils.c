@@ -6,11 +6,12 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 12:22:56 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/18 12:59:36 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/18 14:50:39 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/stack.h"
+#include "../PRINTF/ft_printf.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -83,26 +84,26 @@ void	show_results(t_node *headA, t_node *headB)
 {
 	int	i;
 
-	printf("============================================\n");
-	printf("--------STACK_A-------|\n");
+	ft_printf("============================================\n");
+	ft_printf("--------STACK_A-------|\n");
 	i = 1;
 	while (headA)
 	{
-		printf("Element(A)[%i]->%i      |\n", i, headA->value);
+		ft_printf("Element(A)[%i]->%i      |\n", i, headA->value);
 		headA = headA->next;
 		i++;
 	}
-	printf("----------------------|\n\n");
-	printf("--------STACK_B-------|\n");
+	ft_printf("----------------------|\n\n");
+	ft_printf("--------STACK_B-------|\n");
 	i = 1;
 	while (headB)
 	{
-		printf("Element(B)[%i]->%i      |\n", i, headB->value);
+		ft_printf("Element(B)[%i]->%i      |\n", i, headB->value);
 		headB = headB->next;
 		i++;
 	}
-	printf("----------------------|\n");
-	printf("============================================\n\n");
+	ft_printf("----------------------|\n");
+	ft_printf("============================================\n\n");
 }
 
 void	*ft_memset(void *b, int c, size_t len)
