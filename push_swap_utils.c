@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
+/*   By: lsaint-l <lsaint-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 21:31:40 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/15 14:55:41 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/23 16:52:13 by lsaint-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/stack.h"
 #include "include/stack_utils.h"
+#include <stdlib.h>
 #include <stdio.h>
 
 int	check_index_insert(t_node *head, int value)
@@ -69,7 +70,7 @@ void	split_heada_and_headb(t_node **head_a, t_node **head_b)
 		return ;
 	while (size_list(*head_a) > 3)
 	{
-		push_a(head_a, head_b);
+		push_b(head_a, head_b);
 	}
 	sort_three_elem(head_a);
 }

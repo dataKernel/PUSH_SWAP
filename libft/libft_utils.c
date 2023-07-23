@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   libft_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
+/*   By: lsaint-l <lsaint-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 12:22:56 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/18 15:02:00 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/23 15:37:57 by lsaint-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/stack.h"
 #include "../PRINTF/ft_printf.h"
-#include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
 
 int	test_str(char c, char *str)
 {
@@ -78,6 +79,17 @@ int	ft_atoi(const char *str)
 		str++;
 	}
 	return (result * check);
+}
+
+void	ft_putstr_fd(char *str, int fd)
+{
+	int		i;
+	if (!str)
+		return ;
+	i = 0;
+	while(str[i])
+		i++;
+	write(fd, str, i);
 }
 
 void	show_results(t_node *headA, t_node *headB)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_func_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
+/*   By: lsaint-l <lsaint-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 21:00:25 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/18 14:49:00 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/20 21:18:33 by lsaint-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	push_a(t_node **headB, t_node **headA)
 	t_node	*first_element;
 	t_node	*next_element;
 
+	ft_printf("pa\n");
 	if (headB == NULL || *headB == NULL)
 		return ;
 	first_element = *headA;
@@ -27,7 +28,6 @@ void	push_a(t_node **headB, t_node **headA)
 	*headA = *headB;
 	(*headA)->next = first_element;
 	*headB = next_element;
-	ft_printf("pa\n");
 }
 
 void	push_b(t_node **headA, t_node **headB)
@@ -35,6 +35,7 @@ void	push_b(t_node **headA, t_node **headB)
 	t_node	*first_element;
 	t_node	*next_element;
 
+	ft_printf("pb\n");
 	if (headA == NULL || *headA == NULL)
 		return ;
 	first_element = *headB;
@@ -48,6 +49,7 @@ void	swap_a(t_node **headA)
 {
 	t_node	*old_head;
 
+	ft_printf("sa\n");
 	if (headA == NULL || *headA == NULL || (*headA)->next == NULL)
 		return ;
 	old_head = *headA;
@@ -60,6 +62,7 @@ void	swap_b(t_node **headB)
 {
 	t_node	*old_head;
 
+	ft_printf("sb\n");
 	if (headB == NULL || *headB == NULL || (*headB)->next == NULL)
 		return ;
 	old_head = *headB;
@@ -70,8 +73,7 @@ void	swap_b(t_node **headB)
 
 void	swap_all(t_node **headA, t_node **headB)
 {
-	if (headA != NULL || *headA != NULL || (*headA)->next != NULL)
-		swap_a(headA);
-	if (headB != NULL || *headB != NULL || (*headB)->next != NULL)
-		swap_b(headB);
+	ft_printf("ss\n");
+	swap_a(headA);
+	swap_b(headB);
 }

@@ -3,6 +3,7 @@ a.out
 push_swap_insertions_backup.c
 *.exe
 *.o
+*.a
 checker
 push_swap
 script.c

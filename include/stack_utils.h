@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
+/*   By: lsaint-l <lsaint-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:46:58 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/18 17:13:42 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/23 15:40:01 by lsaint-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,6 +148,7 @@ int		check_nbr_reverse(t_node *head_a, int actualIndex, int insertIndex);
  */
 int		size_list(t_node *head);
 
+void	ft_putstr_fd(char *str, int fd);
 void	sort_three_elem_ext(t_node **head_a, t_node *copy_head);
 void	insertion_ext(int r, int rr, t_node **head_a, t_node **head_b);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);

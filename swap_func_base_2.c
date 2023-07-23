@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   swap_func_base_2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
+/*   By: lsaint-l <lsaint-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 21:24:14 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/13 21:25:38 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/20 20:33:50 by lsaint-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/stack.h"
 #include "include/stack_utils.h"
+#include "PRINTF/ft_printf.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -39,6 +40,8 @@ void	rotate_a(t_node **headA)
 	t_node	*old_head;
 	t_node	*position;
 
+	if (!(*headA)->state)
+		ft_printf("ra\n");
 	if (headA == NULL || *headA == NULL)
 		return ;
 	old_head = *headA;
@@ -60,6 +63,8 @@ void	rotate_b(t_node **headB)
 	t_node	*old_head;
 	t_node	*position;
 
+	if (!(*headB)->state)
+		ft_printf("rb\b");
 	if (headB == NULL || *headB == NULL)
 		return ;
 	old_head = *headB;

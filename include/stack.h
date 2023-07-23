@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
+/*   By: lsaint-l <lsaint-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:50:03 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/14 18:04:07 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/20 16:54:29 by lsaint-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 typedef struct s_node
 {
 	int				value;
+	int				state;
 	struct s_node	*next;
 }t_node;
 
