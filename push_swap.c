@@ -6,7 +6,7 @@
 /*   By: lsaint-l <lsaint-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:54:22 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/23 19:47:40 by lsaint-l         ###   ########.fr       */
+/*   Updated: 2023/07/23 20:51:17 by lsaint-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,24 @@ void	init_list(t_node **headA, int argc, char *argv[])
 void	arguments_checking(int argc, char **argv)
 {
 	int		i;
+	int		j;
 
-	i = 1;
 	if (argc < 2)
 	{
 		ft_putstr_fd("Error\n", 2);
 		exit(1);
+	}
+	i = 1;
+	while (i < argc - 1)
+	{
+		j = 0;
+		if (argv[i][j] < '0' || argv[i][j] > '9')
+		{
+			ft_putstr_fd("Error\n", 2);
+			exit(1);
+		}
+		j++;
+		i++;
 	}
 }
 
