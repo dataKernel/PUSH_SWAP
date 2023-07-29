@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:46:58 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/29 21:50:12 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/29 22:16:45 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,9 @@ void	show_results(t_node *head_a, t_node *head_b);
  * @param head ptr on ptr on `t_node` given as the HEAD
  * @param argc integer representing the numbers of arguments given by prog
  * @param argv string array representing the values of arguments given by prog
- * @param split a boolean to check if the list is created from split elements 
- * or classical argv
  * @return VOID
  */
-void	init_list(t_node **head_a, int argc, char *argv[], bool split);
+void	init_list(t_node **head_a, int argc, char *argv[]);
 
 /**
  * @brief check from the standard input what swap_function to call to apply on

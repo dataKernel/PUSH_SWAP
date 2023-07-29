@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:54:22 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/29 21:55:31 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/29 22:23:21 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void	init_list(t_node **headA, int argc, char *argv[], bool split)
+void	init_list(t_node **headA, int argc, char *argv[])
 {
 	t_node	*nodecreation;
 	int		i;
@@ -30,7 +30,6 @@ void	init_list(t_node **headA, int argc, char *argv[], bool split)
 		j = 1;
 	while (j < argc)
 	{
-		printf("argv[%i]->%s\n", i, argv[i]);
 		nodecreation = create_node(ft_atoi(argv[i]));
 		push_element(headA, nodecreation);
 		i--;
@@ -78,7 +77,8 @@ int	check_space(char *str)
 	return (space + 1);
 }
 
-void	check_arguments(int argc, char *argv[], t_node *head_a, t_node *head_b)
+void	check_arguments(int argc, char *argv[], 
+t_node **head_a, t_node **head_b)
 {
 	char	**split_array;
 
@@ -91,13 +91,12 @@ void	check_arguments(int argc, char *argv[], t_node *head_a, t_node *head_b)
 	{
 		split_array = ft_split(argv[1], ' ');
 		check_argv_alpha(argc, split_array);
-		init_list(&head_a, check_space(argv[1]), split_array, true);
-		show_results(head_a, head_b);
+		init_list(head_a, check_space(argv[1]), split_array);
 	}
 	else
 	{
 		check_argv_alpha(argc, argv);
-		init_list(&head_a, argc, argv, false);
+		init_list(head_a, argc, argv);
 	}
 }
 
@@ -108,8 +107,7 @@ int	main(int argc, char *argv[])
 
 	head_a = NULL;
 	head_b = NULL;
-	check_arguments(argc, argv, head_a, head_b);
-	show_results(head_a, head_b);
+	check_arguments(argc, argv, &head_a, &head_b);
 	split_heada_and_headb(&head_a, &head_b);
 	insertion_into_head_a(&head_a, &head_b);
 	show_results(head_a, head_b);
