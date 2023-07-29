@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsaint-l <lsaint-l@student.42.fr>          +#+  +:+       +#+        */
+/*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 12:22:56 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/23 15:37:57 by lsaint-l         ###   ########.fr       */
+/*   Updated: 2023/07/29 21:50:04 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,33 +24,6 @@ int	test_str(char c, char *str)
 			return (1);
 	}
 	return (0);
-}
-
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
-{
-	unsigned char	*str1;
-	unsigned char	*str2;
-	size_t			i;
-	int				result;
-
-	str1 = (unsigned char *)s1;
-	str2 = (unsigned char *)s2;
-	i = 0;
-	result = 0;
-	while (i < n)
-	{
-		if (str1[i] != str2[i] || str1[i] == '\0')
-		{
-			result = str1[i] - str2[i];
-			break ;
-		}
-		i++;
-	}
-	if (result > 0)
-		result = 1;
-	else if (result < 0)
-		result = -1;
-	return (result);
 }
 
 int	ft_atoi(const char *str)
@@ -81,17 +54,6 @@ int	ft_atoi(const char *str)
 	return (result * check);
 }
 
-void	ft_putstr_fd(char *str, int fd)
-{
-	int		i;
-	if (!str)
-		return ;
-	i = 0;
-	while(str[i])
-		i++;
-	write(fd, str, i);
-}
-
 void	show_results(t_node *headA, t_node *headB)
 {
 	int	i;
@@ -116,23 +78,4 @@ void	show_results(t_node *headA, t_node *headB)
 	}
 	ft_printf("----------------------|\n");
 	ft_printf("============================================\n\n");
-}
-
-void	*ft_memset(void *b, int c, size_t len)
-{
-	size_t			i;
-	unsigned char	*component;
-	unsigned char	value;
-
-	if (!b)
-		return (NULL);
-	component = b;
-	value = c;
-	i = 0;
-	while (i < len)
-	{
-		component[i] = value;
-		i++;
-	}
-	return (b);
 }

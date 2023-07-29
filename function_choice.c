@@ -6,11 +6,12 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 20:48:51 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/14 16:02:14 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/29 22:00:09 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/stack.h"
+#include "PRINTF/libft/libft.h"
 #include "include/stack_utils.h"
 
 // inclusions pour read()

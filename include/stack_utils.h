@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsaint-l <lsaint-l@student.42.fr>          +#+  +:+       +#+        */
+/*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:46:58 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/23 15:40:01 by lsaint-l         ###   ########.fr       */
+/*   Updated: 2023/07/29 21:50:12 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,11 @@ void	show_results(t_node *head_a, t_node *head_b);
  * @param head ptr on ptr on `t_node` given as the HEAD
  * @param argc integer representing the numbers of arguments given by prog
  * @param argv string array representing the values of arguments given by prog
+ * @param split a boolean to check if the list is created from split elements 
+ * or classical argv
  * @return VOID
  */
-void	init_list(t_node **head_a, int argc, char *argv[]);
+void	init_list(t_node **head_a, int argc, char *argv[], bool split);
 
 /**
  * @brief check from the standard input what swap_function to call to apply on
@@ -151,7 +153,6 @@ int		size_list(t_node *head);
 void	ft_putstr_fd(char *str, int fd);
 void	sort_three_elem_ext(t_node **head_a, t_node *copy_head);
 void	insertion_ext(int r, int rr, t_node **head_a, t_node **head_b);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		min(int a, int b);
 int		max(int a, int b);
 int		min_max(int a, int b, int c, int d);

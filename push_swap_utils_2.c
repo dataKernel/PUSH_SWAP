@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils_2.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsaint-l <lsaint-l@student.42.fr>          +#+  +:+       +#+        */
+/*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 17:14:06 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/20 20:50:21 by lsaint-l         ###   ########.fr       */
+/*   Updated: 2023/07/28 19:45:12 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,9 @@ void	sort_three_elem(t_node **headA)
 	t_node	*old_head;
 
 	copy_test_head = copy_head(*headA);
-	if (size_list(*headA) == 2)
+	if (size_list(*headA) == 1)
+		return ;
+	else if (size_list(*headA) == 2)
 	{
 		if ((*headA)->value > (*headA)->next->value)
 			swap_a(headA);

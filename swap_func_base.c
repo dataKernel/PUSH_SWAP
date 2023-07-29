@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_func_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsaint-l <lsaint-l@student.42.fr>          +#+  +:+       +#+        */
+/*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 21:00:25 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/20 21:18:33 by lsaint-l         ###   ########.fr       */
+/*   Updated: 2023/07/28 22:08:10 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	push_a(t_node **headB, t_node **headA)
 	t_node	*first_element;
 	t_node	*next_element;
 
-	ft_printf("pa\n");
+	ft_putstr_fd("pa\n", 1);
 	if (headB == NULL || *headB == NULL)
 		return ;
 	first_element = *headA;
