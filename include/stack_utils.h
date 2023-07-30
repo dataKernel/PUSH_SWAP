@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:46:58 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/29 22:16:45 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/30 15:40:27 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,6 +148,7 @@ int		check_nbr_reverse(t_node *head_a, int actualIndex, int insertIndex);
  */
 int		size_list(t_node *head);
 
+bool    check_doublons(int argc, char *argv);
 void	ft_putstr_fd(char *str, int fd);
 void	sort_three_elem_ext(t_node **head_a, t_node *copy_head);
 void	insertion_ext(int r, int rr, t_node **head_a, t_node **head_b);

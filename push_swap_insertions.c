@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 13:24:09 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/28 21:12:02 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/29 22:53:46 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	get_best_b_to_insert(t_node *head_a, t_node *head_b, int ind)
 	int						insert_index;
 	int						nb_insert;
 	int						i;
-	
+
 	ft_memset(&actual, 0, sizeof(t_rotate_and_reverse));
 	i = 0;
 	mini.value = -1;

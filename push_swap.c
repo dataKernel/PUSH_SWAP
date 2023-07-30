@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:54:22 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/29 22:23:21 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/29 23:55:16 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ t_node **head_a, t_node **head_b)
 	if (argc < 2)
 	{
 		ft_putstr_fd("Error\n", 2);
-		exit(1);
+		exit(0);
 	}
 	else if (argc == 2 && check_space(argv[1]) > 1)
 	{
@@ -108,8 +108,10 @@ int	main(int argc, char *argv[])
 	head_a = NULL;
 	head_b = NULL;
 	check_arguments(argc, argv, &head_a, &head_b);
+	//show_results(head_a, head_b);
+	if (check_list_is_ordered(head_a))
+		return (0);
 	split_heada_and_headb(&head_a, &head_b);
 	insertion_into_head_a(&head_a, &head_b);
-	show_results(head_a, head_b);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 12:22:56 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/29 21:50:04 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/30 15:39:51 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	ft_atoi(const char *str)
 	while (*str >= '0' && *str <= '9')
 	{
 		tmp_result = ((long)(result)) * 10 + ((long)(*str - '0'));
-		if (check == 1 && tmp_result >= 2147483648 || tmp_result >= 2147483649)
+		if (check == 1 && (tmp_result >= 2147483648 || tmp_result >= 2147483649))
 		{
 			printf("Error\n");
 			exit(-1);
@@ -52,6 +52,17 @@ int	ft_atoi(const char *str)
 		str++;
 	}
 	return (result * check);
+}
+
+bool	check_doublons(int argc, char *argv[])
+{
+	int		i;
+	int		j;
+	
+	i = 0;
+	j = i + 1;
+	while(i < argc)
+	return(true);
 }
 
 void	show_results(t_node *headA, t_node *headB)
