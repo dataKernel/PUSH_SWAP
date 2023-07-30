@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 12:22:56 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/30 15:39:51 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/30 18:04:58 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include "../PRINTF/ft_printf.h"
 #include <stdlib.h>
 #include <unistd.h>
-#include <stdio.h>
 
 int	test_str(char c, char *str)
 {
@@ -42,9 +41,9 @@ int	ft_atoi(const char *str)
 	while (*str >= '0' && *str <= '9')
 	{
 		tmp_result = ((long)(result)) * 10 + ((long)(*str - '0'));
-		if (check == 1 && (tmp_result >= 2147483648 || tmp_result >= 2147483649))
+		if ((check == 1 && tmp_result >= 2147483648) || tmp_result >= 2147483649)
 		{
-			printf("Error\n");
+			ft_printf("Error\n");
 			exit(-1);
 		}
 		result *= 10;
@@ -54,15 +53,37 @@ int	ft_atoi(const char *str)
 	return (result * check);
 }
 
-bool	check_doublons(int argc, char *argv[])
+int	ft_lstsize(t_node *head_a)
 {
-	int		i;
-	int		j;
-	
-	i = 0;
-	j = i + 1;
-	while(i < argc)
-	return(true);
+	int		size_lst;
+
+	size_lst = 0;
+	while (head_a)
+	{
+		size_lst++;
+		head_a = head_a->next;
+	}
+	return (size_lst);
+}
+
+bool	check_doublons(t_node *head_a)
+{
+	t_node	*i;
+	int		size_list;
+
+	size_list = ft_lstsize(head_a);
+	while(head_a)
+	{
+		i = head_a->next;
+		while(i)
+		{
+			if(head_a->value == i->value)
+				return(true);
+			i = i->next;
+		}
+		head_a = head_a->next;
+	}
+	return(false);
 }
 
 void	show_results(t_node *headA, t_node *headB)
