@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 21:00:25 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/28 22:08:10 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/30 18:49:47 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	push_a(t_node **headB, t_node **headA)
 	t_node	*first_element;
 	t_node	*next_element;
 
-	ft_putstr_fd("pa\n", 1);
+	ft_printf("pa\n");
 	if (headB == NULL || *headB == NULL)
 		return ;
 	first_element = *headA;
@@ -45,11 +45,12 @@ void	push_b(t_node **headA, t_node **headB)
 	*headA = next_element;
 }
 
-void	swap_a(t_node **headA)
+void	swap_a(t_node **headA, bool copy)
 {
 	t_node	*old_head;
 
-	ft_printf("sa\n");
+	if(!copy)
+		ft_printf("sa\n");
 	if (headA == NULL || *headA == NULL || (*headA)->next == NULL)
 		return ;
 	old_head = *headA;
@@ -74,6 +75,6 @@ void	swap_b(t_node **headB)
 void	swap_all(t_node **headA, t_node **headB)
 {
 	ft_printf("ss\n");
-	swap_a(headA);
+	swap_a(headA, false);
 	swap_b(headB);
 }

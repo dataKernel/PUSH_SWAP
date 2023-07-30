@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   norm_fuker.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsaint-l <lsaint-l@student.42.fr>          +#+  +:+       +#+        */
+/*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 12:23:23 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/23 15:01:44 by lsaint-l         ###   ########.fr       */
+/*   Updated: 2023/07/30 18:51:14 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,21 +42,21 @@ void	sort_three_elem_ext(t_node **head_a, t_node *copy_test_head)
 		&& (*head_a)->next->value > (*head_a)->next->next->value)
 	{
 		rotate_a(head_a);
-		swap_a(head_a);
+		swap_a(head_a, false);
 	}
 	else if ((*head_a)->value < (*head_a)->next->value
 		&& (*head_a)->next->value > (*head_a)->next->next->value)
 	{
 		reverse_a(head_a);
 		if (!check_list_is_ordered(*head_a))
-			swap_a(head_a);
+			swap_a(head_a, false);
 	}
 	else if ((*head_a)->value > (*head_a)->next->value
 		&& (*head_a)->next->value < (*head_a)->next->next->value)
 	{
-		swap_a(&copy_test_head);
+		swap_a(&copy_test_head, true);
 		if (check_list_is_ordered(copy_test_head))
-			swap_a(head_a);
+			swap_a(head_a, false);
 		else
 			rotate_a(head_a);
 	}

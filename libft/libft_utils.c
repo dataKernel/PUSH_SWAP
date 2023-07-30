@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 12:22:56 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/30 18:04:58 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/30 19:44:58 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,11 @@ int	ft_atoi(const char *str)
 	while (*str >= '0' && *str <= '9')
 	{
 		tmp_result = ((long)(result)) * 10 + ((long)(*str - '0'));
-		if ((check == 1 && tmp_result >= 2147483648) || tmp_result >= 2147483649)
+		if ((check == 1 && tmp_result >= 2147483648) || 
+			tmp_result >= 2147483649)
 		{
 			ft_printf("Error\n");
-			exit(-1);
+			exit(0);
 		}
 		result *= 10;
 		result += *str - '0';
@@ -72,18 +73,18 @@ bool	check_doublons(t_node *head_a)
 	int		size_list;
 
 	size_list = ft_lstsize(head_a);
-	while(head_a)
+	while (head_a)
 	{
 		i = head_a->next;
-		while(i)
+		while (i)
 		{
-			if(head_a->value == i->value)
-				return(true);
+			if (head_a->value == i->value)
+				return (true);
 			i = i->next;
 		}
 		head_a = head_a->next;
 	}
-	return(false);
+	return (false);
 }
 
 void	show_results(t_node *headA, t_node *headB)

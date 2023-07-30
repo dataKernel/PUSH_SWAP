@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 17:14:06 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/30 16:42:11 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/30 18:49:17 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	sort_three_elem(t_node **headA)
 	else if (size_list(*headA) == 2)
 	{
 		if ((*headA)->value > (*headA)->next->value)
-			swap_a(headA);
+			swap_a(headA, false);
 	}
 	else
 		sort_three_elem_ext(headA, copy_test_head);

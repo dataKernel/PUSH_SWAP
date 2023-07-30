@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   stack.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsaint-l <lsaint-l@student.42.fr>          +#+  +:+       +#+        */
+/*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:50:03 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/20 16:54:29 by lsaint-l         ###   ########.fr       */
+/*   Updated: 2023/07/30 18:47:43 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STACK_H
 # define STACK_H
+
+# include "stdbool.h"
 
 typedef struct s_node
 {
@@ -90,10 +92,11 @@ void	swap_all(t_node **headA, t_node **headB);
  * @brief swap the node value contained by the head with the 2nd node on the list
  * Check if the head or the next element are NULL so meaning that the list has at
  * least a size of 2
+ * @param copy boolean to check the swap is done on src or copy
  * @param headA ptr on ptr on `t_node` given as the HEAD
  * @return `VOID`
  */
-void	swap_a(t_node **headA);
+void	swap_a(t_node **headA, bool copy);
 
 /**
  * @brief swap the node value contained by the head with the 2nd node on the list

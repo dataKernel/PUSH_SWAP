@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 20:48:51 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/29 22:00:09 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/30 18:51:01 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	size_list(t_node *head)
 void	func_choice_base(t_node **headA, t_node **headB, char *str)
 {
 	if (!ft_strncmp(str, "sa", 3))
-		swap_a(headA);
+		swap_a(headA, false);
 	else if (!ft_strncmp(str, "sb", 3))
 		swap_b(headB);
 	else if (!ft_strncmp(str, "ss", 3))
