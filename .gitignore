@@ -1,6 +1,7 @@
 .vscode
 a.out
 push_swap_insertions_backup.c
+test
 push_swap_tester
 *.exe
 *.o
