@@ -1,12 +1,13 @@
 ###VARS###
-NAME 	= 	push_swap
-PRINTF	=	PRINTF/libftprintf.a
-FLAGS 	=		 
-CC 		= 	gcc
-OBJS	= 	libft_utils.o push_swap_insertions.o push_swap_utils.o \
-			push_swap_utils_2.o push_swap.o swap_func_advanced.o \
-			swap_func_base.o swap_func_base_2.o function_choice.o \
-			norm_fuker.o 
+NAME 		= 	push_swap
+PRINTF		=	PRINTF/libftprintf.a
+FLAGS 		=		 
+CC 			= 	gcc
+OBJS		= 	libft_utils.o push_swap_insertions.o push_swap_utils.o \
+				push_swap_utils_2.o push_swap.o swap_func_advanced.o \
+				swap_func_base.o swap_func_base_2.o norm_fuker.o 
+OBJS_BONUS	=	checker.o function_choice.o
+
 ###RULES###
 all: $(NAME)
 clean:
@@ -16,6 +17,9 @@ fclean:
 	find . -type f -name '*.o' -delete
 push_swap: $(OBJS) $(PRINTF)
 	$(CC) $(OBJS) -o $(NAME) $(PRINTF)
+checker: $(OBJS_BONUS) $(PRINTF)
+
+
 
 ###SRC###
 push_swap.o: push_swap.c include/stack.h include/stack_utils.h
