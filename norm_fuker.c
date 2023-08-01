@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 12:23:23 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/30 18:51:14 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/30 20:04:39 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,19 @@ int	min_max(int a, int b, int c, int d)
 
 	nb_insert = min(max(a, b), max(c, d));
 	return (nb_insert);
+}
+
+int	size_list(t_node *head)
+{
+	int		size;
+
+	if (head == NULL)
+		return (0);
+	size = 0;
+	while (head)
+	{
+		head = head->next;
+		size++;
+	}
+	return (size);
 }

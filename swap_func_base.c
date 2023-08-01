@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 21:00:25 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/30 18:49:47 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/30 19:46:56 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	swap_a(t_node **headA, bool copy)
 {
 	t_node	*old_head;
 
-	if(!copy)
+	if (!copy)
 		ft_printf("sa\n");
 	if (headA == NULL || *headA == NULL || (*headA)->next == NULL)
 		return ;

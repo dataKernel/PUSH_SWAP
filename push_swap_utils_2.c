@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 17:14:06 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/30 18:49:17 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/08/01 13:38:22 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ t_node	*copy_head(t_node *head)
 void	sort_three_elem(t_node **headA)
 {
 	t_node	*copy_test_head;
-	
+
 	copy_test_head = copy_head(*headA);
 	if (size_list(*headA) == 1)
 		return ;

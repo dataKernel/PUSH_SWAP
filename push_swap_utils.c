@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 21:31:40 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/28 19:43:29 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/08/01 13:28:50 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,19 @@ int	count_rr_or_rrr(int a, int b)
 	return (count);
 }
 
+
+/*
+-3 2 ['0', '1']
+
+-3 2               '0' '1'
+*/
+
 void	split_heada_and_headb(t_node **head_a, t_node **head_b)
 {
+	
 	if (head_a == NULL || *head_a == NULL)
 		return ;
+	//fonction qui push les elements de A dans B jusqua ce qu'il reste mini 3 elems dans A OU que A soit triée
 	while (size_list(*head_a) > 3)
 	{
 		push_b(head_a, head_b);

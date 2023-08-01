@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 20:48:51 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/30 18:51:01 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/08/01 12:50:29 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,7 @@
 #include <sys/uio.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include <stdio.h>
 
-int	size_list(t_node *head)
-{
-	int		size;
-
-	if (head == NULL)
-		return (0);
-	size = 0;
-	while (head)
-	{
-		head = head->next;
-		size++;
-	}
-	return (size);
-}
 
 void	func_choice_base(t_node **headA, t_node **headB, char *str)
 {
@@ -96,15 +81,4 @@ void	exec_swap_func(t_node **headA, t_node **headB)
 			i = 0;
 		}
 	}
-}
-
-bool	check_list_is_ordered(t_node *head)
-{
-	while (head->next)
-	{
-		if (head->value > head->next->value)
-			return (false);
-		head = head->next;
-	}
-	return (true);
 }

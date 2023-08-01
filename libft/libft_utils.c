@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 12:22:56 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/30 19:44:58 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/07/30 20:00:13 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,28 +87,39 @@ bool	check_doublons(t_node *head_a)
 	return (false);
 }
 
-void	show_results(t_node *headA, t_node *headB)
+bool	check_list_is_ordered(t_node *head)
 {
-	int	i;
-
-	ft_printf("===========================================\n");
-	ft_printf("--------STACK_A-------|\n");
-	i = 1;
-	while (headA)
+	while (head->next)
 	{
-		ft_printf("Element(A)[%i]->%i      |\n", i, headA->value);
-		headA = headA->next;
-		i++;
+		if (head->value > head->next->value)
+			return (false);
+		head = head->next;
 	}
-	ft_printf("----------------------|\n\n");
-	ft_printf("--------STACK_B-------|\n");
-	i = 1;
-	while (headB)
-	{
-		ft_printf("Element(B)[%i]->%i      |\n", i, headB->value);
-		headB = headB->next;
-		i++;
-	}
-	ft_printf("----------------------|\n");
-	ft_printf("============================================\n\n");
+	return (true);
 }
+
+// void	show_results(t_node *headA, t_node *headB)
+// {
+// 	int	i;
+
+// 	ft_printf("===========================================\n");
+// 	ft_printf("--------STACK_A-------|\n");
+// 	i = 1;
+// 	while (headA)
+// 	{
+// 		ft_printf("Element(A)[%i]->%i      |\n", i, headA->value);
+// 		headA = headA->next;
+// 		i++;
+// 	}
+// 	ft_printf("----------------------|\n\n");
+// 	ft_printf("--------STACK_B-------|\n");
+// 	i = 1;
+// 	while (headB)
+// 	{
+// 		ft_printf("Element(B)[%i]->%i      |\n", i, headB->value);
+// 		headB = headB->next;
+// 		i++;
+// 	}
+// 	ft_printf("----------------------|\n");
+// 	ft_printf("============================================\n\n");
+// }
