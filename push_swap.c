@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:54:22 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/08/05 16:47:04 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/08/05 18:24:17 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "PRINTF/libft/libft.h"
 #include "include/stack_utils.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 void	init_list(t_node **headA, int argc, char *argv[])
 {
@@ -81,7 +82,12 @@ t_node **head_a, t_node **head_b)
 {
 	char	**split_array;
 
-	if (argc == 2 && check_space(argv[1]) > 1)
+	if (argv[1][ft_strlen(argv[1]) - 1] == ' ' || argv[1][0] == ' ')
+	{
+		ft_putstr_fd("Error\n", 2);
+		exit(0);
+	}
+	else if (argc == 2 && check_space(argv[1]) > 1)
 	{
 		split_array = ft_split(argv[1], ' ');
 		check_argv_alpha(argc, split_array);
