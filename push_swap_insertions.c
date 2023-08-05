@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 13:24:09 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/08/05 17:18:40 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/08/05 19:29:48 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,5 +136,5 @@ void	insertion_into_head_a(t_node **head_a, t_node **head_b)
 	}
 	rotate_count = check_nbr_rotate(*head_a, actual_index, 0);
 	reverse_count = check_nbr_reverse(*head_a, actual_index, 0);
-	insertion_ext(rotate_count, reverse_count, head_a, head_b);
+	insertion_ext(rotate_count, reverse_count, head_a);
 }

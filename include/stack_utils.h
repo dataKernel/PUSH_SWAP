@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:46:58 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/08/05 18:07:36 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/08/05 19:27:45 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,7 +159,7 @@ void			ext_best_b(t_rotate_and_reverse *actual,
 void			free_split_array(char **split_array);
 void			ft_putstr_fd(char *str, int fd);
 void			sort_three_elem_ext(t_node **head_a, t_node *copy_head);
-void			insertion_ext(int r, int rr, t_node **head_a, t_node **head_b);
+void			insertion_ext(int r, int rr, t_node **head_a);
 int				size_list(t_node *head);
 int				min(int a, int b);
 int				max(int a, int b);

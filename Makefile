@@ -1,7 +1,7 @@
 ###VARS###
 NAME 		= 	push_swap
 PRINTF		=	PRINTF/libftprintf.a
-FLAGS 		=		 
+FLAGS 		=	-Wall -Wextra -Werror	 
 CC 			= 	gcc
 OBJS		= 	libft_utils.o push_swap_insertions.o push_swap_utils.o \
 				push_swap_utils_2.o push_swap.o swap_func_advanced.o \
@@ -14,7 +14,10 @@ clean:
 fclean:
 	rm -f push_swap
 	find . -type f -name '*.o' -delete
-	
+re: fclean all
+
+.PHONY: all fclean clean re
+
 push_swap: $(OBJS) $(PRINTF)
 	$(CC) $(OBJS) -o $(NAME) $(PRINTF)
 

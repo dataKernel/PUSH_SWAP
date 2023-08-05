@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:54:22 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/08/05 18:24:17 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/08/05 19:27:09 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,10 @@ void	check_argv_alpha(int argc, char **argv)
 	int		i;
 	int		j;
 
-	i = 1;
+	if (ft_strncmp(argv[0], "./push_swap", ft_strlen(argv[0])))
+		i = 0;
+	else
+		i = 1;
 	while (i <= argc - 1)
 	{
 		j = 0;
@@ -78,7 +81,7 @@ int	check_space(char *str)
 }
 
 void	check_arguments(int argc, char *argv[], 
-t_node **head_a, t_node **head_b)
+t_node **head_a)
 {
 	char	**split_array;
 
@@ -87,10 +90,10 @@ t_node **head_a, t_node **head_b)
 		ft_putstr_fd("Error\n", 2);
 		exit(0);
 	}
-	else if (argc == 2 && check_space(argv[1]) > 1)
+	if (argc == 2 && check_space(argv[1]) > 1)
 	{
 		split_array = ft_split(argv[1], ' ');
-		check_argv_alpha(argc, split_array);
+		check_argv_alpha(check_space(argv[1] + 1), split_array);
 		init_list(head_a, check_space(argv[1]), split_array);
 		free_split_array(split_array);
 	}
@@ -115,7 +118,7 @@ int	main(int argc, char *argv[])
 		return (0);
 	head_a = NULL;
 	head_b = NULL;
-	check_arguments(argc, argv, &head_a, &head_b);
+	check_arguments(argc, argv, &head_a);
 	if (check_list_is_ordered(head_a))
 		return (0);
 	split_heada_and_headb(&head_a, &head_b);
