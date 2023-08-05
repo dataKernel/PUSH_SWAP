@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 21:31:40 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/08/01 13:28:50 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/08/03 01:50:11 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,22 +64,38 @@ int	count_rr_or_rrr(int a, int b)
 	return (count);
 }
 
-
-/*
--3 2 ['0', '1']
-
--3 2               '0' '1'
-*/
-
 void	split_heada_and_headb(t_node **head_a, t_node **head_b)
 {
-	
+	t_array_drop	data_array;
+	int				i;
+	int				j;
+
+	i = 0;
+	j = size_list(*head_a);
 	if (head_a == NULL || *head_a == NULL)
 		return ;
-	//fonction qui push les elements de A dans B jusqua ce qu'il reste mini 3 elems dans A OU que A soit triée
-	while (size_list(*head_a) > 3)
+	data_array = get_tab_elems_drop_optim(*head_a, size_list(*head_a));
+	if((size_list(*head_a) - data_array.size_array) > 3)
 	{
-		push_b(head_a, head_b);
+		while(j > 0)
+		{
+			if(data_array.array[i] == (*head_a)->value)
+			{
+				push_b(head_a, head_b);
+				i++;
+			}
+			else
+				rotate_a(head_a);
+			j--;
+		}
 	}
-	sort_three_elem(head_a);
+	else
+	{
+		while (size_list(*head_a) > 3)
+		{
+			push_b(head_a, head_b);
+		}
+		sort_three_elem(head_a);
+	}
+	free(data_array.array);
 }

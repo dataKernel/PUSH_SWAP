@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 13:24:09 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/29 22:53:46 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/08/03 02:21:51 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int	get_best_b_to_insert(t_node *head_a, t_node *head_b, int ind)
 		}
 		head_b = head_b->next;
 		actual.rb++;
+		i++;
 		actual.rrb = size_list(head_b);
 	}
 	return (mini.index);

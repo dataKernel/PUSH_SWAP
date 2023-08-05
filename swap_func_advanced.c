@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_func_advanced.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsaint-l <lsaint-l@student.42.fr>          +#+  +:+       +#+        */
+/*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:18:32 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/20 21:20:10 by lsaint-l         ###   ########.fr       */
+/*   Updated: 2023/08/03 02:29:17 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,27 @@ void	reverse_a(t_node **head)
 	ft_printf("rra\n");
 	if (head == NULL || *head == NULL)
 		return ;
+	old_head = *head;
+	position = *head;
+	while (position)
+	{
+		if (position->next->next == NULL)
+		{
+			*head = position->next;
+			position->next = NULL;
+			(*head)->next = old_head;
+		}
+		position = position->next;
+	}
+}
+
+void reverse(t_node **head)
+{
+	t_node *old_head;
+	t_node *position;
+
+	if (head == NULL || *head == NULL)
+		return;
 	old_head = *head;
 	position = *head;
 	while (position)
@@ -61,13 +82,13 @@ void	reverse_b(t_node **head)
 void	reverse_all(t_node **headA, t_node **headB)
 {
 	ft_printf("rrr\n");
-	reverse_a(headA);
-	reverse_b(headB);
+	reverse(headA);
+	reverse(headB);
 }
 
 void	rotate_all(t_node **headA, t_node **headB)
 {
 	ft_printf("rr\n");
-	rotate_a(headA);
-	rotate_b(headB);
+	rotate(headA);
+	rotate(headB);
 }
