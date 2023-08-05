@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:46:58 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/08/05 16:12:11 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/08/05 17:30:44 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,9 +150,11 @@ int				check_nbr_reverse(t_node *head_a, int actualIndex,
  * @return VOID
  */
 
-
 t_array_drop	get_tab_elems_drop(t_node *head_a, int size_list);
 bool			check_doublons(t_node *head_a);
+void			split_heada_headb_ext(t_node **head_a, t_node **head_b);
+void			ext_best_b(t_rotate_and_reverse *actual, 
+					t_index_and_value *mini);
 void			free_split_array(char **split_array);
 void			ft_putstr_fd(char *str, int fd);
 void			sort_three_elem_ext(t_node **head_a, t_node *copy_head);

@@ -6,13 +6,12 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 13:24:09 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/08/03 02:21:51 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/08/05 17:18:40 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/stack.h"
 #include "include/stack_utils.h"
-#include "PRINTF/libft/libft.h"
 
 int	get_best_b_to_insert(t_node *head_a, t_node *head_b, int ind)
 {
@@ -22,9 +21,8 @@ int	get_best_b_to_insert(t_node *head_a, t_node *head_b, int ind)
 	int						nb_insert;
 	int						i;
 
-	ft_memset(&actual, 0, sizeof(t_rotate_and_reverse));
 	i = 0;
-	mini.value = -1;
+	ext_best_b(&actual, &mini);
 	while (head_b)
 	{
 		insert_index = check_index_insert(head_a, head_b->value);

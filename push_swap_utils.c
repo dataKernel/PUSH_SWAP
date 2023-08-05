@@ -6,14 +6,14 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 21:31:40 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/08/05 16:53:26 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/08/05 17:28:48 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/stack.h"
 #include "include/stack_utils.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 int	check_index_insert(t_node *head, int value)
 {
@@ -60,27 +60,20 @@ void	split_heada_and_headb(t_node **head_a, t_node **head_b)
 	if (head_a == NULL || *head_a == NULL)
 		return ;
 	data_array = get_tab_elems_drop_optim(*head_a, size_list(*head_a));
-	if((size_list(*head_a) - data_array.size_array) > 3)
+	if ((size_list(*head_a) - data_array.size_array) > 3)
 	{
-		while(j > 0)
+		while (j-- > 0)
 		{
-			if(data_array.array[i] == (*head_a)->value)
+			if (data_array.array[i] == (*head_a)->value)
 			{
 				push_b(head_a, head_b);
 				i++;
 			}
 			else
 				rotate_a(head_a);
-			j--;
 		}
 	}
 	else
-	{
-		while (size_list(*head_a) > 3)
-		{
-			push_b(head_a, head_b);
-		}
-		sort_three_elem(head_a);
-	}
+		split_heada_headb_ext(head_a, head_b);
 	free(data_array.array);
 }
