@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 21:24:14 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/08/03 02:35:55 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/08/05 16:24:37 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,13 @@ void	rotate_a(t_node **headA)
 	}
 }
 
-void rotate(t_node **headA)
+void	rotate(t_node **headA)
 {
-	t_node *old_head;
-	t_node *position;
+	t_node	*old_head;
+	t_node	*position;
 
 	if (headA == NULL || *headA == NULL)
-		return;
+		return ;
 	old_head = *headA;
 	*headA = (*headA)->next;
 	position = *headA;

@@ -5,7 +5,7 @@ FLAGS 		=
 CC 			= 	gcc
 OBJS		= 	libft_utils.o push_swap_insertions.o push_swap_utils.o \
 				push_swap_utils_2.o push_swap.o swap_func_advanced.o \
-				swap_func_base.o swap_func_base_2.o norm_fuker.o opti.o
+				swap_func_base.o swap_func_base_2.o norm_fuker.o norm_fuker_2.o opti.o
 
 ###RULES###
 all: $(NAME)
@@ -46,8 +46,11 @@ push_swap_utils_2.o: push_swap_utils_2.c include/stack.h include/stack_utils.h
 libft_utils.o: libft/libft_utils.c include/stack.h
 	$(CC) $(FLAGS) libft/libft_utils.c -c -o libft_utils.o
 
-norm_fuker.o: norm_fuker.c include/stack.h
+norm_fuker.o: norm_fuker.c include/stack.h include/stack_utils.h
 	$(CC) $(FLAGS) norm_fuker.c -c -o norm_fuker.o
+
+norm_fuker_2.o: norm_fuker_2.c include/stack_utils.h
+	$(CC) $(FLAGS) norm_fuker_2.c -c -o norm_fuker_2.o
 
 opti.o: opti.c include/stack.h include/stack_utils.h
 	$(CC) $(FLAGS) opti.c -c -o opti.o

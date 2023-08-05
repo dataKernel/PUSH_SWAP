@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 20:48:51 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/08/01 12:50:29 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/08/05 16:49:41 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #include <sys/uio.h>
 #include <unistd.h>
 #include <stdlib.h>
-
+#include <stdbool.h>
 
 void	func_choice_base(t_node **headA, t_node **headB, char *str)
 {

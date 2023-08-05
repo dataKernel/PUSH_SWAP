@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 12:22:56 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/08/02 17:45:27 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/08/05 16:46:13 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	ft_atoi(const char *str)
 bool	check_doublons(t_node *head_a)
 {
 	t_node	*i;
-	
+
 	while (head_a)
 	{
 		i = head_a->next;

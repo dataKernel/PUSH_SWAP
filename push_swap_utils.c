@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 21:31:40 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/08/03 01:50:11 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/08/05 16:53:26 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,21 +47,6 @@ int	check_nbr_reverse(t_node *head_a, int actual_index, int insert_index)
 	if (res < 0)
 		res += size_list(head_a);
 	return (res);
-}
-
-int	count_rr_or_rrr(int a, int b)
-{
-	int	count;
-
-	if (a == 0 || b == 0)
-		return (0);
-	count = 0;
-	while ((a - b) > 0 || a > 0)
-	{
-		count++;
-		a--;
-	}
-	return (count);
 }
 
 void	split_heada_and_headb(t_node **head_a, t_node **head_b)

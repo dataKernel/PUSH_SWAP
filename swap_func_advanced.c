@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:18:32 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/08/03 02:29:17 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/08/05 16:24:21 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,13 @@ void	reverse_a(t_node **head)
 	}
 }
 
-void reverse(t_node **head)
+void	reverse(t_node **head)
 {
-	t_node *old_head;
-	t_node *position;
+	t_node	*old_head;
+	t_node	*position;
 
 	if (head == NULL || *head == NULL)
-		return;
+		return ;
 	old_head = *head;
 	position = *head;
 	while (position)

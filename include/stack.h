@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:50:03 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/08/03 02:34:57 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/08/05 16:45:57 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,6 +160,6 @@ void	rotate_all(t_node **headA, t_node **headB);
  */
 void	reverse_all(t_node **headA, t_node **headB);
 void	rotate(t_node **headA);
-void 	reverse(t_node **head);
+void	reverse(t_node **head);
 
 #endif
