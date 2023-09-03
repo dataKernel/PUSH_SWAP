@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:54:22 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/30 19:45:23 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/08/03 00:25:20 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,8 +102,8 @@ t_node **head_a, t_node **head_b)
 
 int	main(int argc, char *argv[])
 {
-	t_node	*head_a;
-	t_node	*head_b;
+	t_node			*head_a;
+	t_node			*head_b;
 
 	if (argc < 2)
 		return (0);

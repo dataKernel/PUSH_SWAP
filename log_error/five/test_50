@@ -1,0 +1,25 @@
+Random list of Five numbers
+0 2 3 1 4
+===========================================
+--------STACK_A-------|
+Element(A)[1]->0      |
+Element(A)[2]->2      |
+Element(A)[3]->3      |
+Element(A)[4]->1      |
+Element(A)[5]->4      |
+----------------------|
+
+--------STACK_B-------|
+----------------------|
+============================================
+
+ra
+ra
+ra
+pb
+ra
+ra
+pa
+rra
+Qtt commands = 21
+Test Checker = is not working

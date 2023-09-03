@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 12:22:56 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/30 20:00:13 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/08/02 17:45:27 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,25 +54,10 @@ int	ft_atoi(const char *str)
 	return (result * check);
 }
 
-int	ft_lstsize(t_node *head_a)
-{
-	int		size_lst;
-
-	size_lst = 0;
-	while (head_a)
-	{
-		size_lst++;
-		head_a = head_a->next;
-	}
-	return (size_lst);
-}
-
 bool	check_doublons(t_node *head_a)
 {
 	t_node	*i;
-	int		size_list;
-
-	size_list = ft_lstsize(head_a);
+	
 	while (head_a)
 	{
 		i = head_a->next;
@@ -98,28 +83,28 @@ bool	check_list_is_ordered(t_node *head)
 	return (true);
 }
 
-// void	show_results(t_node *headA, t_node *headB)
-// {
-// 	int	i;
+void	show_results(t_node *headA, t_node *headB)
+{
+	int	i;
 
-// 	ft_printf("===========================================\n");
-// 	ft_printf("--------STACK_A-------|\n");
-// 	i = 1;
-// 	while (headA)
-// 	{
-// 		ft_printf("Element(A)[%i]->%i      |\n", i, headA->value);
-// 		headA = headA->next;
-// 		i++;
-// 	}
-// 	ft_printf("----------------------|\n\n");
-// 	ft_printf("--------STACK_B-------|\n");
-// 	i = 1;
-// 	while (headB)
-// 	{
-// 		ft_printf("Element(B)[%i]->%i      |\n", i, headB->value);
-// 		headB = headB->next;
-// 		i++;
-// 	}
-// 	ft_printf("----------------------|\n");
-// 	ft_printf("============================================\n\n");
-// }
+	ft_printf("===========================================\n");
+	ft_printf("--------STACK_A-------|\n");
+	i = 1;
+	while (headA)
+	{
+		ft_printf("Element(A)[%i]->%i      |\n", i, headA->value);
+		headA = headA->next;
+		i++;
+	}
+	ft_printf("----------------------|\n\n");
+	ft_printf("--------STACK_B-------|\n");
+	i = 1;
+	while (headB)
+	{
+		ft_printf("Element(B)[%i]->%i      |\n", i, headB->value);
+		headB = headB->next;
+		i++;
+	}
+	ft_printf("----------------------|\n");
+	ft_printf("============================================\n\n");
+}

@@ -6,7 +6,7 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:50:03 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/30 18:47:43 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/08/02 13:52:44 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 # define STACK_H
 
 # include "stdbool.h"
+
+typedef struct s_array_drop
+{
+	int		size_array;
+	int		*array;
+}t_array_drop;
 
 typedef struct s_node
 {
