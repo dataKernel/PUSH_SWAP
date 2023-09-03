@@ -20,7 +20,7 @@ static int	size_long(unsigned long n)
 	int		i;
 
 	i = 0;
-	while (n > 0 || n < 0)
+	while (n > 0)
 	{
 		n /= 16;
 		i++;

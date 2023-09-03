@@ -6,7 +6,11 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:46:58 by data_kernel       #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2023/08/02 15:21:15 by data_kernel      ###   ########.fr       */
+=======
+/*   Updated: 2023/08/05 19:27:45 by data_kernel      ###   ########.fr       */
+>>>>>>> 67496ee3fc9f99d6bdc19ff04e32d79a6995de67
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +29,7 @@
  * @param head ptr on `t_node` given as the HEAD
  * @return return heap reference with list copied
  */
-t_node	*copy_head(t_node *head);
+t_node			*copy_head(t_node *head);
 
 /**
  * @brief print values and element indexation to each nodes from
@@ -34,7 +38,7 @@ t_node	*copy_head(t_node *head);
  * @param head_b ptr on `t_node` given as the copy of the HEAD
  * @return VOID
  */
-void	show_results(t_node *head_a, t_node *head_b);
+void			show_results(t_node *head_a, t_node *head_b);
 
 /**
  * @brief init the list based on the arguments given by the program
@@ -43,7 +47,7 @@ void	show_results(t_node *head_a, t_node *head_b);
  * @param argv string array representing the values of arguments given by prog
  * @return VOID
  */
-void	init_list(t_node **head_a, int argc, char *argv[]);
+void			init_list(t_node **head_a, int argc, char *argv[]);
 
 /**
  * @brief check from the standard input what swap_function to call to apply on
@@ -52,7 +56,7 @@ void	init_list(t_node **head_a, int argc, char *argv[]);
  * @param head_b ptr on ptr on `t_node` given as the HEAD
  * @return VOID
  */
-void	exec_swap_func(t_node **head_a, t_node **head_b);
+void			exec_swap_func(t_node **head_a, t_node **head_b);
 
 /**
  * @brief call the right `base` function depending of the string provided
@@ -61,7 +65,7 @@ void	exec_swap_func(t_node **head_a, t_node **head_b);
  * @param str ptr on `char` given as the string corresponding to the std intput
  * @return VOID
  */
-void	func_choice_base(t_node **head_a, t_node **head_b, char *str);
+void			func_choice_base(t_node **head_a, t_node **head_b, char *str);
 
 /**
  * @brief call the right `advanced` function depending of the string  provided
@@ -69,7 +73,8 @@ void	func_choice_base(t_node **head_a, t_node **head_b, char *str);
  * @param head_b ptr on ptr on `t_node` given as the HEAD
  * @param str ptr on `char` given as the string corresponding to the std intput
  */
-void	func_choice_advanced(t_node **head_a, t_node **head_b, char *str);
+void			func_choice_advanced(t_node **head_a, t_node **head_b,
+					char *str);
 
 /**
  * @brief reorder 3 elem from the list, do nothing if there is not element or
@@ -78,7 +83,7 @@ void	func_choice_advanced(t_node **head_a, t_node **head_b, char *str);
  * @param head_b ptr on ptr on `t_node` given as the HEAD
  * @return VOID
  */
-void	sort_three_elem(t_node **head_a);
+void			sort_three_elem(t_node **head_a);
 
 /**
  * @brief slipting all values from head_a to head_b except for the last 3 values
@@ -86,7 +91,7 @@ void	sort_three_elem(t_node **head_a);
  * @param head_b ptr on ptr on `t_node`given as the HEAD
  * @return VOID
  */
-void	split_heada_and_headb(t_node **head_a, t_node **head_b);
+void			split_heada_and_headb(t_node **head_a, t_node **head_b);
 
 /**
  * @brief insert values from head_b into the right place in head_a
@@ -94,51 +99,53 @@ void	split_heada_and_headb(t_node **head_a, t_node **head_b);
  * @param head_b ptr on ptr on `t_node`given as the HEAD
  * @return VOID
  */
-void	insertion_into_head_a(t_node **head_a, t_node **head_b);
+void			insertion_into_head_a(t_node **head_a, t_node **head_b);
 
 /**
  * @brief free the head and all the nodes from the HEAP
  * @param head ptr on ptr on `t_node` given as the HEAD
  * @return void
  */
-void	free_list(t_node *head);
+void			free_list(t_node *head);
 
 /**
  * @brief check that the list is ordered
  * @param head ptr on `t_node` given as the HEAD
  * @return boolean to know if it's ordered or not
  */
-bool	check_list_is_ordered(t_node *head);
+bool			check_list_is_ordered(t_node *head);
 
 /**
- * @brief check inside the stackA with the value provided where to insert 
+ * @brief check inside the stackA with the value provided where to insert
  * the elem via his indexation.
  * @param head_a ptr on `t_node` given as the HEAD
  * @param value integer from stack B
  * @return integer corresponding to the right index insertion
  */
-int		check_index_insert(t_node *head_a, int value);
+int				check_index_insert(t_node *head_a, int value);
 
 /**
- * @brief check the number of rotate needed to insert the element 
+ * @brief check the number of rotate needed to insert the element
  * at the right place inside the stack A
  * @param head_a ptr on ptr on `t_node` given as the HEAD
  * @param actualIndex integer who defines what is the actual index to insert
  * @param insertIndex integer who defines what is the insert index to insert
  * @return integer representing the number  of rotate operations
  */
-int		check_nbr_rotate(t_node *head_a, int actualIndex, int insertIndex);
+int				check_nbr_rotate(t_node *head_a, int actualIndex,
+					int insertIndex);
 
 /**
- * @brief check the number of reverse to insert the element at the 
+ * @brief check the number of reverse to insert the element at the
  * right place inside the stack A
  * @param head_a ptr on ptr on `t_node` given as the HEAD
  * @param actualIndex integer who defines what if the actual index in the list
- * @param insertIndex integer who defines what is the insert index 
+ * @param insertIndex integer who defines what is the insert index
  * to insert in the list
  * @return integer representing the number of reverse operations
  */
-int		check_nbr_reverse(t_node *head_a, int actualIndex, int insertIndex);
+int				check_nbr_reverse(t_node *head_a, int actualIndex,
+					int insertIndex);
 
 /**
  * @brief iterate the list from the HEAD to get the number of elements
@@ -147,6 +154,7 @@ int		check_nbr_reverse(t_node *head_a, int actualIndex, int insertIndex);
  * @return VOID
  */
 
+<<<<<<< HEAD
 t_array_drop get_tab_elems_drop(t_node *head_a, int size_list);
 bool	check_doublons(t_node *head_a);
 int		size_list(t_node *head);
@@ -159,4 +167,25 @@ int		min_max(int a, int b, int c, int d);
 int		test_str(char c, char *str);
 int		ft_atoi(const char *str);
 
+=======
+t_array_drop	get_tab_elems_drop(t_node *head_a, int size_list);
+bool			check_space_end_str(char *str);
+bool			check_doublons(t_node *head_a);
+void			split_heada_headb_ext(t_node **head_a, t_node **head_b);
+void			ext_best_b(t_rotate_and_reverse *actual, 
+					t_index_and_value *mini);
+void			free_split_array(char **split_array);
+void			ft_putstr_fd(char *str, int fd);
+void			sort_three_elem_ext(t_node **head_a, t_node *copy_head);
+void			insertion_ext(int r, int rr, t_node **head_a);
+int				size_list(t_node *head);
+int				min(int a, int b);
+int				max(int a, int b);
+int				min_max(int a, int b, int c, int d);
+int				test_str(char c, char *str);
+int				ft_atoi(const char *str);
+t_array_drop	get_tab_elems_drop_from_index(t_node *head_a, int size_list,
+					int index);
+t_array_drop	get_tab_elems_drop_optim(t_node *head_a, int size_list);
+>>>>>>> 67496ee3fc9f99d6bdc19ff04e32d79a6995de67
 #endif

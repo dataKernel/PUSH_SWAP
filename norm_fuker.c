@@ -6,14 +6,14 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 12:23:23 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/07/30 20:04:39 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/08/05 19:27:33 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/stack.h"
 #include "include/stack_utils.h"
 
-void	insertion_ext(int r, int rr, t_node **head_a, t_node **head_b)
+void	insertion_ext(int r, int rr, t_node **head_a)
 {
 	int	i;
 

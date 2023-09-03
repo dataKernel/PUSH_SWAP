@@ -6,7 +6,11 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:50:03 by data_kernel       #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2023/08/02 13:52:44 by data_kernel      ###   ########.fr       */
+=======
+/*   Updated: 2023/08/05 16:45:57 by data_kernel      ###   ########.fr       */
+>>>>>>> 67496ee3fc9f99d6bdc19ff04e32d79a6995de67
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,5 +163,7 @@ void	rotate_all(t_node **headA, t_node **headB);
  * @return `VOID`
  */
 void	reverse_all(t_node **headA, t_node **headB);
+void	rotate(t_node **headA);
+void	reverse(t_node **head);
 
 #endif

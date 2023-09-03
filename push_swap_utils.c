@@ -6,14 +6,14 @@
 /*   By: data_kernel <data_kernel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 21:31:40 by data_kernel       #+#    #+#             */
-/*   Updated: 2023/08/03 00:43:02 by data_kernel      ###   ########.fr       */
+/*   Updated: 2023/08/05 17:28:48 by data_kernel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/stack.h"
 #include "include/stack_utils.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 int	check_index_insert(t_node *head, int value)
 {
@@ -49,6 +49,7 @@ int	check_nbr_reverse(t_node *head_a, int actual_index, int insert_index)
 	return (res);
 }
 
+<<<<<<< HEAD
 int	count_rr_or_rrr(int a, int b)
 {
 	int	count;
@@ -64,6 +65,8 @@ int	count_rr_or_rrr(int a, int b)
 	return (count);
 }
 
+=======
+>>>>>>> 67496ee3fc9f99d6bdc19ff04e32d79a6995de67
 void	split_heada_and_headb(t_node **head_a, t_node **head_b)
 {
 	t_array_drop	data_array;
@@ -74,6 +77,7 @@ void	split_heada_and_headb(t_node **head_a, t_node **head_b)
 	j = size_list(*head_a);
 	if (head_a == NULL || *head_a == NULL)
 		return ;
+<<<<<<< HEAD
 	data_array = get_tab_elems_drop(*head_a, size_list(*head_a));
 	if((size_list(*head_a) - data_array.size_array) > 3)
 	{
@@ -97,4 +101,23 @@ void	split_heada_and_headb(t_node **head_a, t_node **head_b)
 		}
 		sort_three_elem(head_a);
 	}
+=======
+	data_array = get_tab_elems_drop_optim(*head_a, size_list(*head_a));
+	if ((size_list(*head_a) - data_array.size_array) > 3)
+	{
+		while (j-- > 0)
+		{
+			if (data_array.array[i] == (*head_a)->value)
+			{
+				push_b(head_a, head_b);
+				i++;
+			}
+			else
+				rotate_a(head_a);
+		}
+	}
+	else
+		split_heada_headb_ext(head_a, head_b);
+	free(data_array.array);
+>>>>>>> 67496ee3fc9f99d6bdc19ff04e32d79a6995de67
 }
